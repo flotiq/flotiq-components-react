@@ -8,7 +8,7 @@ import './button.css';
  */
 export const Button = ({ primary, backgroundColor, size, label, rounded = '2xl', ...props }) => {
     const mode = primary ? 'bg-blue-900' : 'bg-red-900';
-    const borderRadius = { '2xl': 'rounded-2xl', xl: 'rounded-xl' };
+    const borderRadius = { '2xl': 'rounded-2xl', xl: 'rounded-xl', none: '' };
     return (
         <button
             type="button"
