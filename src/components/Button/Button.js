@@ -6,12 +6,15 @@ import './button.css';
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-    const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button = ({ primary, backgroundColor, size, label, rounded = '2xl', ...props }) => {
+    const mode = primary ? 'bg-blue-900' : 'bg-red-900';
+    const borderRadius = { '2xl': 'rounded-2xl', xl: 'rounded-xl' };
     return (
         <button
             type="button"
-            className={['mt-20', 'storybook-button', `storybook-button--${size}`, mode].join(' ')}
+            className={[
+                'mt-20', borderRadius[rounded], 'storybook-button', `storybook-button--${size}`, mode,
+            ].join(' ')}
             style={backgroundColor && { backgroundColor }}
             {...props}
         >
@@ -38,6 +41,10 @@ Button.propTypes = {
    */
     label: PropTypes.string.isRequired,
     /**
+     * Border radius
+     */
+    rounded: PropTypes.oneOf(['xl', '2xl']),
+    /**
    * Optional click handler
    */
     onClick: PropTypes.func,
@@ -47,5 +54,6 @@ Button.defaultProps = {
     backgroundColor: null,
     primary: false,
     size: 'medium',
+    rounded: '2xl',
     onClick: undefined,
 };
