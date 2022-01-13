@@ -3,6 +3,10 @@ module.exports = {
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
+  "staticDirs": [
+      "./images",
+      "../src/stories/assets"
+  ],
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
