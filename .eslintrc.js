@@ -11,7 +11,8 @@ module.exports = {
         'eslint:recommended',
     ],
     rules: {
-    /* Restrict file extensions that may contain JSX */
+        'linebreak-style': 0,
+        /* Restrict file extensions that may contain JSX */
         'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
         /* This rule will warn when it encounters a reference to an identifier that has not yet been declared. */
         'no-use-before-define': ['error', { variables: false }],

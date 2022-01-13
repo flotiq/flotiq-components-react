@@ -1,22 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../index.css';
-import './button.css';
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, rounded = '2xl', ...props }) => {
-    const mode = primary ? 'bg-blue-900' : 'bg-red-900';
-    const borderRadius = { '2xl': 'rounded-2xl', xl: 'rounded-xl', none: '' };
+export const Button = ({ label, size, onClick }) => {
+    const sizeClass = {
+        sm: 'px-8 py-3 text-sm',
+        md: 'px-12 py-4 text-md',
+        lg: 'px-16 py-5 text-lg',
+    };
+
     return (
         <button
             type="button"
-            className={[
-                'mt-20', borderRadius[rounded], 'storybook-button', `storybook-button--${size}`, mode,
-            ].join(' ')}
-            style={backgroundColor && { backgroundColor }}
-            {...props}
+            onClick={onClick}
+            className={`
+                inline-flex
+                items-center
+                ${sizeClass[size]}
+                leading-4
+                font-medium
+                rounded-full
+                shadow-sm
+                text-white
+                bg-primary
+                hover:bg-primary-600
+                transition-colors
+                duration-200
+                ease-in-out
+                focus:outline-none`}
         >
             {label}
         </button>
@@ -25,25 +39,13 @@ export const Button = ({ primary, backgroundColor, size, label, rounded = '2xl',
 
 Button.propTypes = {
     /**
-   * Is this the principal call to action on the page?
-   */
-    primary: PropTypes.bool,
-    /**
-   * What background color to use
-   */
-    backgroundColor: PropTypes.string,
-    /**
-   * How large should the button be?
-   */
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
+     * How large should the button be?
+     */
+    size: PropTypes.oneOf(['sm', 'md', 'lg']),
     /**
    * Button contents
    */
     label: PropTypes.string.isRequired,
-    /**
-     * Border radius
-     */
-    rounded: PropTypes.oneOf(['xl', '2xl']),
     /**
    * Optional click handler
    */
@@ -51,9 +53,6 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-    backgroundColor: null,
-    primary: false,
-    size: 'medium',
-    rounded: '2xl',
     onClick: undefined,
+    size: 'sm',
 };
