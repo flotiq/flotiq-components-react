@@ -28,7 +28,7 @@ var Button = function Button(_ref) {
   return /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
     onClick: onClick,
-    className: "\n                inline-flex\n                items-center\n                ".concat(sizeClass[size], "\n                leading-4\n                font-medium\n                rounded-full\n                shadow-sm\n                text-white\n                bg-primary\n                hover:bg-primary-600\n                transition-colors\n                duration-200\n                ease-in-out\n                focus:outline-none")
+    className: ['inline-flex', 'items-center', 'leading-4', 'font-medium', 'rounded-full', 'shadow-sm', 'text-white', 'bg-primary', 'hover:bg-primary-600', 'transition-colors', 'duration-200', 'ease-in-out', 'focus:outline-none', sizeClass[size]].join(' ')
   }, label);
 };
 

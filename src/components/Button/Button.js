@@ -16,21 +16,22 @@ export const Button = ({ label, size, onClick }) => {
         <button
             type="button"
             onClick={onClick}
-            className={`
-                inline-flex
-                items-center
-                ${sizeClass[size]}
-                leading-4
-                font-medium
-                rounded-full
-                shadow-sm
-                text-white
-                bg-primary
-                hover:bg-primary-600
-                transition-colors
-                duration-200
-                ease-in-out
-                focus:outline-none`}
+            className={[
+                'inline-flex',
+                'items-center',
+                'leading-4',
+                'font-medium',
+                'rounded-full',
+                'shadow-sm',
+                'text-white',
+                'bg-primary',
+                'hover:bg-primary-600',
+                'transition-colors',
+                'duration-200',
+                'ease-in-out',
+                'focus:outline-none',
+                sizeClass[size],
+            ].join(' ')}
         >
             {label}
         </button>
