@@ -1,0 +1,55 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+const defaultTheme = require('tailwindcss/defaultTheme');
+
+module.exports = {
+    theme: {
+        fontFamily: {
+            sans: [
+                'Inter',
+                ...defaultTheme.fontFamily.sans,
+            ],
+        },
+        colors: ({ colors }) => ({
+            inherit: colors.inherit,
+            current: colors.current,
+            transparent: colors.transparent,
+            black: colors.black,
+            white: colors.white,
+            slate: colors.slate,
+            gray: colors.gray,
+            zinc: colors.zinc,
+            neutral: colors.neutral,
+            stone: colors.stone,
+            red: colors.red,
+            orange: colors.orange,
+            amber: colors.amber,
+            yellow: colors.yellow,
+            lime: colors.lime,
+            green: colors.green,
+            emerald: colors.emerald,
+            teal: colors.teal,
+            cyan: colors.cyan,
+            sky: colors.sky,
+            blue: colors.blue,
+            indigo: colors.indigo,
+            violet: colors.violet,
+            purple: colors.purple,
+            fuchsia: colors.fuchsia,
+            pink: colors.pink,
+            rose: colors.rose,
+            primary: {
+                DEFAULT: '#0083FC',
+                50: '#B5DBFF',
+                100: '#A0D1FF',
+                200: '#77BEFF',
+                300: '#4FAAFF',
+                400: '#2697FF',
+                500: '#0083FC',
+                600: '#015bd7',
+                700: '#00498C',
+                800: '#002C54',
+                900: '#000E1C',
+            },
+        }),
+    },
+};
