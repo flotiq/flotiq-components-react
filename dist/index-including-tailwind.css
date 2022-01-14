@@ -420,12 +420,49 @@ Ensure the default browser behavior of the `hidden` attribute.
 .items-center {
   align-items: center;
 }
+.rounded {
+  border-radius: 0.25rem;
+}
 .rounded-full {
   border-radius: 9999px;
+}
+.rounded-none {
+  border-radius: 0px;
 }
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(0 131 252 / var(--tw-bg-opacity));
+}
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(20 16 70 / var(--tw-bg-opacity));
+}
+.bg-success {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 251 193 / var(--tw-bg-opacity));
+}
+.bg-danger {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.bg-warning {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 181 55 / var(--tw-bg-opacity));
+}
+.bg-info {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 202 240 / var(--tw-bg-opacity));
+}
+.bg-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
+}
+.bg-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 0 56 / var(--tw-bg-opacity));
+}
+.bg-transparent {
+  background-color: transparent;
 }
 .px-8 {
   padding-left: 2rem;
@@ -469,6 +506,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
@@ -498,6 +539,41 @@ code {
 .hover\:bg-primary-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(1 91 215 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-secondary-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 24 103 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-success-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(45 250 171 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-danger-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(231 20 20 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-warning-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 157 14 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-info-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 157 187 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-light-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(201 201 201 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-dark-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 0 97 / var(--tw-bg-opacity));
 }
 
 .focus\:outline-none:focus {
