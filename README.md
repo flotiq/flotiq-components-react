@@ -71,10 +71,18 @@ module.exports = {
 
 ### 2b. Include component styles (Projects without TailwindCSS)
 
-You can use Flotiq Components without Tailwind. Just import stylesheets from Flotiq Component
+You can use Flotiq Components without Tailwind. Just import stylesheets from Flotiq Component.
+
+If you are using Sass the following line can be included in a src/App.scss
 ```
-@import /node_modules/flotiq-components-react/dist/index-including-tailwind.css
+@import '~flotiq-components-react/dist/index-including-tailwind.css';
 ```
+
+If using css the following line can be included in your src/index.js or App.js file
+```
+import 'flotiq-components-react/dist/index-including-tailwind.css';
+```
+
 
 ### 3. Use components in your code
 
