@@ -15,7 +15,7 @@ To install all dependencies. Please DO NOT use npm for that.
 
 To start storybook server. It will be available on [http://localhost:6006/](http://localhost:6006/)
 
-### `npm run compile`
+### `yarn compile`
 
 To compile components into dist directory and prepare them for publish on npm registry.
 

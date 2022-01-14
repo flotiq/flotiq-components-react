@@ -6,8 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "Button", {
   enumerable: true,
   get: function get() {
-    return _Button.Button;
+    return _Button.default;
   }
 });
 
-var _Button = require("./Button/Button");
+var _Button = _interopRequireDefault(require("./Button/Button"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
