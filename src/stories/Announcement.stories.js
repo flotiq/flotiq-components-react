@@ -10,7 +10,7 @@ export default {
         backgroundColor: { control: 'color' },
         textAlignment: { control: 'select' },
         textSize: { control: 'select' },
-        color: { control: 'color' },
+        textColor: { control: 'color' },
         rounded: { control: 'inline-radio' },
     },
 };

@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../index.css';
 
-export const Announcement = ({
-    backgroundColor,
+export const Announcement = ({ backgroundColor,
     textAlignment,
     textSize,
-    color,
+    textColor,
     content,
     // additionalClasses = [],
     rounded = 'xl',
@@ -28,12 +27,15 @@ export const Announcement = ({
         '9xl': 'text-9xl',
         none: '',
     };
+    const style = {};
+    if (backgroundColor) { style.backgroundColor = backgroundColor; }
+    if (textColor) { style.color = textColor; }
     return (
         <div
             className={[
                 'px-12 py-6', borderRadius[rounded], alignment[textAlignment], fontSize[textSize],
             ].join(' ')}
-            style={(backgroundColor && { backgroundColor }) || (color && { color })}
+            style={style}
             {...props}
         >
             {content}
@@ -71,7 +73,7 @@ Announcement.propTypes = {
     /**
      * What text color to use
      */
-    color: PropTypes.string,
+    textColor: PropTypes.string,
     /**
    * Announcement content
    */
@@ -86,7 +88,7 @@ Announcement.defaultProps = {
     backgroundColor: null,
     textAlignment: null,
     textSize: 'base',
-    color: null,
+    textColor: null,
     rounded: 'xl',
 };
 
