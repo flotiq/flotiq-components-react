@@ -18,4 +18,5 @@ export const Text = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Text.args = {
     children: 'Lorem ipsum dolor sit amet',
+    additionalClasses: [],
 };

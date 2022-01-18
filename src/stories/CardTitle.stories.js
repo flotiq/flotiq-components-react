@@ -18,4 +18,5 @@ export const Title = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Title.args = {
     children: 'Card title',
+    additionalClasses: [],
 };

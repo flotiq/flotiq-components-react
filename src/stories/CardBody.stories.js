@@ -27,4 +27,5 @@ export const Body = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Body.args = {
     children: 'Test',
+    additionalClasses: [],
 };
