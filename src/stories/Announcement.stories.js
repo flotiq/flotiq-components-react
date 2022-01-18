@@ -1,5 +1,5 @@
 import React from 'react';
-import { Announcement } from '../components/Announcement/Announcement';
+import Announcement from '../components/Announcement/Announcement';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
