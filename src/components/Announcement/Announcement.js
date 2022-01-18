@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../index.css';
 
-export const Announcement = ({ backgroundColor,
+const Announcement = ({ backgroundColor,
     textAlignment,
     textSize,
     textColor,

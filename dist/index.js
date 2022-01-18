@@ -1,2 +1,3 @@
+import Announcement from './Announcement/Announcement';
 import Button from './Button/Button';
-export { Button };
+export { Announcement, Button };

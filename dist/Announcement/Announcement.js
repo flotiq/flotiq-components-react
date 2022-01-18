@@ -3,7 +3,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../index.css';
-export const Announcement = ({
+
+const Announcement = ({
   backgroundColor,
   textAlignment,
   textSize,
@@ -54,6 +55,7 @@ export const Announcement = ({
     style: style
   }, props), content);
 };
+
 Announcement.propTypes = {
   /**
   * What background color to use
