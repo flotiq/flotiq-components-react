@@ -7,7 +7,7 @@ export const Announcement = ({ backgroundColor,
     textSize,
     textColor,
     content,
-    // additionalClasses = [],
+    additionalClasses = [],
     rounded = 'xl',
     ...props }) => {
     const borderRadius = { '2xl': 'rounded-2xl', xl: 'rounded-xl', none: '' };
@@ -33,7 +33,7 @@ export const Announcement = ({ backgroundColor,
     return (
         <div
             className={[
-                'px-12 py-6', borderRadius[rounded], alignment[textAlignment], fontSize[textSize],
+                'px-12 py-6', borderRadius[rounded], alignment[textAlignment], fontSize[textSize], ...additionalClasses,
             ].join(' ')}
             style={style}
             {...props}
@@ -82,6 +82,10 @@ Announcement.propTypes = {
      * Border radius
      */
     rounded: PropTypes.oneOf(['xl', '2xl']),
+    /**
+     * Additional classes for button
+     */
+    additionalClasses: PropTypes.arrayOf(PropTypes.string),
 };
 
 Announcement.defaultProps = {
@@ -90,6 +94,7 @@ Announcement.defaultProps = {
     textSize: 'base',
     textColor: null,
     rounded: 'xl',
+    additionalClasses: [],
 };
 
 export default Announcement;

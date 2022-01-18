@@ -22,4 +22,10 @@ export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Base.args = {
     content: 'Your content here...',
+    backgroundColor: '#2697FF',
+    textAlignment: 'center',
+    textSize: '2xl',
+    textColor: '#F9F9F9',
+    rounded: 'xl',
+    additionalClasses: [],
 };
