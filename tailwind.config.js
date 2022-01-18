@@ -8,4 +8,5 @@ module.exports = {
     theme: {
     },
     plugins: [],
+    safelist: require('./src/components/tailwind.safelist'),
 };
