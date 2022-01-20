@@ -11,7 +11,7 @@ const Button = ({ label,
     size,
     rounded,
     additionalClasses,
-    props }) => {
+    ...props }) => {
     const sizeClass = {
         sm: 'px-8 py-3 text-sm',
         md: 'px-12 py-4 text-base',
