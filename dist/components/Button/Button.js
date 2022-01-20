@@ -2,6 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { roundedProps } from '../../defaultProps/rounded';
 /**
  * Primary UI component for user interaction
  */
@@ -9,15 +10,15 @@ import PropTypes from 'prop-types';
 const Button = ({
   label,
   onClick,
-  variant = 'primary',
-  size = 'md',
-  rounded = true,
-  additionalClasses = [],
-  ...props
+  variant,
+  size,
+  rounded,
+  additionalClasses,
+  props
 }) => {
   const sizeClass = {
     sm: 'px-8 py-3 text-sm',
-    md: 'px-12 py-4 text-md',
+    md: 'px-12 py-4 text-base',
     lg: 'px-16 py-5 text-lg'
   };
   const bgClasses = {
@@ -31,11 +32,10 @@ const Button = ({
     dark: 'bg-dark hover:bg-dark-400 text-white',
     transparent: 'bg-transparent text-black'
   };
-  const roundedClass = rounded ? 'rounded-full' : 'rounded-none';
   return /*#__PURE__*/React.createElement("button", _extends({
     type: "button",
     onClick: onClick,
-    className: ['inline-flex', 'items-center', 'leading-4', 'font-medium', roundedClass, 'shadow-sm', bgClasses[variant], 'transition-colors', 'duration-200', 'ease-in-out', 'focus:outline-none', sizeClass[size], ...additionalClasses].join(' ')
+    className: ['inline-flex', 'items-center', 'leading-4', 'font-medium', roundedProps.classSet[rounded], 'shadow-sm', bgClasses[variant], 'transition-colors', 'duration-200', 'ease-in-out', 'focus:outline-none', sizeClass[size], ...additionalClasses].join(' ')
   }, props), label);
 };
 
@@ -58,7 +58,7 @@ Button.propTypes = {
   /**
    * Is this the rounded button?
    */
-  rounded: PropTypes.bool,
+  rounded: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'full']),
 
   /**
    * Additional classes for button
@@ -72,9 +72,9 @@ Button.propTypes = {
 };
 Button.defaultProps = {
   onClick: undefined,
-  size: 'sm',
+  size: 'md',
   additionalClasses: [],
   variant: 'primary',
-  rounded: true
+  rounded: roundedProps.defaultValue
 };
 export default Button;

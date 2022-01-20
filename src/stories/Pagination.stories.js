@@ -14,20 +14,19 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Pagination {...args} />;
 
-export const Base = Template.bind({});
+export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Base.args = {
-    size: 'md',
-    variant: 'primary',
-    borderVariant: 'black',
-    rounded: 'md',
+Primary.args = {
+    ...Pagination.defaultProps,
     page: 1,
     numOfPages: 10,
-    prev: 'Previous',
-    next: 'Next',
-    baseUrl: '/',
-    additionalClasses: [],
-    activeAdditionalClasses: [],
-    prevNextAdditionalClasses: [],
-    containerAdditionalClasses: [],
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+    ...Pagination.defaultProps,
+    page: 1,
+    numOfPages: 10,
+    variant: 'secondary',
+    borderVariant: 'secondary',
 };

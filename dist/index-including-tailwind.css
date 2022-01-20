@@ -509,18 +509,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
-.rounded {
-  border-radius: 0.25rem;
-}
-.rounded-2xl {
-  border-radius: 1rem;
-}
-.rounded-xl {
-  border-radius: 0.75rem;
-}
-.rounded-full {
-  border-radius: 9999px;
-}
 .rounded-none {
   border-radius: 0px;
 }
@@ -532,6 +520,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .rounded-lg {
   border-radius: 0.5rem;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-2xl {
+  border-radius: 1rem;
+}
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 .border {
   border-width: 1px;
@@ -697,9 +697,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .font-medium {
   font-weight: 500;
-}
-.font-normal {
-  font-weight: 400;
 }
 .leading-4 {
   line-height: 1rem;

@@ -1,23 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { roundedProps } from '../../defaultProps/rounded';
 /**
  * Primary UI component for user interaction
  */
 
 const Pagination = ({
   variant = 'primary',
-  borderVariant = 'black',
-  size = 'md',
-  rounded = 'md',
-  additionalClasses = [],
-  activeAdditionalClasses = [],
-  prevNextAdditionalClasses = [],
-  containerAdditionalClasses = [],
-  prev = 'Previous',
-  next = 'Next',
-  baseUrl = '/',
-  page = 1,
-  numOfPages = 1
+  borderVariant,
+  size,
+  rounded,
+  additionalClasses,
+  activeAdditionalClasses,
+  prevNextAdditionalClasses,
+  containerAdditionalClasses,
+  prev,
+  next,
+  baseUrl,
+  page,
+  numOfPages
 }) => {
   const sizeClass = {
     sm: 'w-6 h-6 md:w-8 md:h-8 text-sm',
@@ -71,16 +72,9 @@ const Pagination = ({
     dark: 'border border-dark',
     transparent: 'border border-transparent'
   };
-  const roundedClass = {
-    none: 'rounded-none',
-    sm: 'rounded-sm',
-    md: 'rounded-md',
-    lg: 'rounded-lg',
-    full: 'rounded-full'
-  };
   const safePage = Math.min(Math.max(page, 1), numOfPages);
   return /*#__PURE__*/React.createElement("div", {
-    className: ['bg-white', 'px-1', 'py-3', 'flex', 'items-center', 'justify-between', 'sm:px-6', 'mt-10', ...containerAdditionalClasses].join(' ')
+    className: ['px-1', 'py-3', 'flex', 'items-center', 'justify-between', 'sm:px-6', 'mt-10', ...containerAdditionalClasses].join(' ')
   }, /*#__PURE__*/React.createElement("div", {
     className: "flex-1 flex items-center justify-center"
   }, /*#__PURE__*/React.createElement("nav", {
@@ -88,35 +82,35 @@ const Pagination = ({
     "aria-label": "Pagination"
   }, safePage > 1 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("a", {
     href: safePage > 2 ? `${baseUrl}${safePage - 1}` : baseUrl,
-    className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass2[size], bgClasses[variant], borderClasses[variant], roundedClass[rounded], 'leading-6', 'font-normal', ...prevNextAdditionalClasses].join(' ')
+    className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass2[size], bgClasses[variant], borderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...prevNextAdditionalClasses].join(' ')
   }, prev), /*#__PURE__*/React.createElement("a", {
     href: baseUrl,
-    className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedClass[rounded], 'leading-6', 'font-normal', safePage <= 2 ? 'inline-flex' : 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
+    className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', safePage <= 2 ? 'inline-flex' : 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
   }, "1"), safePage > 4 && /*#__PURE__*/React.createElement("span", {
-    className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedClass[rounded], 'leading-6', 'font-normal', 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
+    className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
   }, "...")), safePage > 3 && /*#__PURE__*/React.createElement("a", {
     href: `${baseUrl}${safePage - 2}`,
-    className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedClass[rounded], 'leading-6', 'font-normal', 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
+    className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
   }, safePage - 2), safePage > 2 && /*#__PURE__*/React.createElement("a", {
     href: `${baseUrl}${safePage - 1}`,
-    className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedClass[rounded], 'leading-6', 'font-normal', ...additionalClasses].join(' ')
+    className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...additionalClasses].join(' ')
   }, safePage - 1), /*#__PURE__*/React.createElement("span", {
     "aria-current": "page",
-    className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], activeBgClasses[variant], activeBorderClasses[variant], roundedClass[rounded], 'leading-6', 'font-normal', ...activeAdditionalClasses].join(' ')
+    className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], activeBgClasses[variant], activeBorderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...activeAdditionalClasses].join(' ')
   }, safePage), safePage < numOfPages - 1 && /*#__PURE__*/React.createElement("a", {
     href: `${baseUrl}${safePage + 1}`,
-    className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedClass[rounded], 'leading-6', 'font-normal', ...additionalClasses].join(' ')
+    className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...additionalClasses].join(' ')
   }, safePage + 1), page < numOfPages - 2 && /*#__PURE__*/React.createElement("a", {
     href: `${baseUrl}${safePage + 2}`,
-    className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedClass[rounded], 'leading-6', 'font-normal', 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
+    className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
   }, safePage + 2), safePage < numOfPages && /*#__PURE__*/React.createElement(React.Fragment, null, safePage < numOfPages - 3 && /*#__PURE__*/React.createElement("span", {
-    className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedClass[rounded], 'leading-6', 'font-normal', 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
+    className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
   }, "..."), /*#__PURE__*/React.createElement("a", {
     href: `${baseUrl}${numOfPages}`,
-    className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedClass[rounded], 'leading-6', 'font-normal', safePage >= numOfPages - 1 ? 'inline-flex' : 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
+    className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', safePage >= numOfPages - 1 ? 'inline-flex' : 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
   }, numOfPages), /*#__PURE__*/React.createElement("a", {
     href: `${baseUrl}${safePage + 1}`,
-    className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass2[size], bgClasses[variant], borderClasses[variant], roundedClass[rounded], 'leading-6', 'font-normal', ...prevNextAdditionalClasses].join(' ')
+    className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass2[size], bgClasses[variant], borderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...prevNextAdditionalClasses].join(' ')
   }, next)))));
 };
 
@@ -139,12 +133,12 @@ Pagination.propTypes = {
   /**
    * Active page number
    */
-  page: PropTypes.number,
+  page: PropTypes.number.isRequired,
 
   /**
    * Number of pages
    */
-  numOfPages: PropTypes.number,
+  numOfPages: PropTypes.number.isRequired,
 
   /**
    * Is this the rounded button?
@@ -189,10 +183,8 @@ Pagination.propTypes = {
 Pagination.defaultProps = {
   size: 'md',
   variant: 'primary',
-  borderVariant: 'black',
-  rounded: 'md',
-  page: 1,
-  numOfPages: 1,
+  borderVariant: 'primary',
+  rounded: roundedProps.defaultValue,
   prev: 'Previous',
   next: 'Next',
   baseUrl: '/',

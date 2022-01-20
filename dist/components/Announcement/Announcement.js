@@ -2,7 +2,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../index.css';
 
 const Announcement = ({
   backgroundColor,
