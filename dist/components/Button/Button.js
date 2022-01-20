@@ -14,7 +14,7 @@ const Button = ({
   size,
   rounded,
   additionalClasses,
-  props
+  ...props
 }) => {
   const sizeClass = {
     sm: 'px-8 py-3 text-sm',

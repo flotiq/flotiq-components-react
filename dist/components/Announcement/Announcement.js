@@ -2,6 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { roundedProps } from '../../defaultProps/rounded';
 
 const Announcement = ({
   backgroundColor,
@@ -9,15 +10,10 @@ const Announcement = ({
   textSize,
   textColor,
   content,
-  additionalClasses = [],
-  rounded = 'xl',
+  additionalClasses,
+  rounded,
   ...props
 }) => {
-  const borderRadius = {
-    '2xl': 'rounded-2xl',
-    xl: 'rounded-xl',
-    none: ''
-  };
   const alignment = {
     left: 'text-left',
     center: 'text-center',
@@ -50,7 +46,7 @@ const Announcement = ({
   }
 
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: ['px-12 py-6', borderRadius[rounded], alignment[textAlignment], fontSize[textSize], ...additionalClasses].join(' '),
+    className: ['px-12 py-6', roundedProps.classSet[rounded], alignment[textAlignment], fontSize[textSize], ...additionalClasses].join(' '),
     style: style
   }, props), content);
 };
@@ -84,7 +80,7 @@ Announcement.propTypes = {
   /**
    * Border radius
    */
-  rounded: PropTypes.oneOf(['xl', '2xl']),
+  rounded: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'full']),
 
   /**
    * Additional classes for button
@@ -96,7 +92,7 @@ Announcement.defaultProps = {
   textAlignment: null,
   textSize: 'base',
   textColor: null,
-  rounded: 'xl',
+  rounded: roundedProps.defaultValue,
   additionalClasses: []
 };
 export default Announcement;
