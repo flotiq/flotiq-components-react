@@ -15,3 +15,8 @@ import Video from './Video/Video';
 import Warning from './Warning/Warning';
 import YouTubeEmbed from './YouTubeEmbed/YouTubeEmbed';
 export { Announcement, Audio, Button, Code, Content, Delimiter, File, Header, Image, List, Paragraph, Quote, Table, Video, Warning, YouTubeEmbed };
+
+import Announcement from './components/Announcement/Announcement';
+import Button from './components/Button/Button';
+import Pagination from './components/Pagination/Pagination';
+export { Announcement, Button, Pagination };
