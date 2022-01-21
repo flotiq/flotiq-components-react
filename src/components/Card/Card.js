@@ -5,15 +5,15 @@ import CardTitle from './CardTitle';
 import CardImg from './CardImg';
 import CardText from './CardText';
 import { Context } from './Context';
+import { roundedProps } from '../../defaultProps/rounded';
 
 const Card = ({ children,
-    rounded = true,
-    bordered = false,
-    vertical = false,
-    proportionsForVertical = { body: '1/2', img: '1/2', breakpoint: 'md' },
-    additionalClasses = [],
+    rounded,
+    bordered,
+    vertical,
+    proportionsForVertical,
+    additionalClasses,
     ...props }) => {
-    const roundedClass = rounded ? 'rounded-lg' : 'rounded-none';
     const borderedClass = bordered ? 'border border-gray-200' : '';
     const context = useMemo(() => ({ vertical, proportionsForVertical }), [vertical, proportionsForVertical]);
     const directionClasses = vertical ? 'flex flex-wrap lg:flex-nowrap align-start' : 'flex-none';
@@ -28,7 +28,7 @@ const Card = ({ children,
                     directionClasses,
                     'bg-white',
                     'overflow-hidden',
-                    roundedClass,
+                    roundedProps.classSet[rounded],
                     borderedClass,
                     ...additionalClasses,
                 ].join(' ')}
@@ -52,7 +52,7 @@ Card.propTypes = {
     /**
      * Is this the rounded card?
      */
-    rounded: PropTypes.bool,
+    rounded: PropTypes.oneOf(['none', 'sm', 'md', 'lg']),
     /**
      * Should the card has a border?
      */
@@ -72,10 +72,10 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-    additionalClasses: [],
-    rounded: true,
-    bordered: false,
+    rounded: 'lg',
+    bordered: true,
     vertical: false,
+    additionalClasses: [],
     proportionsForVertical: { body: '1/2', img: '1/2', breakpoint: 'md' },
 };
 

@@ -17,6 +17,6 @@ const Template = (args) => <Card.Text {...args} />;
 export const Text = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Text.args = {
-    children: 'Lorem ipsum dolor sit amet',
+    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     additionalClasses: [],
 };

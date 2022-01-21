@@ -43,27 +43,18 @@ const SimpleTemplate = (args) => (
 export const Standard = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Standard.args = {
-    rounded: true,
-    bordered: false,
-    vertical: false,
-    additionalClasses: [],
+    ...Card.defaultProps,
 };
 
 export const Vertical = VerticalTemplate.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Vertical.args = {
-    rounded: true,
-    bordered: false,
+    ...Card.defaultProps,
     vertical: true,
-    proportionsForVertical: { body: '1/2', img: '1/2', breakpoint: 'md' },
-    additionalClasses: [],
 };
 
 export const WithoutImage = SimpleTemplate.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 WithoutImage.args = {
-    rounded: true,
-    bordered: true,
-    vertical: false,
-    additionalClasses: [],
+    ...Card.defaultProps,
 };

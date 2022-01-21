@@ -21,9 +21,10 @@ const CardBody = ({ children, additionalClasses = [] }) => {
     return (
         <div className={[
             'px-5',
-            'md:px-10',
-            'pt-10',
-            'pb-5',
+            'pt-5',
+            'pb-2',
+            'md:px-6',
+            'md:pt-6',
             directionClass,
             basisClass,
             ...additionalClasses,

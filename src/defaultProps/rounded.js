@@ -7,6 +7,10 @@ const classSet = {
 };
 const defaultValue = 'full';
 
+/**
+ * Default settings for rounded props
+ * PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'full'])
+ */
 export const roundedProps = {
     classSet,
     defaultValue,
