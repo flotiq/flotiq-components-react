@@ -157,4 +157,5 @@ Base.args = {
             type: 'table',
         },
     ],
+    additionalClasses: [],
 };

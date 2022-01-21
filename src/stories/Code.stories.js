@@ -1,5 +1,6 @@
 import React from 'react';
 import highlight from 'highlight.js';
+import 'highlight.js/styles/nord.css';
 
 import { Code } from '../index';
 

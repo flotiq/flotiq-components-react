@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Audio = ({ url, caption, additionalClasses = [] }) => (
+const Audio = ({ url, caption, additionalClasses = [], ...props }) => (
     <div className={['flex flex-col', ...additionalClasses].join(' ')}>
-        {caption && <p className="pb-25 md:pb-5">{caption}</p>}
+        {caption && <p className="pb-2 md:pb-5">{caption}</p>}
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-        <audio controls className="w-full">
+        <audio controls className="w-full" {...props}>
             <source src={url} type="audio/ogg" />
             <source src={url} type="audio/mpeg" />
             Your browser does not support the audio element.

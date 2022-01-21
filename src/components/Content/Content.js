@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Code from '../Code/Code';
 import Delimiter from '../Delimiter/Delimiter';
 import File from '../File/File';
@@ -22,6 +23,9 @@ const Content = ({
     codeProps,
     warningProps,
     delimiterProps,
+    listProps,
+    additionalClasses,
+    ...props
 }) => {
     useEffect(() => {
         if (highlight) {
@@ -29,7 +33,7 @@ const Content = ({
         }
     }, [highlight]);
     return (
-        <div>
+        <div className={additionalClasses.join(' ')} {...props}>
             {blocks.map((block) => {
                 switch (block.type) {
                 case 'header':
@@ -53,7 +57,14 @@ const Content = ({
                         />
                     );
                 case 'list':
-                    return <List items={block.data.items} style={block.data.style} key={block.id} />;
+                    return (
+                        <List
+                            items={block.data.items}
+                            style={block.data.style}
+                            {...listProps}
+                            key={block.id}
+                        />
+                    );
                 case 'image':
                     return (
                         <File
@@ -117,6 +128,21 @@ const Content = ({
             })}
         </div>
     );
+};
+
+Content.propTypes = {
+    /**
+     * Header contents
+     */
+    blocks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+    /**
+     * Additional classes for button
+     */
+    additionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
+Content.defaultProps = {
+    additionalClasses: [],
 };
 
 export default Content;
