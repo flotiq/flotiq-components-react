@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card } from '../components';
+import Card from '../components/Card/Card';
 import { Title } from './CardTitle.stories';
 import { Text } from './CardText.stories';
 

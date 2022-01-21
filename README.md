@@ -56,7 +56,7 @@ To use Tailwind benefits include Flotiq Components to your `tailwind.config.js`
 ```js
 module.exports = {
     content: [
-        './node_modules/flotiq-components-react/src/components/**/*.{js,jsx,ts,tsx}', // Flotiq Components location
+        './node_modules/flotiq-components-react/dist/**/*.{js,jsx,ts,tsx}', // Flotiq Components location
         './src/**/*.{js,jsx,ts,tsx}',
     ],
     theme: {

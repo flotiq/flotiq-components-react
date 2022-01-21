@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Button } from '../components';
+import Button from '../components/Button/Button';
+import { roundedProps } from '../defaultProps/rounded';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -11,7 +12,7 @@ export default {
         label: { control: 'text' },
         size: { control: 'inline-radio' },
         variant: { control: 'select' },
-        rounded: { control: 'boolean' },
+        rounded: { control: 'inline-radio' },
     },
 };
 
@@ -21,34 +22,29 @@ const Template = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
+    ...Button.defaultProps,
     label: 'Button',
-    variant: 'primary',
-    rounded: true,
-    additionalClasses: [],
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
+    ...Button.defaultProps,
     label: 'Button',
     variant: 'secondary',
-    rounded: true,
-    additionalClasses: [],
 };
 
 export const Large = Template.bind({});
 Large.args = {
+    ...Button.defaultProps,
     label: 'Button',
     size: 'lg',
     variant: 'info',
-    rounded: true,
-    additionalClasses: [],
 };
 
 export const MediumSquared = Template.bind({});
 MediumSquared.args = {
+    ...Button.defaultProps,
     label: 'Button',
-    size: 'md',
     variant: 'success',
-    rounded: false,
-    additionalClasses: [],
+    rounded: roundedProps.values[0],
 };

@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { roundedProps } from '../../defaultProps/rounded';
 
 /**
  * Primary UI component for user interaction
  */
 const Button = ({ label,
     onClick,
-    variant = 'primary',
-    size = 'md',
-    rounded = true,
-    additionalClasses = [],
+    variant,
+    size,
+    rounded,
+    additionalClasses,
     ...props }) => {
     const sizeClass = {
         sm: 'px-8 py-3 text-sm',
-        md: 'px-12 py-4 text-md',
+        md: 'px-12 py-4 text-base',
         lg: 'px-16 py-5 text-lg',
     };
     const bgClasses = {
@@ -27,7 +28,6 @@ const Button = ({ label,
         dark: 'bg-dark hover:bg-dark-400 text-white',
         transparent: 'bg-transparent text-black',
     };
-    const roundedClass = rounded ? 'rounded-full' : 'rounded-none';
 
     return (
         <button
@@ -38,7 +38,7 @@ const Button = ({ label,
                 'items-center',
                 'leading-4',
                 'font-medium',
-                roundedClass,
+                roundedProps.classSet[rounded],
                 'shadow-sm',
                 bgClasses[variant],
                 'transition-colors',
@@ -81,7 +81,7 @@ Button.propTypes = {
     /**
      * Is this the rounded button?
      */
-    rounded: PropTypes.bool,
+    rounded: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'full']),
     /**
      * Additional classes for button
      */
@@ -94,10 +94,10 @@ Button.propTypes = {
 
 Button.defaultProps = {
     onClick: undefined,
-    size: 'sm',
+    size: 'md',
     additionalClasses: [],
     variant: 'primary',
-    rounded: true,
+    rounded: roundedProps.defaultValue,
 };
 
 export default Button;
