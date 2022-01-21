@@ -4,11 +4,9 @@ import { Context } from './Context';
 
 const CardImg = ({ src, alt, additionalClasses = [], additionalContainerClasses = [] }) => {
     const context = useContext(Context);
-    const directionClass = context && context.vertical ? 'basis-full' : '';
 
     return (
         <div className={[
-            directionClass,
             context.basisClassImage,
             ...additionalContainerClasses,
         ].join(' ')}

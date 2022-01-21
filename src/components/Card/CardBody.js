@@ -4,8 +4,7 @@ import { Context } from './Context';
 
 const CardBody = ({ children, additionalClasses = [] }) => {
     const context = useContext(Context);
-    const directionClass = context && context.vertical
-        ? 'flex flex-col items-start justify-between basis-full' : '';
+
     return (
         <div className={[
             'px-5',
@@ -13,14 +12,12 @@ const CardBody = ({ children, additionalClasses = [] }) => {
             'pb-2',
             'md:px-6',
             'md:pt-6',
-            directionClass,
             context.basisClassBody,
             ...additionalClasses,
         ].join(' ')}
         >
             {children}
         </div>
-
     );
 };
 
