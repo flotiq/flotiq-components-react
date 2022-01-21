@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Table } from '../components';
+import { Table } from '../index';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

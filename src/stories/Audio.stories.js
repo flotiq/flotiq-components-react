@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Audio } from '../components';
+import { Audio } from '../index';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

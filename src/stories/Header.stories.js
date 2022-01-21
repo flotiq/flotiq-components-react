@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Header } from '../components';
+import { Header } from '../index';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

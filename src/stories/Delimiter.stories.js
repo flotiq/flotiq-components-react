@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Delimiter } from '../components';
+import { Delimiter } from '../index';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

@@ -1,7 +1,7 @@
 import React from 'react';
 import highlight from 'highlight.js';
 
-import { Code } from '../components';
+import { Code } from '../index';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

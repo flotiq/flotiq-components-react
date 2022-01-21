@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Video } from '../components';
+import { Video } from '../index';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

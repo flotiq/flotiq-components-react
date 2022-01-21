@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Image } from '../components';
+import { Image } from '../index';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

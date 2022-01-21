@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { YouTubeEmbed } from '../components';
+import { YouTubeEmbed } from '../index';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
