@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import CardBody from './CardBody';
 import CardTitle from './CardTitle';
@@ -6,6 +6,13 @@ import CardImg from './CardImg';
 import CardText from './CardText';
 import { Context } from './Context';
 import { roundedProps } from '../../defaultProps/rounded';
+
+const calcBasisClass = (scale, isVertical, breakpoint = 'md') => {
+    if (scale && isVertical) {
+        return `${breakpoint}:basis-${scale}`;
+    }
+    return '';
+};
 
 const Card = ({ children,
     rounded,
@@ -15,12 +22,14 @@ const Card = ({ children,
     additionalClasses,
     ...props }) => {
     const borderedClass = bordered ? 'border border-gray-200' : '';
-    const context = useMemo(() => ({ vertical, proportionsForVertical }), [vertical, proportionsForVertical]);
-    const directionClasses = vertical ? 'flex flex-wrap lg:flex-nowrap align-start' : 'flex-none';
-    useEffect(() => {
-        context.vertical = vertical;
-        context.proportionsForVertical = proportionsForVertical;
-    }, [context, vertical, proportionsForVertical]);
+    const directionClasses = vertical ? 'flex flex-wrap justify-between align-start' : 'flex-none';
+
+    const context = useMemo(() => ({
+        vertical,
+        basisClassImage: calcBasisClass(proportionsForVertical?.img, vertical, proportionsForVertical?.breakpoint),
+        basisClassBody: calcBasisClass(proportionsForVertical?.body, vertical, proportionsForVertical?.breakpoint),
+    }), [vertical, proportionsForVertical]);
+
     return (
         <Context.Provider value={context}>
             <div
