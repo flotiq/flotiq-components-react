@@ -66,8 +66,12 @@ module.exports = {
         require('./node_modules/flotiq-components-react/dist/tailwind.preset'), // Flotiq Component theme presets
     ],
     plugins: [],
+    // Below configuration is required if you use the Cards component
+    safelist: require('./node_modules/flotiq-components-react/dist/tailwind.safelist'),
 };
 ```
+
+Tip: You can also reduce the `safelist` by replacing it with the array of classes that you use before pushing the code for production.
 
 ### 2b. Include component styles (Projects without TailwindCSS)
 
