@@ -5,7 +5,7 @@ const CardText = ({
   children,
   additionalClasses = []
 }) => /*#__PURE__*/React.createElement("p", {
-  className: ['text-base', 'font-light', 'my-5', ...additionalClasses].join(' ')
+  className: ['text-base', 'font-light', 'my-4', ...additionalClasses].join(' ')
 }, children);
 
 CardText.propTypes = {

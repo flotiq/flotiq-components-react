@@ -450,9 +450,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .z-0 {
   z-index: 0;
 }
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .mt-10 {
   margin-top: 2.5rem;
@@ -691,14 +691,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .basis-full {
   flex-basis: 100%;
 }
-.flex-col {
-  flex-direction: column;
-}
 .flex-wrap {
   flex-wrap: wrap;
-}
-.items-start {
-  align-items: flex-start;
 }
 .items-center {
   align-items: center;
@@ -848,11 +842,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
-.pt-10 {
-  padding-top: 2.5rem;
+.pt-5 {
+  padding-top: 1.25rem;
 }
-.pb-5 {
-  padding-bottom: 1.25rem;
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 .text-left {
   text-align: left;
@@ -1621,9 +1615,13 @@ code {
     flex-basis: 100%;
   }
 
-  .md\:px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+  .md\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .md\:pt-6 {
+    padding-top: 1.5rem;
   }
 
   .md\:text-base {
@@ -1889,10 +1887,6 @@ code {
 
   .lg\:basis-full {
     flex-basis: 100%;
-  }
-
-  .lg\:flex-nowrap {
-    flex-wrap: nowrap;
   }
 }
 

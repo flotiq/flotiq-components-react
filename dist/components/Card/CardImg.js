@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Context } from './Context';
 
@@ -9,28 +9,8 @@ const CardImg = ({
   additionalContainerClasses = []
 }) => {
   const context = useContext(Context);
-  let directionClass = '';
-
-  if (context && context.vertical && context.proportionsForVertical && context.proportionsForVertical.img) {
-    const {
-      img,
-      breakpoint
-    } = context.proportionsForVertical;
-    directionClass = `basis-full ${breakpoint ?? 'md'}:basis-${img}`;
-  }
-
-  useEffect(() => {
-    if (context && context.vertical && context.proportionsForVertical && context.proportionsForVertical.img) {
-      const {
-        img,
-        breakpoint
-      } = context.proportionsForVertical; // eslint-disable-next-line react-hooks/exhaustive-deps
-
-      directionClass = `basis-full ${breakpoint ?? 'md'}:basis-${img}`;
-    }
-  }, [context]);
   return /*#__PURE__*/React.createElement("div", {
-    className: [directionClass, ...additionalContainerClasses].join(' ')
+    className: [context.basisClassImage, ...additionalContainerClasses].join(' ')
   }, /*#__PURE__*/React.createElement("img", {
     src: src,
     alt: alt,
