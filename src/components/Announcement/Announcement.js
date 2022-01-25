@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
+import { backgroundProps } from '../../defaultProps/background';
 
-const Announcement = ({ backgroundColor,
+const Announcement = ({ variant,
+    backgroundColor,
     textAlignment,
     textSize,
     textColor,
@@ -33,6 +35,7 @@ const Announcement = ({ backgroundColor,
         <div
             className={[
                 'px-12 py-6',
+                backgroundProps.classSet[variant],
                 roundedProps.classSet[rounded],
                 alignment[textAlignment],
                 fontSize[textSize],
@@ -48,7 +51,21 @@ const Announcement = ({ backgroundColor,
 
 Announcement.propTypes = {
     /**
-   * What background color to use
+     * What color variant to use?
+     */
+    variant: PropTypes.oneOf([
+        'primary',
+        'secondary',
+        'success',
+        'danger',
+        'warning',
+        'info',
+        'light',
+        'dark',
+        'transparent',
+    ]),
+    /**
+   * What background color to use? Background color will override variant colors
    */
     backgroundColor: PropTypes.string,
     /**
@@ -74,7 +91,7 @@ Announcement.propTypes = {
         '9xl',
     ]),
     /**
-     * What text color to use
+     * What text color to use?  Text color will override variant colors
      */
     textColor: PropTypes.string,
     /**
@@ -92,11 +109,12 @@ Announcement.propTypes = {
 };
 
 Announcement.defaultProps = {
+    variant: backgroundProps.defaultValue,
     backgroundColor: null,
     textAlignment: null,
     textSize: 'base',
     textColor: null,
-    rounded: roundedProps.defaultValue,
+    rounded: 'lg',
     additionalClasses: [],
 };
 

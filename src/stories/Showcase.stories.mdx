@@ -1,4 +1,31 @@
 import { Meta } from '@storybook/addon-docs';
+
+import { Base as AnnouncementShowcase } from "./Announcement.stories";
+import { Primary as ButtonShowcase } from "./Button.stories";
+import { Standard as CardShowcase } from "./Card.stories";
+import { Primary as PaginationShowcase } from "./Pagination.stories";
+import Divider from "./addons/Divider";
+
+<Meta title="Showcase" />
+
+# Components showcase
+
+Showcase of components in their primary state and with default properties.
+
+<AnnouncementShowcase {...AnnouncementShowcase.args}/>
+
+<Divider/>
+
+<ButtonShowcase {...ButtonShowcase.args}/>
+
+<Divider/>
+
+<CardShowcase {...CardShowcase.args}/>
+
+<Divider/>
+
+<PaginationShowcase {...PaginationShowcase.args}/>
+
 import Announcement from '../components/Announcement/Announcement';
 import Audio from '../components/Audio/Audio';
 import Button from '../components/Button/Button';

@@ -3,6 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React from 'react';
 import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
+import { backgroundProps } from '../../defaultProps/background';
 /**
  * Primary UI component for user interaction
  */
@@ -21,21 +22,21 @@ const Button = ({
     md: 'px-12 py-4 text-base',
     lg: 'px-16 py-5 text-lg'
   };
-  const bgClasses = {
-    primary: 'bg-primary hover:bg-primary-600 text-white',
-    secondary: 'bg-secondary hover:bg-secondary-400 text-white',
-    success: 'bg-success hover:bg-success-600 text-white',
-    danger: 'bg-danger hover:bg-danger-600 text-white',
-    warning: 'bg-warning hover:bg-warning-600 text-black',
-    info: 'bg-info hover:bg-info-600 text-black',
-    light: 'bg-light hover:bg-light-600 text-black',
-    dark: 'bg-dark hover:bg-dark-400 text-white',
-    transparent: 'bg-transparent text-black'
+  const hoverBackgroundClasses = {
+    primary: 'hover:bg-primary-600',
+    secondary: 'hover:bg-secondary-400',
+    success: 'hover:bg-success-600',
+    danger: 'hover:bg-danger-600',
+    warning: 'hover:bg-warning-600',
+    info: 'hover:bg-info-600',
+    light: 'hover:bg-light-600',
+    dark: 'hover:bg-dark-400',
+    transparent: ''
   };
   return /*#__PURE__*/React.createElement("button", _extends({
     type: "button",
     onClick: onClick,
-    className: ['inline-flex', 'items-center', 'leading-4', 'font-medium', roundedProps.classSet[rounded], 'shadow-sm', bgClasses[variant], 'transition-colors', 'duration-200', 'ease-in-out', 'focus:outline-none', sizeClass[size], ...additionalClasses].join(' ')
+    className: ['inline-flex', 'items-center', 'leading-4', 'font-medium', roundedProps.classSet[rounded], 'shadow-sm', backgroundProps.classSet[variant], hoverBackgroundClasses[variant], 'transition-colors', 'duration-200', 'ease-in-out', 'focus:outline-none', sizeClass[size], ...additionalClasses].join(' ')
   }, props), label);
 };
 
@@ -74,7 +75,7 @@ Button.defaultProps = {
   onClick: undefined,
   size: 'md',
   additionalClasses: [],
-  variant: 'primary',
+  variant: backgroundProps.defaultValue,
   rounded: roundedProps.defaultValue
 };
 export default Button;

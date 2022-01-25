@@ -8,6 +8,7 @@ import File from './components/File/File';
 import Header from './components/Header/Header';
 import Image from './components/Image/Image';
 import List from './components/List/List';
+import Card from './components/Card/Card';
 import Pagination from './components/Pagination/Pagination';
 import Paragraph from './components/Paragraph/Paragraph';
 import Quote from './components/Quote/Quote';
@@ -27,6 +28,7 @@ export {
     Header,
     Image,
     List,
+    Card,
     Pagination,
     Paragraph,
     Quote,

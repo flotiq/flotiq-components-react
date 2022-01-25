@@ -3,8 +3,10 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React from 'react';
 import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
+import { backgroundProps } from '../../defaultProps/background';
 
 const Announcement = ({
+  variant,
   backgroundColor,
   textAlignment,
   textSize,
@@ -46,14 +48,19 @@ const Announcement = ({
   }
 
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: ['px-12 py-6', roundedProps.classSet[rounded], alignment[textAlignment], fontSize[textSize], ...additionalClasses].join(' '),
+    className: ['px-12 py-6', backgroundProps.classSet[variant], roundedProps.classSet[rounded], alignment[textAlignment], fontSize[textSize], ...additionalClasses].join(' '),
     style: style
   }, props), content);
 };
 
 Announcement.propTypes = {
   /**
-  * What background color to use
+   * What color variant to use?
+   */
+  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'transparent']),
+
+  /**
+  * What background color to use? Background color will override variant colors
   */
   backgroundColor: PropTypes.string,
 
@@ -68,7 +75,7 @@ Announcement.propTypes = {
   textSize: PropTypes.oneOf(['xs', 'sm', 'base', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl', '8xl', '9xl']),
 
   /**
-   * What text color to use
+   * What text color to use?  Text color will override variant colors
    */
   textColor: PropTypes.string,
 
@@ -88,11 +95,12 @@ Announcement.propTypes = {
   additionalClasses: PropTypes.arrayOf(PropTypes.string)
 };
 Announcement.defaultProps = {
+  variant: backgroundProps.defaultValue,
   backgroundColor: null,
   textAlignment: null,
   textSize: 'base',
   textColor: null,
-  rounded: roundedProps.defaultValue,
+  rounded: 'lg',
   additionalClasses: []
 };
 export default Announcement;
