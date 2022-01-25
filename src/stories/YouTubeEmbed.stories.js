@@ -18,9 +18,5 @@ export const Basic = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Basic.args = {
     url: 'https://www.youtube.com/watch?v=w0JFqbDgKVQ',
-    width: 640,
-    height: 360,
-    title: 'Youtube video',
-    allowFullScreen: true,
-    additionalClasses: [],
+    ...YouTubeEmbed.defaultProps,
 };

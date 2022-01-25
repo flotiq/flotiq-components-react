@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 const YouTubeEmbed = ({
     url,
-    width = 640,
-    height = 360,
-    title = 'Youtube video',
-    allowFullScreen = true,
-    additionalClasses = [],
+    width,
+    height,
+    title,
+    allowFullScreen,
+    additionalClasses,
+    ...props
 }) => {
     const safeUrl = url.replace('/watch?v=', '/embed/');
     return (
@@ -21,13 +22,14 @@ const YouTubeEmbed = ({
             allowFullScreen={allowFullScreen}
             title={title}
             className={additionalClasses.join(' ')}
+            {...props}
         />
     );
 };
 
 YouTubeEmbed.propTypes = {
     /**
-     * Level of header
+     * YouTUbe url
      */
     url: PropTypes.string.isRequired,
     /**
@@ -35,7 +37,7 @@ YouTubeEmbed.propTypes = {
      */
     width: PropTypes.number,
     /**
-     * Iframe width
+     * Iframe height
      */
     height: PropTypes.number,
     /**
@@ -47,7 +49,7 @@ YouTubeEmbed.propTypes = {
      */
     allowFullScreen: PropTypes.bool,
     /**
-     * Additional classes for button
+     * Additional classes for embed
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
 };

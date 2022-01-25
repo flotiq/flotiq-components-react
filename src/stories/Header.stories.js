@@ -18,53 +18,48 @@ const Template = (args) => <Header {...args} />;
 export const Level1 = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Level1.args = {
-    level: 1,
+    ...Header.defaultProps,
     text: 'Heading 1',
-    alignement: 'left',
-    additionalClasses: [],
 };
 
 export const Level2 = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Level2.args = {
+    ...Header.defaultProps,
     level: 2,
     text: 'Heading 2',
     alignement: 'center',
-    additionalClasses: [],
 };
 
 export const Level3 = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Level3.args = {
+    ...Header.defaultProps,
     level: 3,
     text: 'Heading 3',
     alignement: 'right',
-    additionalClasses: [],
 };
 
 export const Level4 = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Level4.args = {
+    ...Header.defaultProps,
     level: 4,
     text: 'Heading 4',
-    alignement: 'left',
-    additionalClasses: [],
 };
 
 export const Level5 = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Level5.args = {
+    ...Header.defaultProps,
     level: 5,
     text: 'Heading 5',
-    alignement: 'left',
-    additionalClasses: [],
 };
 
 export const Level6 = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Level6.args = {
+    ...Header.defaultProps,
     level: 6,
     text: 'Heading 6',
-    alignement: 'left',
-    additionalClasses: [],
 };

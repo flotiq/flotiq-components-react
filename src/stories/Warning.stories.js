@@ -19,5 +19,5 @@ export const Base = Template.bind({});
 Base.args = {
     title: 'WARNING',
     message: 'Lorem ipsum dolor sit amet',
-    additionalClasses: [],
+    ...Warning.defaultProps,
 };

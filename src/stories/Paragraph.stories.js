@@ -23,6 +23,5 @@ Base.args = {
         + ' Nullam vehicula tortor vitae lorem egestas imperdiet.'
         + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
         + ' Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
-    alignement: 'left',
-    additionalClasses: [],
+    ...Paragraph.defaultProps,
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { List } from '../index';
+import { list } from './defaultContent/defaultContent';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -18,38 +19,6 @@ const Template = (args) => <List {...args} />;
 export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Base.args = {
-    items: [{
-        content: 'Lorem ipsum',
-        items: [
-            {
-                content: 'Lorem ipsum',
-                items: [
-                    {
-                        content: 'Lorem ipsum',
-                        items: [
-                            {
-                                content: 'Lorem ipsum',
-                                items: [
-                                    {
-                                        content: 'Lorem ipsum',
-                                        items: [
-                                            {
-                                                content: 'Lorem ipsum',
-                                            },
-                                        ],
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-                ],
-            },
-        ],
-    }, {
-        content: 'Dolor sit amet',
-    }, {
-        content: 'Donec condimentum augue vitae rhoncus vehicula',
-    }],
-    style: 'unordered',
-    additionalClasses: [],
+    items: list,
+    ...List.defaultProps,
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Table } from '../index';
+import { table } from './defaultContent/defaultContent';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -17,10 +18,14 @@ const Template = (args) => <Table {...args} />;
 export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Base.args = {
-    content: [
-        ['lorem', 'ipsum', 'dolor'],
-        ['sit', 'amet', 'lorem'],
-        ['ipsum', 'dolor', 'sit'],
-    ],
-    additionalClasses: [],
+    content: table,
+    ...Table.defaultProps,
+};
+
+export const WithHeadings = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+WithHeadings.args = {
+    content: table,
+    ...Table.defaultProps,
+    withHeadings: true,
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Header = ({ level = 1, text, anchor, alignement, additionalClasses = [], ...props }) => {
+const Header = ({ level = 1, text, anchor, alignement, additionalClasses, ...props }) => {
     const safeLevel = Math.min(Math.max(level, 1), 6);
     const HeaderToRender = `h${safeLevel}`;
     const sizeClass = {
@@ -42,11 +42,11 @@ Header.propTypes = {
      */
     anchor: PropTypes.string,
     /**
-     * Header anchor
+     * Header alignement
      */
     alignement: PropTypes.oneOf(['left', 'center', 'right']),
     /**
-     * Additional classes for button
+     * Additional classes for header
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
 };

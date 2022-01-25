@@ -33,15 +33,15 @@ const Code = ({ code, language, highlight, additionalClasses, ...props }) => {
 
 Code.propTypes = {
     /**
-     * Header contents
+     * Code content
      */
     code: PropTypes.string.isRequired,
     /**
-     * Header contents
+     * Programming language name
      */
     language: PropTypes.string,
     /**
-     * Additional classes for button
+     * Additional classes for code
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
 };

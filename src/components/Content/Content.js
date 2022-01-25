@@ -73,6 +73,7 @@ const Content = ({
                             fileName={block.data.fileName}
                             extension={block.data.extension}
                             stretched={block.data.stretched}
+                            rounded="none"
                             {...fileProps}
                             key={block.id}
                         />
@@ -132,16 +133,66 @@ const Content = ({
 
 Content.propTypes = {
     /**
-     * Header contents
+     * Content blocks
      */
     blocks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
     /**
-     * Additional classes for button
+     * Additional props for header component
+     */
+    headerProps: PropTypes.shape(Header.defaultProps),
+    /**
+     * Additional props for paragraph component
+     */
+    paragraphProps: PropTypes.shape(Paragraph.defaultProps),
+    /**
+     * Additional props for YouTube embed component
+     */
+    youTubeEmbedProps: PropTypes.shape(YouTubeEmbed.defaultProps),
+    /**
+     * Additional props for file components
+     */
+    fileProps: PropTypes.shape(File.defaultProps),
+    /**
+     * Additional props for quote component
+     */
+    quoteProps: PropTypes.shape(Quote.defaultProps),
+    /**
+     * Additional props for table component
+     */
+    tableProps: PropTypes.shape(Table.defaultProps),
+    /**
+     * Additional props for code component
+     */
+    codeProps: PropTypes.shape(Code.defaultProps),
+    /**
+     * Additional props for warning component
+     */
+    warningProps: PropTypes.shape(Warning.defaultProps),
+    /**
+     * Additional props for delimiter component
+     */
+    delimiterProps: PropTypes.shape(Delimiter.defaultProps),
+    /**
+     * Additional components for list component
+     */
+    listProps: PropTypes.shape(List.defaultProps),
+    /**
+     * Additional classes for content container
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
 };
 
 Content.defaultProps = {
+    headerProps: {},
+    paragraphProps: {},
+    youTubeEmbedProps: {},
+    fileProps: {},
+    quoteProps: {},
+    tableProps: {},
+    codeProps: {},
+    warningProps: {},
+    delimiterProps: {},
+    listProps: {},
     additionalClasses: [],
 };
 

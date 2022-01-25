@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Paragraph = ({ text, alignement, additionalClasses = [], ...props }) => {
+const Paragraph = ({ text, alignement, additionalClasses, ...props }) => {
     const alignementClass = {
         left: 'text-left',
         center: 'text-center',
@@ -18,15 +18,15 @@ const Paragraph = ({ text, alignement, additionalClasses = [], ...props }) => {
 
 Paragraph.propTypes = {
     /**
-     * Header contents
+     * Paragraph content
      */
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     /**
-     * Header anchor
+     * Paragraph alignement
      */
     alignement: PropTypes.oneOf(['left', 'center', 'right']),
     /**
-     * Additional classes for button
+     * Additional classes for paragraph
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
 };

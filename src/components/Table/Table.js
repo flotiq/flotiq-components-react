@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Table = ({ content, withHeadings }) => (
-    <table className="table text-content-table mt-2 mb-4">
+const Table = ({ content, withHeadings, additionalClasses, ...props }) => (
+    <table className={['table mt-2 mb-4', ...additionalClasses].join(' ')} {...props}>
         {content.map((row, index) => (withHeadings && index === 0 ? (
             <thead>
                 <tr>
@@ -21,5 +22,25 @@ const Table = ({ content, withHeadings }) => (
         )))}
     </table>
 );
+
+Table.propTypes = {
+    /**
+     * Table contents
+     */
+    content: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+    /**
+     * Does the table should have headings?
+     */
+    withHeadings: PropTypes.bool,
+    /**
+     * Additional classes for table
+     */
+    additionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
+Table.defaultProps = {
+    withHeadings: false,
+    additionalClasses: [],
+};
 
 export default Table;
