@@ -1,18 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { borderProps } from '../../defaultProps/border';
 
 const Delimiter = ({ variant, style, additionalClasses, ...props }) => {
-    const colorClasses = {
-        primary: 'border-primary',
-        secondary: 'border-secondary',
-        success: 'border-success',
-        danger: 'border-danger',
-        warning: 'border-warning',
-        info: 'border-info',
-        light: 'border-light',
-        dark: 'border-dark',
-    };
-
     const styleClasses = {
         solid: 'border-solid',
         dashed: 'border-dashed',
@@ -22,7 +12,7 @@ const Delimiter = ({ variant, style, additionalClasses, ...props }) => {
 
     return (
         <hr
-            className={['my-2', colorClasses[variant], styleClasses[style], ...additionalClasses].join(' ')}
+            className={['my-2', borderProps.classSet[variant], styleClasses[style], ...additionalClasses].join(' ')}
             {...props}
         />
     );
@@ -53,7 +43,7 @@ Delimiter.propTypes = {
 };
 
 Delimiter.defaultProps = {
-    variant: 'primary',
+    variant: borderProps.defaultValue,
     style: 'solid',
     additionalClasses: [],
 };

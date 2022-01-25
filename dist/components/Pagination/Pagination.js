@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
+import { borderProps } from '../../defaultProps/border';
+import { backgroundProps } from '../../defaultProps/background';
 /**
  * Primary UI component for user interaction
  */
@@ -38,31 +40,13 @@ const Pagination = ({
     dark: 'bg-white hover:bg-dark text-black hover:text-white',
     transparent: 'bg-transparent text-black'
   };
-  const activeBgClasses = {
-    primary: 'bg-primary text-white',
-    secondary: 'bg-secondary text-white',
-    info: 'bg-info text-black',
-    light: 'bg-light text-black',
-    dark: 'bg-dark text-white',
-    transparent: 'bg-transparent text-black'
-  };
-  const borderVariantClasses = {
-    primary: 'border border-primary',
-    secondary: 'border border-secondary',
-    info: 'border border-info',
-    light: 'border border-light',
-    dark: 'border border-dark',
-    transparent: 'border border-transparent',
-    black: 'border border-black',
-    white: 'border border-white'
-  };
   const borderClasses = {
-    primary: ['border', borderVariantClasses[borderVariant], 'hover:border-primary'].join(' '),
-    secondary: ['border', borderVariantClasses[borderVariant], 'hover:border-secondary'].join(' '),
-    info: ['border', borderVariantClasses[borderVariant], 'hover:border-info'].join(' '),
-    light: ['border', borderVariantClasses[borderVariant], 'hover:border-light'].join(' '),
-    dark: ['border', borderVariantClasses[borderVariant], 'hover:border-dark'].join(' '),
-    transparent: ['border', borderVariantClasses[borderVariant], 'hover:border-transparent'].join(' ')
+    primary: ['border', borderProps.classSet[borderVariant], 'hover:border-primary'].join(' '),
+    secondary: ['border', borderProps.classSet[borderVariant], 'hover:border-secondary'].join(' '),
+    info: ['border', borderProps.classSet[borderVariant], 'hover:border-info'].join(' '),
+    light: ['border', borderProps.classSet[borderVariant], 'hover:border-light'].join(' '),
+    dark: ['border', borderProps.classSet[borderVariant], 'hover:border-dark'].join(' '),
+    transparent: ['border', borderProps.classSet[borderVariant], 'hover:border-transparent'].join(' ')
   };
   const activeBorderClasses = {
     primary: 'border border-primary',
@@ -96,7 +80,7 @@ const Pagination = ({
     className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...additionalClasses].join(' ')
   }, safePage - 1), /*#__PURE__*/React.createElement("span", {
     "aria-current": "page",
-    className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], activeBgClasses[variant], activeBorderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...activeAdditionalClasses].join(' ')
+    className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], backgroundProps.classSet[variant], activeBorderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...activeAdditionalClasses].join(' ')
   }, safePage), safePage < numOfPages - 1 && /*#__PURE__*/React.createElement("a", {
     href: `${baseUrl}${safePage + 1}`,
     className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...additionalClasses].join(' ')

@@ -16,9 +16,17 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <List {...args} />;
 
-export const Base = Template.bind({});
+export const Unordered = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Base.args = {
+Unordered.args = {
     items: list,
     ...List.defaultProps,
+};
+
+export const Ordered = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Ordered.args = {
+    items: list,
+    ...List.defaultProps,
+    style: 'ordered',
 };

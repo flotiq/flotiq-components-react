@@ -1,9 +1,22 @@
 import { Meta } from '@storybook/addon-docs';
 
 import { Base as AnnouncementShowcase } from "./Announcement.stories";
+import { Base as AudioShowcase } from './Audio.stories';
 import { Primary as ButtonShowcase } from "./Button.stories";
 import { Standard as CardShowcase } from "./Card.stories";
+import { Base as CodeShowcase } from './Code.stories';
+import { Base as ContentShowcase } from './Content.stories';
+import { Primary as DelimiterShowcase } from './Delimiter.stories';
+import { Level1 as HeaderShowcase } from './Header.stories';
+import { Base as ImageShowcase } from './Image.stories';
+import { Unordered as ListShowcase } from './List.stories';
 import { Primary as PaginationShowcase } from "./Pagination.stories";
+import { Base as ParagraphShowcase } from "./Paragraph.stories";
+import { Primary as QuoteShowcase } from "./Quote.stories";
+import { Base as TableShowcase } from "./Table.stories";
+import { Base as VideoShowcase } from "./Video.stories";
+import { Base as WarningShowcase } from "./Warning.stories";
+import { Base as YouTubeEmbedShowcase } from "./YouTubeEmbed.stories";
 import Divider from "./addons/Divider";
 
 <Meta title="Showcase" />
@@ -12,124 +25,87 @@ import Divider from "./addons/Divider";
 
 Showcase of components in their primary state and with default properties.
 
+<h1>Announcement: </h1>
 <AnnouncementShowcase {...AnnouncementShowcase.args}/>
 
 <Divider/>
 
+<h1>Audio: </h1>
+<AudioShowcase {...AudioShowcase.args}/>
+
+<Divider/>
+
+<h1>Button: </h1>
 <ButtonShowcase {...ButtonShowcase.args}/>
 
 <Divider/>
 
+<h1>Card: </h1>
 <CardShowcase {...CardShowcase.args}/>
 
 <Divider/>
 
-<PaginationShowcase {...PaginationShowcase.args}/>
-
-import Announcement from '../components/Announcement/Announcement';
-import Audio from '../components/Audio/Audio';
-import Button from '../components/Button/Button';
-import Code from '../components/Code/Code';
-import Content from '../components/Content/Content';
-import Delimiter from '../components/Delimiter/Delimiter';
-import File from '../components/File/File';
-import Header from '../components/Header/Header';
-import Image from '../components/Image/Image';
-import List from '../components/List/List';
-import Pagination from '../components/Pagination/Pagination';
-import Paragraph from '../components/Paragraph/Paragraph';
-import Quote from '../components/Quote/Quote';
-import Table from '../components/Table/Table';
-import Video from '../components/Video/Video';
-import Warning from '../components/Warning/Warning';
-import YouTubeEmbed from '../components/YouTubeEmbed/YouTubeEmbed';
-import { blocks, list, table } from './defaultContent/defaultContent';
-import highlight from 'highlight.js';
-import 'highlight.js/styles/nord.css';
-
-<Meta title="Showcase" />
-
-# Components showcase
-
-Showcase of components in their primary state and with default properties.
-
-
-<h1>Announcement: </h1>
-<Announcement content="Announcement content"/>
-
-***
-
-<h1>Audio: </h1>
-<Audio url="https://api.flotiq.com/image/0x0/_media-4e30edc8-d1b5-45a1-842a-80f5e8467121.mp3"/>
-
-***
-
-<h1>Button: </h1>
-<Button label="Button"/>
-
-***
-
 <h1>Code: </h1>
-<Code code="npm run dev" highlight={highlight}/>
+<CodeShowcase {...CodeShowcase.args}/>
 
-***
+<Divider/>
 
 <h1>Content: </h1>
-<Content blocks={blocks} highlight={highlight}/>
+<ContentShowcase {...ContentShowcase.args}/>
 
-***
+<Divider/>
 
 <h1>Delimiter: </h1>
-<Delimiter />
+<DelimiterShowcase {...DelimiterShowcase.args} />
 
-***
+<Divider/>
 
 <h1>Header: </h1>
-<Header text="Example header"/>
+<HeaderShowcase {...HeaderShowcase.args}/>
 
-***
+<Divider/>
 
 <h1>Image: </h1>
-<Image url="https://api.flotiq.com/image/0x0/_media-3a62e398-fbe3-46e8-ba5b-05a2690390ae.png"/>
+<ImageShowcase {...ImageShowcase.args}/>
 
-***
+<Divider/>
 
 <h1>List: </h1>
-<List items={list}/>
+<ListShowcase {...ListShowcase.args}/>
 
-***
+<Divider/>
 
 <h1>Pagination: </h1>
-<Pagination page="1" numOfPages="5"/>
+<PaginationShowcase {...PaginationShowcase.args}/>
 
-***
+<Divider/>
 
 <h1>Paragraph: </h1>
-<Paragraph text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum augue vitae rhoncus vehicula. Phasellus aliquam leo eu porta scelerisque. In et vestibulum ex. Aliquam erat volutpat. Nullam vehicula tortor vitae lorem egestas imperdiet. Vestibulum molestie sem mollis, commodo neque vitae, posuere urna. Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor."/>
+<ParagraphShowcase {...ParagraphShowcase.args}/>
 
-***
+<Divider/>
 
 <h1>Quote: </h1>
-<Quote caption="Lorem ipsum" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum augue vitae rhoncus vehicula. Phasellus aliquam leo eu porta scelerisque. In et vestibulum ex. Aliquam erat volutpat. Nullam vehicula tortor vitae lorem egestas imperdiet. Vestibulum molestie sem mollis, commodo neque vitae, posuere urna. Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor."/>
+<QuoteShowcase {...QuoteShowcase.args}/>
 
-***
+<Divider/>
 
 <h1>Table: </h1>
-<Table content={table}/>
+<TableShowcase {...TableShowcase.args}/>
 
-***
+<Divider/>
 
 <h1>Video: </h1>
-<Video url="https://api.flotiq.com/image/0x0/_media-768b6c18-5bf4-44aa-8361-3ef6045dc4b4.mp4"/>
+<VideoShowcase {...VideoShowcase.args}/>
 
-***
+<Divider/>
 
 <h1>Warning: </h1>
-<Warning title="WARNING" message="Lorem ipsum dolor sit amet"/>
+<WarningShowcase {...WarningShowcase.args}/>
 
-***
+<Divider/>
 
 <h1>YouTube Embed: </h1>
-<YouTubeEmbed url="https://www.youtube.com/watch?v=w0JFqbDgKVQ"/>
+<YouTubeEmbedShowcase {...YouTubeEmbedShowcase.args}/>
 
-***
+<Divider/>

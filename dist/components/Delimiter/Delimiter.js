@@ -2,6 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { borderProps } from '../../defaultProps/border';
 
 const Delimiter = ({
   variant,
@@ -9,16 +10,6 @@ const Delimiter = ({
   additionalClasses,
   ...props
 }) => {
-  const colorClasses = {
-    primary: 'border-primary',
-    secondary: 'border-secondary',
-    success: 'border-success',
-    danger: 'border-danger',
-    warning: 'border-warning',
-    info: 'border-info',
-    light: 'border-light',
-    dark: 'border-dark'
-  };
   const styleClasses = {
     solid: 'border-solid',
     dashed: 'border-dashed',
@@ -26,7 +17,7 @@ const Delimiter = ({
     double: 'border-double'
   };
   return /*#__PURE__*/React.createElement("hr", _extends({
-    className: ['my-2', colorClasses[variant], styleClasses[style], ...additionalClasses].join(' ')
+    className: ['my-2', borderProps.classSet[variant], styleClasses[style], ...additionalClasses].join(' ')
   }, props));
 };
 
@@ -47,7 +38,7 @@ Delimiter.propTypes = {
   additionalClasses: PropTypes.arrayOf(PropTypes.string)
 };
 Delimiter.defaultProps = {
-  variant: 'primary',
+  variant: borderProps.defaultValue,
   style: 'solid',
   additionalClasses: []
 };

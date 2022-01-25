@@ -14,9 +14,9 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <YouTubeEmbed {...args} />;
 
-export const Basic = Template.bind({});
+export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Basic.args = {
+Base.args = {
     url: 'https://www.youtube.com/watch?v=w0JFqbDgKVQ',
     ...YouTubeEmbed.defaultProps,
 };
