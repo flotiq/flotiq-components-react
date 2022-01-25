@@ -83,8 +83,9 @@ Card.defaultProps = {
     breakpoint: 'md'
   }
 };
-Card.Body = CardBody;
-Card.Title = CardTitle;
-Card.Img = CardImg;
-Card.Text = CardText;
-export default Card;
+export default Object.assign(Card, {
+  Body: CardBody,
+  Title: CardTitle,
+  Img: CardImg,
+  Text: CardText
+});
