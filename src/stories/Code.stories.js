@@ -26,6 +26,6 @@ export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Base.args = {
     code: 'const example = "Flotiq is great!"',
-    language: 'javascript',
     ...Code.defaultProps,
+    language: 'javascript',
 };
