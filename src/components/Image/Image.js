@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
 
+/**
+ * Component for displaying images
+ */
 const Image = ({ url, caption, stretched, rounded, additionalClasses, ...props }) => (
     <>
         <img
@@ -10,7 +13,7 @@ const Image = ({ url, caption, stretched, rounded, additionalClasses, ...props }
             className={[stretched ? 'w-full' : '', roundedProps.classSet[rounded], ...additionalClasses].join(' ')}
             {...props}
         />
-        {caption && <p className="pt-2">{caption}</p>}
+        {caption && <p className="pt-2 opacity-70 italic">{caption}</p>}
     </>
 );
 
@@ -40,7 +43,7 @@ Image.propTypes = {
 Image.defaultProps = {
     caption: null,
     stretched: false,
-    rounded: roundedProps.defaultValue,
+    rounded: 'none',
     additionalClasses: [],
 };
 

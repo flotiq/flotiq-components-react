@@ -41,7 +41,6 @@ export const Danger = Template.bind({});
 Danger.args = {
     ...Delimiter.defaultProps,
     variant: 'danger',
-    style: 'double',
 };
 
 export const Warning = Template.bind({});

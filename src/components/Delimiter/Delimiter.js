@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { borderProps } from '../../defaultProps/border';
 
+/**
+ * Component for separating content
+ */
 const Delimiter = ({ variant, style, additionalClasses, ...props }) => {
     const styleClasses = {
         solid: 'border-solid',
         dashed: 'border-dashed',
         dotted: 'border-dotted',
-        double: 'border-double',
     };
 
     return (
@@ -35,7 +37,7 @@ Delimiter.propTypes = {
     /**
      * Delimiter style
      */
-    style: PropTypes.oneOf(['solid', 'dashed', 'dotted', 'double']),
+    style: PropTypes.oneOf(['solid', 'dashed', 'dotted']),
     /**
      * Additional classes for delimiter
      */

@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Component for standard text
+ */
 const Paragraph = ({ text, alignement, additionalClasses, ...props }) => {
     const alignementClass = {
         left: 'text-left',
@@ -9,7 +12,7 @@ const Paragraph = ({ text, alignement, additionalClasses, ...props }) => {
     };
     return (
         <p
-            className={['text-base py-2', alignementClass[alignement], ...additionalClasses].join(' ')}
+            className={['py-2', alignementClass[alignement], ...additionalClasses].join(' ')}
             dangerouslySetInnerHTML={{ __html: text }}
             {...props}
         />

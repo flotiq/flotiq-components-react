@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Audio = ({ url, caption, additionalClasses, ...props }) => (
+/**
+ * Component for audio files
+ */
+const Audio = ({ url, caption, extension, additionalClasses, ...props }) => (
     <div className={['flex flex-col', ...additionalClasses].join(' ')}>
-        {caption && <p className="pb-2 md:pb-5">{caption}</p>}
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <audio controls className="w-full" {...props}>
-            <source src={url} type="audio/ogg" />
-            <source src={url} type="audio/mpeg" />
+            <source src={url} type={`audio/${extension}`} />
             Your browser does not support the audio element.
         </audio>
+        {caption && <p className="pt-2 md:pt-5 opacity-70 italic">{caption}</p>}
     </div>
 );
 
@@ -18,6 +20,10 @@ Audio.propTypes = {
      * File url
      */
     url: PropTypes.string.isRequired,
+    /**
+     * File extension
+     */
+    extension: PropTypes.string.isRequired,
     /**
      * File caption
      */
@@ -29,7 +35,7 @@ Audio.propTypes = {
 };
 
 Audio.defaultProps = {
-    caption: '',
+    caption: null,
     additionalClasses: [],
 };
 

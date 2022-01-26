@@ -2,6 +2,9 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Context } from './Context';
 
+/**
+ * Component for text body of card like component
+ */
 const CardBody = ({ children, additionalClasses = [] }) => {
     const context = useContext(Context);
 

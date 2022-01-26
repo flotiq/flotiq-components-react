@@ -11,6 +11,9 @@ import Table from '../Table/Table';
 import Warning from '../Warning/Warning';
 import YouTubeEmbed from '../YouTubeEmbed/YouTubeEmbed';
 
+/**
+ * Component for displaying contents of block fields (editor.js)
+ */
 const Content = ({
     blocks,
     highlight,
@@ -25,6 +28,7 @@ const Content = ({
     delimiterProps,
     listProps,
     additionalClasses,
+    standardPadding,
     ...props
 }) => {
     useEffect(() => {
@@ -32,101 +36,107 @@ const Content = ({
             highlight.highlightAll();
         }
     }, [highlight]);
+
+    const getBlock = (block) => {
+        switch (block.type) {
+        case 'header':
+            return (
+                <Header
+                    level={block.data.level}
+                    text={block.data.text}
+                    anchor={block.data.anchor}
+                    alignement={block.tunes?.alignmentTuneTool?.alignment}
+                    {...headerProps}
+                    key={block.id}
+                />
+            );
+        case 'paragraph':
+            return (
+                <Paragraph
+                    text={block.data.text}
+                    alignement={block.tunes?.alignementTuneTool?.alignement}
+                    {...paragraphProps}
+                    key={block.id}
+                />
+            );
+        case 'list':
+            return (
+                <List
+                    items={block.data.items}
+                    style={block.data.style}
+                    {...listProps}
+                    key={block.id}
+                />
+            );
+        case 'image':
+            return (
+                <File
+                    url={block.data.url}
+                    caption={block.data.caption}
+                    fileName={block.data.fileName}
+                    extension={block.data.extension}
+                    stretched={block.data.stretched}
+                    {...fileProps}
+                    key={block.id}
+                />
+            );
+        case 'quote':
+            return (
+                <Quote
+                    text={block.data.text}
+                    caption={block.data.caption}
+                    {...quoteProps}
+                    key={block.id}
+                />
+            );
+        case 'youtubeEmbed':
+            return (
+                <YouTubeEmbed
+                    url={block.data.url}
+                    key={block.id}
+                    {...youTubeEmbedProps}
+                />
+            );
+        case 'table':
+            return (
+                <Table
+                    content={block.data.withHeadings ? block.data.content.slice(1) : block.data.content}
+                    headers={block.data.withHeadings ? block.data.content[0] : null}
+                    {...tableProps}
+                    key={block.id}
+                />
+            );
+        case 'code':
+            return (
+                <Code
+                    code={block.data.code}
+                    {...codeProps}
+                    key={block.id}
+                />
+            );
+        case 'warning':
+            return (
+                <Warning
+                    title={block.data.title}
+                    message={block.data.message}
+                    {...warningProps}
+                    key={block.id}
+                />
+            );
+        case 'delimiter':
+            return <Delimiter {...delimiterProps} />;
+        default:
+            return null;
+        }
+    };
+
     return (
         <div className={additionalClasses.join(' ')} {...props}>
-            {blocks.map((block) => {
-                switch (block.type) {
-                case 'header':
-                    return (
-                        <Header
-                            level={block.data.level}
-                            text={block.data.text}
-                            anchor={block.data.anchor}
-                            alignement={block.tunes?.alignmentTuneTool?.alignment}
-                            {...headerProps}
-                            key={block.id}
-                        />
-                    );
-                case 'paragraph':
-                    return (
-                        <Paragraph
-                            text={block.data.text}
-                            alignement={block.tunes?.alignementTuneTool?.alignement}
-                            {...paragraphProps}
-                            key={block.id}
-                        />
-                    );
-                case 'list':
-                    return (
-                        <List
-                            items={block.data.items}
-                            style={block.data.style}
-                            {...listProps}
-                            key={block.id}
-                        />
-                    );
-                case 'image':
-                    return (
-                        <File
-                            url={block.data.url}
-                            caption={block.data.caption}
-                            fileName={block.data.fileName}
-                            extension={block.data.extension}
-                            stretched={block.data.stretched}
-                            rounded="none"
-                            {...fileProps}
-                            key={block.id}
-                        />
-                    );
-                case 'quote':
-                    return (
-                        <Quote
-                            text={block.data.text}
-                            caption={block.data.caption}
-                            {...quoteProps}
-                            key={block.id}
-                        />
-                    );
-                case 'youtubeEmbed':
-                    return (
-                        <YouTubeEmbed
-                            url={block.data.url}
-                            key={block.id}
-                            {...youTubeEmbedProps}
-                        />
-                    );
-                case 'table':
-                    return (
-                        <Table
-                            content={block.data.content}
-                            withHeadings={block.data.withHeadings}
-                            {...tableProps}
-                            key={block.id}
-                        />
-                    );
-                case 'code':
-                    return (
-                        <Code
-                            code={block.data.code}
-                            {...codeProps}
-                            key={block.id}
-                        />
-                    );
-                case 'warning':
-                    return (
-                        <Warning
-                            title={block.data.title}
-                            message={block.data.message}
-                            {...warningProps}
-                            key={block.id}
-                        />
-                    );
-                case 'delimiter':
-                    return <Delimiter {...delimiterProps} />;
-                default:
-                    return null;
-                }
-            })}
+            {blocks.map((block) => (
+                <div className={standardPadding}>
+                    { getBlock(block) }
+                </div>
+            ))}
         </div>
     );
 };
@@ -177,6 +187,10 @@ Content.propTypes = {
      */
     listProps: PropTypes.shape(List.defaultProps),
     /**
+     * Standard horizontal padding for block components
+     */
+    standardPadding: PropTypes.string,
+    /**
      * Additional classes for content container
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
@@ -193,6 +207,7 @@ Content.defaultProps = {
     warningProps: {},
     delimiterProps: {},
     listProps: {},
+    standardPadding: 'py-2',
     additionalClasses: [],
 };
 

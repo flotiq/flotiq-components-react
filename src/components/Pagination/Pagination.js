@@ -6,7 +6,7 @@ import { borderProps } from '../../defaultProps/border';
 import { backgroundProps } from '../../defaultProps/background';
 
 /**
- * Primary UI component for user interaction
+ * Component for pagination navigation
  */
 const Pagination = ({ variant = 'primary',
     borderVariant,

@@ -33,6 +33,21 @@ export const blocks = [
         },
     },
     {
+        id: 'V7WlZmeTuJ',
+        data: {
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                + ' Donec condimentum augue vitae rhoncus vehicula.'
+                + ' Phasellus aliquam leo eu porta scelerisque. In et vestibulum ex. Aliquam erat volutpat.'
+                + ' Nullam vehicula tortor vitae lorem egestas imperdiet.'
+                + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
+                + ' Integer malesuada congue dui vel tincidunt.'
+                + ' Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
+            caption: 'Example quote caption',
+            alignment: 'left',
+        },
+        type: 'quote',
+    },
+    {
         id: 'oCJRGb2FFb',
         data: {
             items: [
@@ -91,21 +106,6 @@ export const blocks = [
         type: 'youtubeEmbed',
     },
     {
-        id: 'V7WlZmeTuJ',
-        data: {
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                + ' Donec condimentum augue vitae rhoncus vehicula.'
-                + ' Phasellus aliquam leo eu porta scelerisque. In et vestibulum ex. Aliquam erat volutpat.'
-                + ' Nullam vehicula tortor vitae lorem egestas imperdiet.'
-                + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
-                + ' Integer malesuada congue dui vel tincidunt.'
-                + ' Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
-            caption: 'Example quote caption',
-            alignment: 'left',
-        },
-        type: 'quote',
-    },
-    {
         id: 'sVDwJq9ZCe',
         data: {
             title: 'Exaple warning name',
@@ -121,7 +121,8 @@ export const blocks = [
     {
         id: 'sVDwJq9ZCf',
         data: {
-            code: 'npm run dev',
+            code: '```javascript```\n'
+                + 'const example = "Flotiq is great!"',
         },
         type: 'code',
     },

@@ -22,10 +22,10 @@ Base.args = {
     ...Table.defaultProps,
 };
 
-export const WithHeadings = Template.bind({});
+export const WithHeaders = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-WithHeadings.args = {
-    content: table,
+WithHeaders.args = {
+    content: table.slice(1),
     ...Table.defaultProps,
-    withHeadings: true,
+    headers: table[0],
 };

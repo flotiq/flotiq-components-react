@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Component for listings
+ */
 const List = ({ items, style, level, additionalClasses, ...props }) => {
     const ListType = style === 'ordered' ? 'ol' : 'ul';
     const listStyleClass = {
@@ -12,7 +15,7 @@ const List = ({ items, style, level, additionalClasses, ...props }) => {
     return (
         <ListType
             className={[
-                'space-y-4',
+                'space-y-1',
                 listStyleClass[style],
                 'list-inside',
                 marginClass,
@@ -24,7 +27,6 @@ const List = ({ items, style, level, additionalClasses, ...props }) => {
                 <Fragment key={item.content}>
                     <li
                         dangerouslySetInnerHTML={{ __html: item.content }}
-                        className="text-sm md:text-lg"
                     />
                     {(item.items && item.items.length > 0) && (
                         <List items={item.items} style={style} level={safeLevel + 1} />)}

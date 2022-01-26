@@ -18,5 +18,6 @@ export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Base.args = {
     url: 'https://api.flotiq.com/image/0x0/_media-4e30edc8-d1b5-45a1-842a-80f5e8467121.mp3',
+    extension: 'mp3',
     ...Audio.defaultProps,
 };

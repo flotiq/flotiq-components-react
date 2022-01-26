@@ -9,10 +9,10 @@ const File = ({ url, caption, stretched, extension, fileName, ...props }) => {
         return <Image url={url} caption={caption} stretched={stretched} {...props} />;
     }
     if (isMovie(extension)) {
-        return <Video url={url} caption={caption} stretched={stretched} {...props} />;
+        return <Video url={url} caption={caption} stretched={stretched} extension={extension} {...props} />;
     }
     if (isAudio(extension)) {
-        return <Audio url={url} caption={caption} stretched={stretched} {...props} />;
+        return <Audio url={url} caption={caption} stretched={stretched} extension={extension} {...props} />;
     }
     return (
         <div>

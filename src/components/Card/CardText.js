@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Standard text part of body in card like component
+ */
 const CardText = ({ children, additionalClasses = [] }) => (
     <p className={['text-base', 'font-light', 'my-4', ...additionalClasses].join(' ')}>
         {children}

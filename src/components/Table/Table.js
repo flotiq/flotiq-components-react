@@ -1,25 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Table = ({ content, withHeadings, additionalClasses, ...props }) => (
-    <table className={['table mt-2 mb-4', ...additionalClasses].join(' ')} {...props}>
-        {content.map((row, index) => (withHeadings && index === 0 ? (
+/**
+ * Multi-column multi-row table component
+ */
+const Table = ({ content, headers, additionalClasses, ...props }) => (
+    <table
+        className={['w-full border-collapse mt-2 mb-4 border border-light', ...additionalClasses].join(' ')}
+        {...props}
+    >
+        {headers.length > 0 && (
             <thead>
                 <tr>
-                    {row.map((column) => (
-                        <th>{column}</th>
+                    {headers.map((column) => (
+                        <th className="border border-light p-3">{column}</th>
                     ))}
                 </tr>
             </thead>
-        ) : (
-            <thead>
+        )}
+        <tbody>
+            {content.map((row) => (
                 <tr>
                     {row.map((column) => (
-                        <td className="text-m">{column}</td>
+                        <td className="border border-light p-3">{column}</td>
                     ))}
                 </tr>
-            </thead>
-        )))}
+            ))}
+        </tbody>
     </table>
 );
 
@@ -27,11 +34,13 @@ Table.propTypes = {
     /**
      * Table contents
      */
-    content: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+    content: PropTypes.arrayOf(
+        PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element])),
+    ).isRequired,
     /**
-     * Does the table should have headings?
+     * Array of headers
      */
-    withHeadings: PropTypes.bool,
+    headers: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element])),
     /**
      * Additional classes for table
      */
@@ -39,7 +48,7 @@ Table.propTypes = {
 };
 
 Table.defaultProps = {
-    withHeadings: false,
+    headers: [],
     additionalClasses: [],
 };
 

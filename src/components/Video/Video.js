@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Video = ({ url, caption, additionalClasses, ...props }) => (
+/**
+ * Component for video files
+ */
+const Video = ({ url, caption, extension, additionalClasses, ...props }) => (
     <div className={['text-content-image pt-2 pb-2', ...additionalClasses].join(' ')}>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-        <video width="320" height="240" controls {...props}>
-            <source src={url} type="video/mp4" />
-            <source src={url} type="video/ogg" />
+        <video width="100%" controls {...props}>
+            <source src={url} type={`video/${extension}`} />
             Your browser does not support the video tag.
         </video>
-        <p className="text-content-image-caption pt-2">{caption}</p>
+        <p className="pt-2 opacity-70 italic">{caption}</p>
     </div>
 );
 
@@ -18,6 +20,10 @@ Video.propTypes = {
      * Video url
      */
     url: PropTypes.string.isRequired,
+    /**
+     * File extension
+     */
+    extension: PropTypes.string.isRequired,
     /**
      * Video caption
      */

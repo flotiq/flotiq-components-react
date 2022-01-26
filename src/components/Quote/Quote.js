@@ -1,15 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { backgroundProps } from '../../defaultProps/background';
 import { borderProps } from '../../defaultProps/border';
 
-const Quote = ({ text, caption, variant, additionalClasses, ...props }) => (
-    <div className={['px-12 md:px-28 flex flex-col', ...additionalClasses].join(' ')} {...props}>
-        <p className={['px-8 md:px-12 border-l-4', borderProps.classSet[variant]].join(' ')}>{text}</p>
+/**
+ * Component for quote with caption
+ */
+const Quote = ({
+    text, caption, variant, additionalClasses, quoteAdditionalClasses, captionAdditionalClasses, ...props
+}) => (
+    <div className={['flex flex-col italic', ...additionalClasses].join(' ')} {...props}>
         <p
             className={[
-                'self-end mt-3 mr-12 px-8 py-1.5 rounded',
-                backgroundProps.classSet[variant],
+                'pl-6 md:pl-10 py-4 border-l-4', borderProps.classSet[variant], ...quoteAdditionalClasses,
+            ].join(' ')}
+        >
+            {text}
+        </p>
+        <p
+            className={[
+                'self-end mt-3 py-1.5 opacity-70',
+                ...captionAdditionalClasses,
             ].join(' ')}
         >
             {caption}
@@ -41,14 +51,24 @@ Quote.propTypes = {
         'transparent',
     ]),
     /**
-     * Additional classes for quote
+     * Additional classes for quote container
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
+    /**
+     * Additional classes for quote
+     */
+    quoteAdditionalClasses: PropTypes.arrayOf(PropTypes.string),
+    /**
+     * Additional classes for quote caption
+     */
+    captionAdditionalClasses: PropTypes.arrayOf(PropTypes.string),
 };
 
 Quote.defaultProps = {
     variant: borderProps.defaultValue,
     additionalClasses: [],
+    quoteAdditionalClasses: [],
+    captionAdditionalClasses: [],
 };
 
 export default Quote;
