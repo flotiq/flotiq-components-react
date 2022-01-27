@@ -3,6 +3,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React from 'react';
 import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
+/**
+ * Component for displaying images
+ */
 
 const Image = ({
   url,
@@ -16,7 +19,7 @@ const Image = ({
   alt: caption,
   className: [stretched ? 'w-full' : '', roundedProps.classSet[rounded], ...additionalClasses].join(' ')
 }, props)), caption && /*#__PURE__*/React.createElement("p", {
-  className: "pt-2"
+  className: "pt-2 opacity-70 italic"
 }, caption));
 
 Image.propTypes = {
@@ -48,7 +51,7 @@ Image.propTypes = {
 Image.defaultProps = {
   caption: null,
   stretched: false,
-  rounded: roundedProps.defaultValue,
+  rounded: 'none',
   additionalClasses: []
 };
 export default Image;

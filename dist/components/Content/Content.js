@@ -12,6 +12,9 @@ import Quote from '../Quote/Quote';
 import Table from '../Table/Table';
 import Warning from '../Warning/Warning';
 import YouTubeEmbed from '../YouTubeEmbed/YouTubeEmbed';
+/**
+ * Component for displaying contents of block fields (editor.js)
+ */
 
 const Content = ({
   blocks,
@@ -27,6 +30,7 @@ const Content = ({
   delimiterProps,
   listProps,
   additionalClasses,
+  standardPadding,
   ...props
 }) => {
   useEffect(() => {
@@ -34,9 +38,8 @@ const Content = ({
       highlight.highlightAll();
     }
   }, [highlight]);
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: additionalClasses.join(' ')
-  }, props), blocks.map(block => {
+
+  const getBlock = block => {
     switch (block.type) {
       case 'header':
         return /*#__PURE__*/React.createElement(Header, _extends({
@@ -70,8 +73,7 @@ const Content = ({
           caption: block.data.caption,
           fileName: block.data.fileName,
           extension: block.data.extension,
-          stretched: block.data.stretched,
-          rounded: "none"
+          stretched: block.data.stretched
         }, fileProps, {
           key: block.id
         }));
@@ -92,8 +94,8 @@ const Content = ({
 
       case 'table':
         return /*#__PURE__*/React.createElement(Table, _extends({
-          content: block.data.content,
-          withHeadings: block.data.withHeadings
+          content: block.data.withHeadings ? block.data.content.slice(1) : block.data.content,
+          headers: block.data.withHeadings ? block.data.content[0] : null
         }, tableProps, {
           key: block.id
         }));
@@ -119,7 +121,13 @@ const Content = ({
       default:
         return null;
     }
-  }));
+  };
+
+  return /*#__PURE__*/React.createElement("div", _extends({
+    className: additionalClasses.join(' ')
+  }, props), blocks.map(block => /*#__PURE__*/React.createElement("div", {
+    className: standardPadding
+  }, getBlock(block))));
 };
 
 Content.propTypes = {
@@ -179,6 +187,11 @@ Content.propTypes = {
   listProps: PropTypes.shape(List.defaultProps),
 
   /**
+   * Standard horizontal padding for block components
+   */
+  standardPadding: PropTypes.string,
+
+  /**
    * Additional classes for content container
    */
   additionalClasses: PropTypes.arrayOf(PropTypes.string)
@@ -194,6 +207,7 @@ Content.defaultProps = {
   warningProps: {},
   delimiterProps: {},
   listProps: {},
+  standardPadding: 'py-2',
   additionalClasses: []
 };
 export default Content;

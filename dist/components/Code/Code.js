@@ -2,6 +2,10 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+/**
+ * Component for highlighting code.
+ * Install highlight.js to make the component looks like in the examples, we use nord.css
+ */
 
 const Code = ({
   code,
@@ -14,7 +18,7 @@ const Code = ({
     if (highlight) {
       highlight.highlightAll();
     }
-  }, [highlight]);
+  }, [highlight, language, code]);
   let CodeToDisplay = code;
   let lang = language;
 

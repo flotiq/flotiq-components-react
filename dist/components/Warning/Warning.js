@@ -2,6 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
+/**
+ * Component for displaying warnings
+ */
 
 const Warning = ({
   message,
@@ -9,8 +12,14 @@ const Warning = ({
   additionalClasses,
   ...props
 }) => /*#__PURE__*/React.createElement("div", _extends({
-  className: additionalClasses.join(' ')
-}, props), /*#__PURE__*/React.createElement("p", null, title), /*#__PURE__*/React.createElement("p", null, message));
+  className: ['bg-warning-200 p-6', ...additionalClasses].join(' ')
+}, props), /*#__PURE__*/React.createElement("p", {
+  className: "font-bold text-xl text-warning-800"
+}, title), /*#__PURE__*/React.createElement("hr", {
+  className: "my-4 border-warning-600"
+}), /*#__PURE__*/React.createElement("p", {
+  className: "text-warning-800"
+}, message));
 
 Warning.propTypes = {
   /**

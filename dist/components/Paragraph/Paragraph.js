@@ -2,6 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
+/**
+ * Component for standard text
+ */
 
 const Paragraph = ({
   text,
@@ -15,7 +18,7 @@ const Paragraph = ({
     right: 'text-right'
   };
   return /*#__PURE__*/React.createElement("p", _extends({
-    className: ['text-base py-2', alignementClass[alignement], ...additionalClasses].join(' '),
+    className: ['py-2', alignementClass[alignement], ...additionalClasses].join(' '),
     dangerouslySetInnerHTML: {
       __html: text
     }

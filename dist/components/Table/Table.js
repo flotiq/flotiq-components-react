@@ -2,28 +2,33 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
+/**
+ * Multi-column multi-row table component
+ */
 
 const Table = ({
   content,
-  withHeadings,
+  headers,
   additionalClasses,
   ...props
 }) => /*#__PURE__*/React.createElement("table", _extends({
-  className: ['table mt-2 mb-4', ...additionalClasses].join(' ')
-}, props), content.map((row, index) => withHeadings && index === 0 ? /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, row.map(column => /*#__PURE__*/React.createElement("th", null, column)))) : /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, row.map(column => /*#__PURE__*/React.createElement("td", {
-  className: "text-m"
+  className: ['w-full border-collapse mt-2 mb-4 border border-light', ...additionalClasses].join(' ')
+}, props), headers.length > 0 && /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, headers.map(column => /*#__PURE__*/React.createElement("th", {
+  className: "border border-light p-3"
+}, column)))), /*#__PURE__*/React.createElement("tbody", null, content.map(row => /*#__PURE__*/React.createElement("tr", null, row.map(column => /*#__PURE__*/React.createElement("td", {
+  className: "border border-light p-3"
 }, column))))));
 
 Table.propTypes = {
   /**
    * Table contents
    */
-  content: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+  content: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element]))).isRequired,
 
   /**
-   * Does the table should have headings?
+   * Array of headers
    */
-  withHeadings: PropTypes.bool,
+  headers: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element])),
 
   /**
    * Additional classes for table
@@ -31,7 +36,7 @@ Table.propTypes = {
   additionalClasses: PropTypes.arrayOf(PropTypes.string)
 };
 Table.defaultProps = {
-  withHeadings: false,
+  headers: [],
   additionalClasses: []
 };
 export default Table;

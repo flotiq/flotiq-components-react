@@ -2,28 +2,31 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
+/**
+ * Component for displaying iframe with YouTube video
+ */
 
 const YouTubeEmbed = ({
   url,
-  width,
-  height,
   title,
   allowFullScreen,
   additionalClasses,
   ...props
 }) => {
   const safeUrl = url.replace('/watch?v=', '/embed/');
-  return /*#__PURE__*/React.createElement("iframe", _extends({
+  return /*#__PURE__*/React.createElement("div", {
+    className: "height-0 pb-[56.25%] relative"
+  }, /*#__PURE__*/React.createElement("iframe", _extends({
     id: "ytplayer",
     type: "text/html",
-    width: width,
-    height: height,
+    width: "640",
+    height: "360",
     src: safeUrl,
     frameBorder: "0",
     allowFullScreen: allowFullScreen,
     title: title,
-    className: additionalClasses.join(' ')
-  }, props));
+    className: ['absolute', 'w-full', 'h-full', ...additionalClasses].join(' ')
+  }, props)));
 };
 
 YouTubeEmbed.propTypes = {
@@ -31,16 +34,6 @@ YouTubeEmbed.propTypes = {
    * YouTUbe url
    */
   url: PropTypes.string.isRequired,
-
-  /**
-   * Iframe width
-   */
-  width: PropTypes.number,
-
-  /**
-   * Iframe height
-   */
-  height: PropTypes.number,
 
   /**
    * Title of iframe
@@ -58,8 +51,6 @@ YouTubeEmbed.propTypes = {
   additionalClasses: PropTypes.arrayOf(PropTypes.string)
 };
 YouTubeEmbed.defaultProps = {
-  width: 640,
-  height: 360,
   title: 'Youtube video',
   allowFullScreen: true,
   additionalClasses: []

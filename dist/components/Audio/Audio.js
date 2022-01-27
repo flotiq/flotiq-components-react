@@ -2,32 +2,38 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
+/**
+ * Component for audio files
+ */
 
 const Audio = ({
   url,
   caption,
+  extension,
   additionalClasses,
   ...props
 }) => /*#__PURE__*/React.createElement("div", {
   className: ['flex flex-col', ...additionalClasses].join(' ')
-}, caption && /*#__PURE__*/React.createElement("p", {
-  className: "pb-2 md:pb-5"
-}, caption), /*#__PURE__*/React.createElement("audio", _extends({
+}, /*#__PURE__*/React.createElement("audio", _extends({
   controls: true,
   className: "w-full"
 }, props), /*#__PURE__*/React.createElement("source", {
   src: url,
-  type: "audio/ogg"
-}), /*#__PURE__*/React.createElement("source", {
-  src: url,
-  type: "audio/mpeg"
-}), "Your browser does not support the audio element."));
+  type: `audio/${extension}`
+}), "Your browser does not support the audio element."), caption && /*#__PURE__*/React.createElement("p", {
+  className: "pt-2 md:pt-5 opacity-70 italic"
+}, caption));
 
 Audio.propTypes = {
   /**
    * File url
    */
   url: PropTypes.string.isRequired,
+
+  /**
+   * File extension
+   */
+  extension: PropTypes.string.isRequired,
 
   /**
    * File caption
@@ -40,7 +46,7 @@ Audio.propTypes = {
   additionalClasses: PropTypes.arrayOf(PropTypes.string)
 };
 Audio.defaultProps = {
-  caption: '',
+  caption: null,
   additionalClasses: []
 };
 export default Audio;

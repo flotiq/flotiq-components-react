@@ -2,21 +2,25 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { backgroundProps } from '../../defaultProps/background';
 import { borderProps } from '../../defaultProps/border';
+/**
+ * Component for quote with caption
+ */
 
 const Quote = ({
   text,
   caption,
   variant,
   additionalClasses,
+  quoteAdditionalClasses,
+  captionAdditionalClasses,
   ...props
 }) => /*#__PURE__*/React.createElement("div", _extends({
-  className: ['px-12 md:px-28 flex flex-col', ...additionalClasses].join(' ')
+  className: ['flex flex-col italic', ...additionalClasses].join(' ')
 }, props), /*#__PURE__*/React.createElement("p", {
-  className: ['px-8 md:px-12 border-l-4', borderProps.classSet[variant]].join(' ')
-}, text), /*#__PURE__*/React.createElement("p", {
-  className: ['self-end mt-3 mr-12 px-8 py-1.5 rounded', backgroundProps.classSet[variant]].join(' ')
+  className: ['pl-6 md:pl-10 py-4 border-l-4', borderProps.classSet[variant], ...quoteAdditionalClasses].join(' ')
+}, text), caption && /*#__PURE__*/React.createElement("p", {
+  className: ['self-end mt-3 py-1.5 opacity-70', ...captionAdditionalClasses].join(' ')
 }, caption));
 
 Quote.propTypes = {
@@ -36,12 +40,24 @@ Quote.propTypes = {
   variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'transparent']),
 
   /**
+   * Additional classes for quote container
+   */
+  additionalClasses: PropTypes.arrayOf(PropTypes.string),
+
+  /**
    * Additional classes for quote
    */
-  additionalClasses: PropTypes.arrayOf(PropTypes.string)
+  quoteAdditionalClasses: PropTypes.arrayOf(PropTypes.string),
+
+  /**
+   * Additional classes for quote caption
+   */
+  captionAdditionalClasses: PropTypes.arrayOf(PropTypes.string)
 };
 Quote.defaultProps = {
   variant: borderProps.defaultValue,
-  additionalClasses: []
+  additionalClasses: [],
+  quoteAdditionalClasses: [],
+  captionAdditionalClasses: []
 };
 export default Quote;

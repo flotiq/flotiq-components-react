@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Context } from './Context';
+/**
+ * Component for image in card like component
+ */
 
 const CardImg = ({
   src,

@@ -3,6 +3,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React from 'react';
 import PropTypes from 'prop-types';
 import { borderProps } from '../../defaultProps/border';
+/**
+ * Component for separating content
+ */
 
 const Delimiter = ({
   variant,
@@ -13,8 +16,7 @@ const Delimiter = ({
   const styleClasses = {
     solid: 'border-solid',
     dashed: 'border-dashed',
-    dotted: 'border-dotted',
-    double: 'border-double'
+    dotted: 'border-dotted'
   };
   return /*#__PURE__*/React.createElement("hr", _extends({
     className: ['my-2', borderProps.classSet[variant], styleClasses[style], ...additionalClasses].join(' ')
@@ -30,7 +32,7 @@ Delimiter.propTypes = {
   /**
    * Delimiter style
    */
-  style: PropTypes.oneOf(['solid', 'dashed', 'dotted', 'double']),
+  style: PropTypes.oneOf(['solid', 'dashed', 'dotted']),
 
   /**
    * Additional classes for delimiter

@@ -26,7 +26,8 @@ const File = ({
     return /*#__PURE__*/React.createElement(Video, _extends({
       url: url,
       caption: caption,
-      stretched: stretched
+      stretched: stretched,
+      extension: extension
     }, props));
   }
 
@@ -34,7 +35,8 @@ const File = ({
     return /*#__PURE__*/React.createElement(Audio, _extends({
       url: url,
       caption: caption,
-      stretched: stretched
+      stretched: stretched,
+      extension: extension
     }, props));
   }
 
