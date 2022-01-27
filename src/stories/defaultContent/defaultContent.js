@@ -58,7 +58,7 @@ export const blocks = [
                             content: 'Example <i>list</i>',
                         },
                     ],
-                    content: 'Exaple list',
+                    content: 'Example list',
                 },
             ],
             style: 'ordered',
@@ -108,7 +108,7 @@ export const blocks = [
     {
         id: 'sVDwJq9ZCe',
         data: {
-            title: 'Exaple warning name',
+            title: 'Example warning name',
             message: 'Example warning message',
         },
         type: 'warning',
