@@ -16,14 +16,17 @@ const Quote = ({
         >
             {text}
         </p>
-        <p
-            className={[
-                'self-end mt-3 py-1.5 opacity-70',
-                ...captionAdditionalClasses,
-            ].join(' ')}
-        >
-            {caption}
-        </p>
+        { caption
+            && (
+                <p
+                    className={[
+                        'self-end mt-3 py-1.5 opacity-70',
+                        ...captionAdditionalClasses,
+                    ].join(' ')}
+                >
+                    {caption}
+                </p>
+            )}
     </div>
 );
 
