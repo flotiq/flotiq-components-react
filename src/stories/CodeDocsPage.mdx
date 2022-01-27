@@ -1,0 +1,27 @@
+# Code
+
+Component for highlighting code.
+
+Install [highlight.js](https://highlightjs.org/) to make the component looks like in the examples, we use nord.css
+
+import { Meta, Story, ArgsTable } from "@storybook/addon-docs";
+import { Code } from '../index';
+
+<Meta title="Flotiq components/Code" component={Code} />
+
+
+<Story id="flotiq-components-code--base" />
+
+Code:
+```javascript
+import highlight from 'highlight.js';
+import 'highlight.js/styles/nord.css';
+// ...
+<Code code='const example = "Flotiq is great!";' highlight={highlight} language="javascript"/>
+// ...
+```
+
+
+<ArgsTable id="flotiq-components-code--base" />
+
+

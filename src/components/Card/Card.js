@@ -14,6 +14,9 @@ const calcBasisClass = (scale, isVertical, breakpoint = 'md') => {
     return '';
 };
 
+/**
+ * Complex component for displaying card like elements
+ */
 const Card = ({ children,
     rounded,
     bordered,
