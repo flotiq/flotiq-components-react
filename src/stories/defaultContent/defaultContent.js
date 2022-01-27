@@ -16,7 +16,7 @@ export const blocks = [
     {
         id: 'i5RZbGlOWy',
         data: {
-            text: '<b>Exaple</b> <i>paragraph </i>with formatting.'
+            text: '<b>Example</b> <i>paragraph </i>with formatting.'
                 + ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                 + ' Donec condimentum augue vitae rhoncus vehicula.'
                 + ' Phasellus aliquam leo eu porta scelerisque. In et vestibulum ex. Aliquam erat volutpat.'
