@@ -44,12 +44,6 @@ const Card = ({
   }, props), children));
 };
 
-class ProportionsForVertical {
-  body;
-  img;
-  breakpoint;
-}
-
 Card.propTypes = {
   /**
    * Is this the rounded card?
@@ -69,7 +63,11 @@ Card.propTypes = {
   /**
    * Should the card be vertical?
    */
-  proportionsForVertical: PropTypes.objectOf(ProportionsForVertical),
+  proportionsForVertical: PropTypes.shape({
+    body: PropTypes.string,
+    img: PropTypes.string,
+    breakpoint: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl'])
+  }),
 
   /**
    * Additional classes for card

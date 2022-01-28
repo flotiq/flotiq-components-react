@@ -4,15 +4,30 @@ import Image from '../Image/Image';
 import Video from '../Video/Video';
 import Audio from '../Audio/Audio';
 
-const File = ({ url, caption, stretched, extension, fileName, ...props }) => {
+const File = ({ url, caption, stretched, extension, fileName, imageProps, videoProps, audioProps }) => {
+    console.log(imageProps);
     if (isImage(extension)) {
-        return <Image url={url} caption={caption} stretched={stretched} {...props} />;
+        return <Image url={url} caption={caption} stretched={stretched} {...imageProps} />;
     }
     if (isMovie(extension)) {
-        return <Video url={url} caption={caption} stretched={stretched} extension={extension} {...props} />;
+        return (
+            <Video
+                url={url}
+                caption={caption}
+                extension={extension}
+                {...videoProps}
+            />
+        );
     }
     if (isAudio(extension)) {
-        return <Audio url={url} caption={caption} stretched={stretched} extension={extension} {...props} />;
+        return (
+            <Audio
+                url={url}
+                caption={caption}
+                extension={extension}
+                {...audioProps}
+            />
+        );
     }
     return (
         <div>
@@ -49,6 +64,18 @@ File.propTypes = {
      */
     fileName: PropTypes.string,
     /**
+     * Additional props for image components
+     */
+    imageProps: PropTypes.shape({}),
+    /**
+     * Additional props for video components
+     */
+    videoProps: PropTypes.shape({}),
+    /**
+     * Additional props for audio components
+     */
+    audioProps: PropTypes.shape({}),
+    /**
      * Additional classes for file
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
@@ -58,6 +85,9 @@ File.defaultProps = {
     caption: null,
     stretched: false,
     fileName: '',
+    imageProps: {},
+    videoProps: {},
+    audioProps: {},
     additionalClasses: [],
 };
 

@@ -13,14 +13,18 @@ const Image = ({
   stretched,
   rounded,
   additionalClasses,
+  captionAdditionalClasses,
   ...props
-}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("img", _extends({
-  src: url,
-  alt: caption,
-  className: [stretched ? 'w-full' : '', roundedProps.classSet[rounded], ...additionalClasses].join(' ')
-}, props)), caption && /*#__PURE__*/React.createElement("p", {
-  className: "pt-2 opacity-70 italic"
-}, caption));
+}) => {
+  console.log(additionalClasses, props);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("img", _extends({
+    src: url,
+    alt: caption,
+    className: [stretched ? 'w-full' : '', roundedProps.classSet[rounded], ...additionalClasses].join(' ')
+  }, props)), caption && /*#__PURE__*/React.createElement("p", {
+    className: ['pt-2 opacity-70 italic', ...captionAdditionalClasses].join(' ')
+  }, caption));
+};
 
 Image.propTypes = {
   /**
@@ -41,17 +45,23 @@ Image.propTypes = {
   /**
    * Image roundness?
    */
-  rounded: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'full']),
+  rounded: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', 'full']),
 
   /**
    * Additional classes for image
    */
-  additionalClasses: PropTypes.arrayOf(PropTypes.string)
+  additionalClasses: PropTypes.arrayOf(PropTypes.string),
+
+  /**
+   * Additional classes for image caption
+   */
+  captionAdditionalClasses: PropTypes.arrayOf(PropTypes.string)
 };
 Image.defaultProps = {
   caption: null,
   stretched: false,
   rounded: 'none',
-  additionalClasses: []
+  additionalClasses: [],
+  captionAdditionalClasses: []
 };
 export default Image;
