@@ -6,7 +6,6 @@ import { roundedProps } from '../../defaultProps/rounded';
  * Component for displaying images
  */
 const Image = ({ url, caption, stretched, rounded, additionalClasses, captionAdditionalClasses, ...props }) => {
-    console.log(additionalClasses, props);
     return (
         <>
             <img

@@ -5,7 +5,6 @@ import Video from '../Video/Video';
 import Audio from '../Audio/Audio';
 
 const File = ({ url, caption, stretched, extension, fileName, imageProps, videoProps, audioProps }) => {
-    console.log(imageProps);
     if (isImage(extension)) {
         return <Image url={url} caption={caption} stretched={stretched} {...imageProps} />;
     }
