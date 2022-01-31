@@ -75,7 +75,7 @@ const Content = ({
                     caption={block.data.caption}
                     fileName={block.data.fileName}
                     extension={block.data.extension}
-                    stretched={block.data.stretched === 'true'}
+                    stretched={block.data.stretched}
                     {...fileProps}
                     key={block.id}
                 />
