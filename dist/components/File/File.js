@@ -12,32 +12,34 @@ const File = ({
   stretched,
   extension,
   fileName,
-  ...props
+  imageProps,
+  videoProps,
+  audioProps
 }) => {
+  console.log(imageProps);
+
   if (isImage(extension)) {
     return /*#__PURE__*/React.createElement(Image, _extends({
       url: url,
       caption: caption,
       stretched: stretched
-    }, props));
+    }, imageProps));
   }
 
   if (isMovie(extension)) {
     return /*#__PURE__*/React.createElement(Video, _extends({
       url: url,
       caption: caption,
-      stretched: stretched,
       extension: extension
-    }, props));
+    }, videoProps));
   }
 
   if (isAudio(extension)) {
     return /*#__PURE__*/React.createElement(Audio, _extends({
       url: url,
       caption: caption,
-      stretched: stretched,
       extension: extension
-    }, props));
+    }, audioProps));
   }
 
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
@@ -78,6 +80,21 @@ File.propTypes = {
   fileName: PropTypes.string,
 
   /**
+   * Additional props for image components
+   */
+  imageProps: PropTypes.shape({}),
+
+  /**
+   * Additional props for video components
+   */
+  videoProps: PropTypes.shape({}),
+
+  /**
+   * Additional props for audio components
+   */
+  audioProps: PropTypes.shape({}),
+
+  /**
    * Additional classes for file
    */
   additionalClasses: PropTypes.arrayOf(PropTypes.string)
@@ -86,6 +103,9 @@ File.defaultProps = {
   caption: null,
   stretched: false,
   fileName: '',
+  imageProps: {},
+  videoProps: {},
+  audioProps: {},
   additionalClasses: []
 };
 export default File;

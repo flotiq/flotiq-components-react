@@ -97,7 +97,7 @@ Announcement.propTypes = {
     /**
    * Announcement content
    */
-    content: PropTypes.string.isRequired,
+    content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     /**
      * Border radius
      */

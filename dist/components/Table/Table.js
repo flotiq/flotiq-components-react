@@ -14,9 +14,16 @@ const Table = ({
 }) => /*#__PURE__*/React.createElement("table", _extends({
   className: ['w-full border-collapse mt-2 mb-4 border border-light', ...additionalClasses].join(' ')
 }, props), headers.length > 0 && /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, headers.map(column => /*#__PURE__*/React.createElement("th", {
-  className: "border border-light p-3"
-}, column)))), /*#__PURE__*/React.createElement("tbody", null, content.map(row => /*#__PURE__*/React.createElement("tr", null, row.map(column => /*#__PURE__*/React.createElement("td", {
-  className: "border border-light p-3"
+  className: "border border-light p-3",
+  key: column
+}, column)))), /*#__PURE__*/React.createElement("tbody", null, content.map((row, index) =>
+/*#__PURE__*/
+// eslint-disable-next-line react/no-array-index-key
+React.createElement("tr", {
+  key: index
+}, row.map(column => /*#__PURE__*/React.createElement("td", {
+  className: "border border-light p-3",
+  key: column
 }, column))))));
 
 Table.propTypes = {

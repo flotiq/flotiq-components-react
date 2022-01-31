@@ -73,7 +73,7 @@ const Content = ({
           caption: block.data.caption,
           fileName: block.data.fileName,
           extension: block.data.extension,
-          stretched: block.data.stretched
+          stretched: block.data.stretched === 'true'
         }, fileProps, {
           key: block.id
         }));
@@ -126,7 +126,8 @@ const Content = ({
   return /*#__PURE__*/React.createElement("div", _extends({
     className: additionalClasses.join(' ')
   }, props), blocks.map(block => /*#__PURE__*/React.createElement("div", {
-    className: standardPadding
+    className: standardPadding,
+    key: block.id
   }, getBlock(block))));
 };
 
@@ -139,52 +140,52 @@ Content.propTypes = {
   /**
    * Additional props for header component
    */
-  headerProps: PropTypes.shape(Header.defaultProps),
+  headerProps: PropTypes.shape({}),
 
   /**
    * Additional props for paragraph component
    */
-  paragraphProps: PropTypes.shape(Paragraph.defaultProps),
+  paragraphProps: PropTypes.shape({}),
 
   /**
    * Additional props for YouTube embed component
    */
-  youTubeEmbedProps: PropTypes.shape(YouTubeEmbed.defaultProps),
+  youTubeEmbedProps: PropTypes.shape({}),
 
   /**
    * Additional props for file components
    */
-  fileProps: PropTypes.shape(File.defaultProps),
+  fileProps: PropTypes.shape({}),
 
   /**
    * Additional props for quote component
    */
-  quoteProps: PropTypes.shape(Quote.defaultProps),
+  quoteProps: PropTypes.shape({}),
 
   /**
    * Additional props for table component
    */
-  tableProps: PropTypes.shape(Table.defaultProps),
+  tableProps: PropTypes.shape({}),
 
   /**
    * Additional props for code component
    */
-  codeProps: PropTypes.shape(Code.defaultProps),
+  codeProps: PropTypes.shape({}),
 
   /**
    * Additional props for warning component
    */
-  warningProps: PropTypes.shape(Warning.defaultProps),
+  warningProps: PropTypes.shape({}),
 
   /**
    * Additional props for delimiter component
    */
-  delimiterProps: PropTypes.shape(Delimiter.defaultProps),
+  delimiterProps: PropTypes.shape({}),
 
   /**
    * Additional components for list component
    */
-  listProps: PropTypes.shape(List.defaultProps),
+  listProps: PropTypes.shape({}),
 
   /**
    * Standard horizontal padding for block components
