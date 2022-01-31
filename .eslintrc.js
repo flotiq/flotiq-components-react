@@ -51,5 +51,6 @@ module.exports = {
             namedComponents: 'arrow-function',
         }],
         'import/prefer-default-export': 0,
+        'react/no-danger': 0,
     },
 };

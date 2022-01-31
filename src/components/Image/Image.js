@@ -5,19 +5,19 @@ import { roundedProps } from '../../defaultProps/rounded';
 /**
  * Component for displaying images
  */
-const Image = ({ url, caption, stretched, rounded, additionalClasses, captionAdditionalClasses, ...props }) => {
-    return (
-        <>
-            <img
-                src={url}
-                alt={caption}
-                className={[(stretched ? 'w-full' : ''), roundedProps.classSet[rounded], ...additionalClasses].join(' ')}
-                {...props}
-            />
-            {caption && <p className={['pt-2 opacity-70 italic', ...captionAdditionalClasses].join(' ')}>{caption}</p>}
-        </>
-    );
-};
+const Image = ({ url, caption, stretched, rounded, additionalClasses, captionAdditionalClasses, ...props }) => (
+    <>
+        <img
+            src={url}
+            alt={caption}
+            className={[
+                (stretched ? 'w-full' : ''), roundedProps.classSet[rounded], ...additionalClasses,
+            ].join(' ')}
+            {...props}
+        />
+        {caption && <p className={['pt-2 opacity-70 italic', ...captionAdditionalClasses].join(' ')}>{caption}</p>}
+    </>
+);
 
 Image.propTypes = {
     /**
