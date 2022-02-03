@@ -27,7 +27,7 @@ export const Level2 = Template.bind({});
 Level2.args = {
     ...Header.defaultProps,
     level: 2,
-    text: 'Heading 2',
+    text: 'What is a <b>CMS</b>',
     alignement: 'center',
 };
 

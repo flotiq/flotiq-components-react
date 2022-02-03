@@ -35,12 +35,22 @@ const Header = ({
     };
 
     return (
-        <HeaderToRender
-            className={[sizeClass[safeLevel], alignementClass[alignement], ...additionalClasses].join(' ')}
-            dangerouslySetInnerHTML={{ __html: text }}
-            id={anchor}
-            {...props}
-        />
+        React.isValidElement(text) ? (
+            <HeaderToRender
+                className={[sizeClass[safeLevel], alignementClass[alignement], ...additionalClasses].join(' ')}
+                id={anchor}
+                {...props}
+            >
+                {text}
+            </HeaderToRender>
+        ) : (
+            <HeaderToRender
+                className={[sizeClass[safeLevel], alignementClass[alignement], ...additionalClasses].join(' ')}
+                dangerouslySetInnerHTML={{ __html: text }}
+                id={anchor}
+                {...props}
+            />
+        )
     );
 };
 

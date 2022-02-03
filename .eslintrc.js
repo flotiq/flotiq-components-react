@@ -10,6 +10,9 @@ module.exports = {
         'airbnb',
         'eslint:recommended',
     ],
+    plugins: [
+        'flowtype',
+    ],
     rules: {
         'linebreak-style': 0,
         /* Restrict file extensions that may contain JSX */

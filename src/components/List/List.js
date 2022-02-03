@@ -25,9 +25,11 @@ const List = ({ items, style, level, additionalClasses, ...props }) => {
         >
             {items.map((item) => (
                 <Fragment key={item.content}>
-                    <li
-                        dangerouslySetInnerHTML={{ __html: item.content }}
-                    />
+                    {React.isValidElement(item.content) ? (<li>{item.content}</li>) : (
+                        <li
+                            dangerouslySetInnerHTML={{ __html: item.content }}
+                        />
+                    )}
                     {(item.items && item.items.length > 0) && (
                         <List items={item.items} style={style} level={safeLevel + 1} />)}
                 </Fragment>
@@ -37,7 +39,7 @@ const List = ({ items, style, level, additionalClasses, ...props }) => {
 };
 
 const Items = {
-    content: PropTypes.string.isRequired,
+    content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 };
 Items.items = PropTypes.arrayOf(PropTypes.shape(Items));
 
