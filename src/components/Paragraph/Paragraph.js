@@ -10,7 +10,14 @@ const Paragraph = ({ text, alignement, additionalClasses, ...props }) => {
         center: 'text-center',
         right: 'text-right',
     };
-    return (
+    return React.isValidElement(text) ? (
+        <p
+            className={['py-2', alignementClass[alignement], ...additionalClasses].join(' ')}
+            {...props}
+        >
+            {text}
+        </p>
+    ) : (
         <p
             className={['py-2', alignementClass[alignement], ...additionalClasses].join(' ')}
             dangerouslySetInnerHTML={{ __html: text }}
