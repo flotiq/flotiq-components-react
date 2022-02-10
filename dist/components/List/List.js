@@ -2,6 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { sanitize } from 'dompurify';
 /**
  * Component for listings
  */
@@ -24,9 +25,9 @@ const List = ({
     className: ['space-y-1', listStyleClass[style], 'list-inside', marginClass, ...additionalClasses].join(' ')
   }, props), items.map(item => /*#__PURE__*/React.createElement(Fragment, {
     key: item.content
-  }, /*#__PURE__*/React.createElement("li", {
+  }, /*#__PURE__*/React.isValidElement(item.content) ? /*#__PURE__*/React.createElement("li", null, item.content) : /*#__PURE__*/React.createElement("li", {
     dangerouslySetInnerHTML: {
-      __html: item.content
+      __html: sanitize(item.content)
     }
   }), item.items && item.items.length > 0 && /*#__PURE__*/React.createElement(List, {
     items: item.items,
@@ -36,7 +37,7 @@ const List = ({
 };
 
 const Items = {
-  content: PropTypes.string.isRequired
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired
 };
 Items.items = PropTypes.arrayOf(PropTypes.shape(Items));
 List.propTypes = {

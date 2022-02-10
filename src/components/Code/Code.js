@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { sanitize } from 'dompurify';
 
 /**
  * Component for highlighting code.
@@ -27,7 +28,7 @@ const Code = ({ code, language, highlight, additionalClasses, ...props }) => {
         >
             <pre>
                 <code
-                    dangerouslySetInnerHTML={{ __html: CodeToDisplay }}
+                    dangerouslySetInnerHTML={{ __html: sanitize(CodeToDisplay) }}
                     className={`language-${lang}`}
                 />
             </pre>

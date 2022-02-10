@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { sanitize } from 'dompurify';
 import { borderProps } from '../../defaultProps/border';
 
 /**
@@ -9,13 +10,22 @@ const Quote = ({
     text, caption, variant, additionalClasses, quoteAdditionalClasses, captionAdditionalClasses, ...props
 }) => (
     <div className={['flex flex-col italic', ...additionalClasses].join(' ')} {...props}>
-        <p
-            className={[
-                'pl-6 md:pl-10 py-4 border-l-4', borderProps.classSet[variant], ...quoteAdditionalClasses,
-            ].join(' ')}
-        >
-            {text}
-        </p>
+        {React.isValidElement(text) ? (
+            <p
+                className={[
+                    'pl-6 md:pl-10 py-4 border-l-4', borderProps.classSet[variant], ...quoteAdditionalClasses,
+                ].join(' ')}
+            >
+                {text}
+            </p>
+        ) : (
+            <p
+                className={[
+                    'pl-6 md:pl-10 py-4 border-l-4', borderProps.classSet[variant], ...quoteAdditionalClasses,
+                ].join(' ')}
+                dangerouslySetInnerHTML={{ __html: sanitize(text) }}
+            />
+        )}
         { caption
             && (
                 <p

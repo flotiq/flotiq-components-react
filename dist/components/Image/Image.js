@@ -15,16 +15,13 @@ const Image = ({
   additionalClasses,
   captionAdditionalClasses,
   ...props
-}) => {
-  console.log(additionalClasses, props);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("img", _extends({
-    src: url,
-    alt: caption,
-    className: [stretched ? 'w-full' : '', roundedProps.classSet[rounded], ...additionalClasses].join(' ')
-  }, props)), caption && /*#__PURE__*/React.createElement("p", {
-    className: ['pt-2 opacity-70 italic', ...captionAdditionalClasses].join(' ')
-  }, caption));
-};
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("img", _extends({
+  src: url,
+  alt: caption,
+  className: [stretched ? 'w-full' : '', roundedProps.classSet[rounded], ...additionalClasses].join(' ')
+}, props)), caption && /*#__PURE__*/React.createElement("p", {
+  className: ['pt-2 opacity-70 italic', ...captionAdditionalClasses].join(' ')
+}, caption));
 
 Image.propTypes = {
   /**

@@ -2,6 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { sanitize } from 'dompurify';
 /**
  * Component for headings
  */
@@ -35,10 +36,13 @@ const Header = ({
     center: 'text-center',
     right: 'text-right'
   };
-  return /*#__PURE__*/React.createElement(HeaderToRender, _extends({
+  return /*#__PURE__*/React.isValidElement(text) ? /*#__PURE__*/React.createElement(HeaderToRender, _extends({
+    className: [sizeClass[safeLevel], alignementClass[alignement], ...additionalClasses].join(' '),
+    id: anchor
+  }, props), text) : /*#__PURE__*/React.createElement(HeaderToRender, _extends({
     className: [sizeClass[safeLevel], alignementClass[alignement], ...additionalClasses].join(' '),
     dangerouslySetInnerHTML: {
-      __html: text
+      __html: sanitize(text)
     },
     id: anchor
   }, props));

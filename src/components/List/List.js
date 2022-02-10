@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { sanitize } from 'dompurify';
 
 /**
  * Component for listings
@@ -27,7 +28,7 @@ const List = ({ items, style, level, additionalClasses, ...props }) => {
                 <Fragment key={item.content}>
                     {React.isValidElement(item.content) ? (<li>{item.content}</li>) : (
                         <li
-                            dangerouslySetInnerHTML={{ __html: item.content }}
+                            dangerouslySetInnerHTML={{ __html: sanitize(item.content) }}
                         />
                     )}
                     {(item.items && item.items.length > 0) && (

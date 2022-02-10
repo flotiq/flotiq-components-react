@@ -12,6 +12,7 @@ module.exports = {
     ],
     plugins: [
         'flowtype',
+        'risxss',
     ],
     rules: {
         'linebreak-style': 0,
@@ -54,6 +55,6 @@ module.exports = {
             namedComponents: 'arrow-function',
         }],
         'import/prefer-default-export': 0,
-        'react/no-danger': 0,
+        'import/no-extraneous-dependencies': 0,
     },
 };
