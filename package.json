@@ -20,7 +20,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs-build",
-    "compile": "cross-env NODE_ENV=production babel src --out-dir dist --ignore src/stories && postcss ./src/index.css -o ./dist/index-including-tailwind.css"
+    "compile": "cross-env NODE_ENV=production babel src --out-dir dist --ignore src/stories && postcss ./src/index.css -o ./dist/index-including-tailwind.css && shx cp -r ./src/assets/ ./dist/assets/"
   },
   "eslintConfig": {
     "extends": [
@@ -89,6 +89,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
+    "shx": "^0.3.4",
     "tailwindcss": "^3.0.13",
     "webpack": "^5.66.0"
   }

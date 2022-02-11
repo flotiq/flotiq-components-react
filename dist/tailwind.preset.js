@@ -4,7 +4,8 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   theme: {
     fontFamily: {
-      sans: ['Inter', ...defaultTheme.fontFamily.sans]
+      sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      sora: ['Sora', ...defaultTheme.fontFamily.sans]
     },
     colors: ({
       colors
@@ -139,6 +140,19 @@ module.exports = {
         700: '#000000',
         800: '#000000',
         900: '#000000'
+      },
+      'light-blue': {
+        DEFAULT: '#E9F3FF',
+        50: '#FFFFFF',
+        100: '#FFFFFF',
+        200: '#FFFFFF',
+        300: '#FFFFFF',
+        400: '#FFFFFF',
+        500: '#E9F3FF',
+        600: '#B1D4FF',
+        700: '#79B6FF',
+        800: '#4197FF',
+        900: '#0979FF'
       }
     })
   }

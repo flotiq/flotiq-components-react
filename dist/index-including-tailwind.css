@@ -444,11 +444,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1536px;
   }
 }
+.fixed {
+  position: fixed;
+}
 .absolute {
   position: absolute;
 }
 .relative {
   position: relative;
+}
+.bottom-\[20px\] {
+  bottom: 20px;
+}
+.right-\[20px\] {
+  right: 20px;
 }
 .z-0 {
   z-index: 0;
@@ -469,6 +478,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-10 {
   margin-top: 2.5rem;
+}
+.mr-1 {
+  margin-right: 0.25rem;
+}
+.mr-12 {
+  margin-right: 3rem;
+}
+.mr-2 {
+  margin-right: 0.5rem;
 }
 .mt-3 {
   margin-top: 0.75rem;
@@ -506,6 +524,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-10 {
   height: 2.5rem;
 }
+.h-5 {
+  height: 1.25rem;
+}
 .h-full {
   height: 100%;
 }
@@ -529,6 +550,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-24 {
   width: 6rem;
+}
+.w-auto {
+  width: auto;
 }
 .flex-none {
   flex: none;
@@ -849,6 +873,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
+.border-light-blue {
+  --tw-border-opacity: 1;
+  border-color: rgb(233 243 255 / var(--tw-border-opacity));
+}
 .border-warning-600 {
   --tw-border-opacity: 1;
   border-color: rgb(228 157 14 / var(--tw-border-opacity));
@@ -942,13 +970,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
-.py-1\.5 {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+.py-1\.5 {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
 }
 .pt-2 {
   padding-top: 0.5rem;
@@ -997,6 +1029,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-right {
   text-align: right;
+}
+.font-sora {
+  font-family: Sora, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .text-xs {
   font-size: 0.75rem;
@@ -1092,6 +1127,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .transition-colors {
@@ -1495,6 +1535,10 @@ code {
 
   .md\:h-12 {
     height: 3rem;
+  }
+
+  .md\:h-6 {
+    height: 1.5rem;
   }
 
   .md\:w-8 {
