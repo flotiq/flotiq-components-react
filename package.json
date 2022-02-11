@@ -1,6 +1,6 @@
 {
   "name": "flotiq-components-react",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "main": "dist/index.js",
   "private": false,
   "author": "Flotiq team <hello@flotiq.com>",
