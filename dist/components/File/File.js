@@ -16,8 +16,6 @@ const File = ({
   videoProps,
   audioProps
 }) => {
-  console.log(imageProps);
-
   if (isImage(extension)) {
     return /*#__PURE__*/React.createElement(Image, _extends({
       url: url,

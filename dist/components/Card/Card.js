@@ -9,8 +9,8 @@ import CardText from './CardText';
 import { Context } from './Context';
 import { roundedProps } from '../../defaultProps/rounded';
 
-const calcBasisClass = (scale, isVertical, breakpoint = 'md') => {
-  if (scale && isVertical) {
+const calcBasisClass = (scale, isHorizontal, breakpoint = 'md') => {
+  if (scale && isHorizontal) {
     return `${breakpoint}:basis-${scale}`;
   }
 
@@ -25,18 +25,18 @@ const Card = ({
   children,
   rounded,
   bordered,
-  vertical,
-  proportionsForVertical,
+  horizontal,
+  proportionsForHorizontal,
   additionalClasses,
   ...props
 }) => {
   const borderedClass = bordered ? 'border border-gray-200' : '';
-  const directionClasses = vertical ? 'flex flex-wrap justify-between align-start' : 'flex-none';
+  const directionClasses = horizontal ? 'flex flex-wrap justify-between align-start' : 'flex-none';
   const context = useMemo(() => ({
-    vertical,
-    basisClassImage: calcBasisClass(proportionsForVertical?.img, vertical, proportionsForVertical?.breakpoint),
-    basisClassBody: calcBasisClass(proportionsForVertical?.body, vertical, proportionsForVertical?.breakpoint)
-  }), [vertical, proportionsForVertical]);
+    horizontal,
+    basisClassImage: calcBasisClass(proportionsForHorizontal?.img, horizontal, proportionsForHorizontal?.breakpoint),
+    basisClassBody: calcBasisClass(proportionsForHorizontal?.body, horizontal, proportionsForHorizontal?.breakpoint)
+  }), [horizontal, proportionsForHorizontal]);
   return /*#__PURE__*/React.createElement(Context.Provider, {
     value: context
   }, /*#__PURE__*/React.createElement("div", _extends({
@@ -56,14 +56,14 @@ Card.propTypes = {
   bordered: PropTypes.bool,
 
   /**
-   * Should the card be vertical?
+   * Should the card be horizontal?
    */
-  vertical: PropTypes.bool,
+  horizontal: PropTypes.bool,
 
   /**
-   * Should the card be vertical?
+   * Should the card be horizontal?
    */
-  proportionsForVertical: PropTypes.shape({
+  proportionsForHorizontal: PropTypes.shape({
     body: PropTypes.string,
     img: PropTypes.string,
     breakpoint: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl'])
@@ -77,9 +77,9 @@ Card.propTypes = {
 Card.defaultProps = {
   rounded: 'lg',
   bordered: true,
-  vertical: false,
+  horizontal: false,
   additionalClasses: [],
-  proportionsForVertical: {
+  proportionsForHorizontal: {
     body: '1/2',
     img: '1/2',
     breakpoint: 'md'

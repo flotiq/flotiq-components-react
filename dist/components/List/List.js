@@ -24,7 +24,7 @@ const List = ({
     className: ['space-y-1', listStyleClass[style], 'list-inside', marginClass, ...additionalClasses].join(' ')
   }, props), items.map(item => /*#__PURE__*/React.createElement(Fragment, {
     key: item.content
-  }, /*#__PURE__*/React.createElement("li", {
+  }, /*#__PURE__*/React.isValidElement(item.content) ? /*#__PURE__*/React.createElement("li", null, item.content) : /*#__PURE__*/React.createElement("li", {
     dangerouslySetInnerHTML: {
       __html: item.content
     }
@@ -36,7 +36,7 @@ const List = ({
 };
 
 const Items = {
-  content: PropTypes.string.isRequired
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired
 };
 Items.items = PropTypes.arrayOf(PropTypes.shape(Items));
 List.propTypes = {
