@@ -17,7 +17,9 @@ const Paragraph = ({
     center: 'text-center',
     right: 'text-right'
   };
-  return /*#__PURE__*/React.createElement("p", _extends({
+  return /*#__PURE__*/React.isValidElement(text) ? /*#__PURE__*/React.createElement("p", _extends({
+    className: ['py-2', alignementClass[alignement], ...additionalClasses].join(' ')
+  }, props), text) : /*#__PURE__*/React.createElement("p", _extends({
     className: ['py-2', alignementClass[alignement], ...additionalClasses].join(' '),
     dangerouslySetInnerHTML: {
       __html: text

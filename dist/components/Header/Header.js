@@ -35,7 +35,10 @@ const Header = ({
     center: 'text-center',
     right: 'text-right'
   };
-  return /*#__PURE__*/React.createElement(HeaderToRender, _extends({
+  return /*#__PURE__*/React.isValidElement(text) ? /*#__PURE__*/React.createElement(HeaderToRender, _extends({
+    className: [sizeClass[safeLevel], alignementClass[alignement], ...additionalClasses].join(' '),
+    id: anchor
+  }, props), text) : /*#__PURE__*/React.createElement(HeaderToRender, _extends({
     className: [sizeClass[safeLevel], alignementClass[alignement], ...additionalClasses].join(' '),
     dangerouslySetInnerHTML: {
       __html: text
