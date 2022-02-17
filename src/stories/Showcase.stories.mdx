@@ -1,5 +1,7 @@
 import { Meta } from '@storybook/addon-docs';
 
+import Divider from "./addons/Divider";
+
 import { Base as AnnouncementShowcase } from "./Announcement.stories";
 import { Base as AudioShowcase } from './Audio.stories';
 import { Primary as ButtonShowcase } from "./Button.stories";
@@ -17,7 +19,7 @@ import { Base as TableShowcase } from "./Table.stories";
 import { Base as VideoShowcase } from "./Video.stories";
 import { Base as WarningShowcase } from "./Warning.stories";
 import { Base as YouTubeEmbedShowcase } from "./YouTubeEmbed.stories";
-import Divider from "./addons/Divider";
+import { Primary as PoweredByFlotiqShowcase } from "./PoweredByFlotiq.stories";
 
 <Meta title="Showcase" />
 
@@ -118,5 +120,10 @@ Showcase of components in their primary state and with default properties.
 
 # [YouTube Embed](?path=/story/flotiq-components-youtube-embed--base)
 <YouTubeEmbedShowcase {...YouTubeEmbedShowcase.args}/>
+
+<Divider/>
+
+# [Powered by Flotiq](?path=/story/powered-by-flotiq--primary)
+<PoweredByFlotiqShowcase {...PoweredByFlotiqShowcase.args}/>
 
 <Divider/>
