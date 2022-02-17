@@ -1,5 +1,7 @@
 # Flotiq components for React
 
+![](https://img.shields.io/npm/v/flotiq-components-react)
+
 This project uses eslint. This project do not have React app to start, it only has storybook part.
 The build storybook is available on [https://flotiq.github.io/flotiq-components-react/](https://flotiq.github.io/flotiq-components-react)
 
