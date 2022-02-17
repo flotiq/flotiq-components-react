@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { sanitize } from 'dompurify';
+import { sanitize } from 'isomorphic-dompurify';
 /**
  * Component for headings
  */

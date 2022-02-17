@@ -2,7 +2,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { sanitize } from 'dompurify';
 /**
  * Component for highlighting code.
  * Install highlight.js to make the component looks like in the examples, we use nord.css
@@ -34,11 +33,8 @@ const Code = ({
   return /*#__PURE__*/React.createElement("div", _extends({
     className: additionalClasses.join(' ')
   }, props), /*#__PURE__*/React.createElement("pre", null, /*#__PURE__*/React.createElement("code", {
-    dangerouslySetInnerHTML: {
-      __html: sanitize(CodeToDisplay)
-    },
     className: `language-${lang}`
-  })));
+  }, CodeToDisplay)));
 };
 
 Code.propTypes = {

@@ -6,7 +6,9 @@
   "author": "Flotiq team <hello@flotiq.com>",
   "description": "Flotiq components for React",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "isomorphic-dompurify": "^0.18.0"
+  },
   "peerDependencies": {
     "highlight.js": "^11.4.0",
     "prop-types": "^15.x",
@@ -75,7 +77,6 @@
     "autoprefixer": "^10.4.2",
     "babel-jest": "^27.4.6",
     "cross-env": "^7.0.3",
-    "dompurify": "^2.3.5",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-react-app": "^7.0.0",
@@ -103,7 +104,12 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.jsx?$": ["babel-jest", { "configFile": "./specs/.babelrc"}]
+      "^.+\\.jsx?$": [
+        "babel-jest",
+        {
+          "configFile": "./specs/.babelrc"
+        }
+      ]
     },
     "testMatch": [
       "**/*.steps.js"

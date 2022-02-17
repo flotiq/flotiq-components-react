@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { sanitize } from 'dompurify';
+import { sanitize } from 'isomorphic-dompurify';
 import { borderProps } from '../../defaultProps/border';
 
 /**
