@@ -19,6 +19,10 @@ To start storybook server. It will be available on [http://localhost:6006/](http
 
 To compile components into dist directory and prepare them for publish on npm registry.
 
+### `yarn test`
+
+To test the package, tests are written using [gherkin](https://cucumber.io/docs/gherkin/reference/), [cucumber](https://cucumber.io/) and [jest](https://www.npmjs.com/package/jest-cucumber).
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
