@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { sanitize } from 'isomorphic-dompurify';
 
 /**
  * Component for headings
@@ -46,7 +47,7 @@ const Header = ({
         ) : (
             <HeaderToRender
                 className={[sizeClass[safeLevel], alignementClass[alignement], ...additionalClasses].join(' ')}
-                dangerouslySetInnerHTML={{ __html: text }}
+                dangerouslySetInnerHTML={{ __html: sanitize(text) }}
                 id={anchor}
                 {...props}
             />

@@ -2,6 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { sanitize } from 'isomorphic-dompurify';
 /**
  * Component for listings
  */
@@ -26,7 +27,7 @@ const List = ({
     key: item.content
   }, /*#__PURE__*/React.isValidElement(item.content) ? /*#__PURE__*/React.createElement("li", null, item.content) : /*#__PURE__*/React.createElement("li", {
     dangerouslySetInnerHTML: {
-      __html: item.content
+      __html: sanitize(item.content)
     }
   }), item.items && item.items.length > 0 && /*#__PURE__*/React.createElement(List, {
     items: item.items,

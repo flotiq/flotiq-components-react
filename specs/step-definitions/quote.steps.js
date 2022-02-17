@@ -21,7 +21,7 @@ defineFeature(feature, (test) => {
 
         and(/^the quote has text "(.*)"$/, (text) => {
             const tree = quote.toJSON();
-            expect(tree.children[0].children[0]).toBe(text);
+            expect(tree.children[0].props.dangerouslySetInnerHTML.__html).toBe(text);
         });
     });
 });

@@ -2,6 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { sanitize } from 'isomorphic-dompurify';
 /**
  * Component for standard text
  */
@@ -22,7 +23,7 @@ const Paragraph = ({
   }, props), text) : /*#__PURE__*/React.createElement("p", _extends({
     className: ['py-2', alignementClass[alignement], ...additionalClasses].join(' '),
     dangerouslySetInnerHTML: {
-      __html: text
+      __html: sanitize(text)
     }
   }, props));
 };
