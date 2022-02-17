@@ -46,7 +46,7 @@ To include this library in your own project you should follow these steps.
 
 Add Flotiq Components module
 ```
-npm install https://github.com/flotiq/flotiq-components-react.git
+npm install flotiq-components-react
 ```
 
 ### 2a. Include component styles (Projects using Tailwind)
