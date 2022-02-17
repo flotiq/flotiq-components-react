@@ -11,6 +11,7 @@ import List from './components/List/List';
 import Card from './components/Card/Card';
 import Pagination from './components/Pagination/Pagination';
 import Paragraph from './components/Paragraph/Paragraph';
+import PoweredByFlotiq from './components/PoweredByFlotiq/PoweredByFlotiq';
 import Quote from './components/Quote/Quote';
 import Table from './components/Table/Table';
 import Video from './components/Video/Video';
@@ -21,6 +22,7 @@ export {
     Announcement,
     Audio,
     Button,
+    Card,
     Code,
     Content,
     Delimiter,
@@ -28,9 +30,9 @@ export {
     Header,
     Image,
     List,
-    Card,
     Pagination,
     Paragraph,
+    PoweredByFlotiq,
     Quote,
     Table,
     Video,

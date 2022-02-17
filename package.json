@@ -1,8 +1,8 @@
 {
   "name": "flotiq-components-react",
-  "version": "0.4.2",
+  "version": "0.4.8",
   "main": "dist/index.js",
-  "private": true,
+  "private": false,
   "author": "Flotiq team <hello@flotiq.com>",
   "description": "Flotiq components for React",
   "license": "MIT",
@@ -16,11 +16,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --color",
+    "jest": "jest --verbose",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs-build",
-    "compile": "cross-env NODE_ENV=production babel src --out-dir dist --ignore src/stories && postcss ./src/index.css -o ./dist/index-including-tailwind.css"
+    "compile": "cross-env NODE_ENV=production babel src --out-dir dist --ignore src/stories && postcss ./src/index.css -o ./dist/index-including-tailwind.css && shx cp -r ./src/assets ./dist/"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +57,7 @@
     "@babel/eslint-parser": "^7.16.5",
     "@babel/plugin-syntax-flow": "^7.16.5",
     "@babel/plugin-transform-react-jsx": "^7.16.5",
+    "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.5",
     "@storybook/addon-actions": "^6.4.12",
     "@storybook/addon-essentials": "^6.4.12",
@@ -71,6 +73,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@typescript-eslint/parser": "^5.8.1",
     "autoprefixer": "^10.4.2",
+    "babel-jest": "^27.4.6",
     "cross-env": "^7.0.3",
     "dompurify": "^2.3.5",
     "eslint": "^7.32.0",
@@ -84,6 +87,8 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-risxss": "^2.1.0",
     "highlight.js": "^11.4.0",
+    "jest": "^27.4.7",
+    "jest-cucumber": "^3.0.1",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
     "prettier": "^2.2.1",
@@ -91,7 +96,26 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
+    "react-test-renderer": "^17.0.2",
+    "shx": "^0.3.4",
     "tailwindcss": "^3.0.13",
     "webpack": "^5.66.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": ["babel-jest", { "configFile": "./specs/.babelrc"}]
+    },
+    "testMatch": [
+      "**/*.steps.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      "../../assets/(.*)": [
+        "<rootDir>/specs/mocks/image.js"
+      ]
+    }
   }
 }

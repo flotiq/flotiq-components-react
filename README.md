@@ -19,9 +19,9 @@ To start storybook server. It will be available on [http://localhost:6006/](http
 
 To compile components into dist directory and prepare them for publish on npm registry.
 
-### `npm publish`
+### `yarn test`
 
-To publish package on npm registry.
+To test the package, tests are written using [gherkin](https://cucumber.io/docs/gherkin/reference/), [cucumber](https://cucumber.io/) and [jest](https://www.npmjs.com/package/jest-cucumber).
 
 ### `npm run eject`
 
@@ -96,6 +96,11 @@ import { Button } from 'flotiq-components-react';
 <Button label="Hello Component!"/>
 ```
 
+## NPM publish
+
+To publish a new package in NPM, you need to update the version in the packages.json file and then commit the changes with the message "Release x.y.z".
+Where x.y.z is the new version of the package.
+Commit about this on the master branch will start building a tag about this version and publishing a new version to npm.
 
 
 
