@@ -33,11 +33,8 @@ const Code = ({
   return /*#__PURE__*/React.createElement("div", _extends({
     className: additionalClasses.join(' ')
   }, props), /*#__PURE__*/React.createElement("pre", null, /*#__PURE__*/React.createElement("code", {
-    dangerouslySetInnerHTML: {
-      __html: CodeToDisplay
-    },
     className: `language-${lang}`
-  })));
+  }, CodeToDisplay)));
 };
 
 Code.propTypes = {

@@ -16,7 +16,7 @@ defineFeature(feature, (test) => {
 
         then(/^the code has text "(.*)"$/, (text) => {
             const tree = code.toJSON();
-            expect(tree.children[0].children[0].props.dangerouslySetInnerHTML.__html).toBe(text);
+            expect(tree.children[0].children[0].children[0]).toBe(text);
         });
     });
 });
