@@ -26,10 +26,9 @@ const Code = ({ code, language, highlight, additionalClasses, ...props }) => {
             {...props}
         >
             <pre>
-                <code
-                    dangerouslySetInnerHTML={{ __html: CodeToDisplay }}
-                    className={`language-${lang}`}
-                />
+                <code className={`language-${lang}`}>
+                    {CodeToDisplay}
+                </code>
             </pre>
         </div>
     );

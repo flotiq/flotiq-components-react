@@ -1,12 +1,14 @@
 {
   "name": "flotiq-components-react",
-  "version": "0.4.7",
+  "version": "0.4.11",
   "main": "dist/index.js",
   "private": false,
   "author": "Flotiq team <hello@flotiq.com>",
   "description": "Flotiq components for React",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "isomorphic-dompurify": "^0.18.0"
+  },
   "peerDependencies": {
     "highlight.js": "^11.4.0",
     "prop-types": "^15.x",
@@ -14,13 +16,12 @@
     "react-dom": "^17.x"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --color",
+    "jest": "jest --verbose",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs-build",
-    "compile": "cross-env NODE_ENV=production babel src --out-dir dist --ignore src/stories && postcss ./src/index.css -o ./dist/index-including-tailwind.css"
+    "compile": "cross-env NODE_ENV=production babel src --out-dir dist --ignore src/stories && postcss ./src/index.css -o ./dist/index-including-tailwind.css && shx cp -r ./src/assets ./dist/"
   },
   "eslintConfig": {
     "extends": [
@@ -51,28 +52,30 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.8",
-    "@babel/core": "^7.16.5",
-    "@babel/eslint-parser": "^7.16.5",
-    "@babel/plugin-syntax-flow": "^7.16.5",
-    "@babel/plugin-transform-react-jsx": "^7.16.5",
-    "@babel/preset-react": "^7.16.5",
-    "@storybook/addon-actions": "^6.4.12",
-    "@storybook/addon-essentials": "^6.4.12",
-    "@storybook/addon-links": "^6.4.12",
-    "@storybook/addons": "^6.4.12",
-    "@storybook/builder-webpack5": "^6.4.12",
-    "@storybook/manager-webpack5": "^6.4.12",
-    "@storybook/node-logger": "^6.4.12",
-    "@storybook/preset-create-react-app": "^4.0.0",
-    "@storybook/react": "^6.4.12",
+    "@babel/cli": "^7.17.3",
+    "@babel/core": "^7.17.4",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/plugin-syntax-flow": "^7.16.7",
+    "@babel/plugin-transform-react-jsx": "^7.17.3",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/addons": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/manager-webpack5": "^6.4.19",
+    "@storybook/node-logger": "^6.4.19",
+    "@storybook/preset-create-react-app": "^4.0.1",
+    "@storybook/react": "^6.4.19",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@typescript-eslint/parser": "^5.8.1",
     "autoprefixer": "^10.4.2",
+    "babel-jest": "^27.4.6",
     "cross-env": "^7.0.3",
-    "eslint": "^8.8.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-react-app": "^7.0.0",
     "eslint-plugin-flowtype": "^8.0.3",
@@ -81,15 +84,42 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-risxss": "^2.1.0",
     "highlight.js": "^11.4.0",
-    "postcss": "^8.4.5",
+    "jest": "^27.4.7",
+    "jest-cucumber": "^3.0.1",
+    "postcss": "^8.4.6",
     "postcss-cli": "^9.1.0",
     "prettier": "^2.2.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
+    "react-test-renderer": "^17.0.2",
+    "shx": "^0.3.4",
     "tailwindcss": "^3.0.13",
     "webpack": "^5.66.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": [
+        "babel-jest",
+        {
+          "configFile": "./specs/.babelrc"
+        }
+      ]
+    },
+    "testMatch": [
+      "**/*.steps.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      "../../assets/(.*)": [
+        "<rootDir>/specs/mocks/image.js"
+      ]
+    }
   }
 }

@@ -1,5 +1,7 @@
 # Flotiq components for React
 
+![](https://img.shields.io/npm/v/flotiq-components-react)
+
 This project uses eslint. This project do not have React app to start, it only has storybook part.
 The build storybook is available on [https://flotiq.github.io/flotiq-components-react/](https://flotiq.github.io/flotiq-components-react)
 
@@ -18,6 +20,10 @@ To start storybook server. It will be available on [http://localhost:6006/](http
 ### `yarn compile`
 
 To compile components into dist directory and prepare them for publish on npm registry.
+
+### `yarn test`
+
+To test the package, tests are written using [gherkin](https://cucumber.io/docs/gherkin/reference/), [cucumber](https://cucumber.io/) and [jest](https://www.npmjs.com/package/jest-cucumber).
 
 ### `npm run eject`
 
@@ -42,7 +48,7 @@ To include this library in your own project you should follow these steps.
 
 Add Flotiq Components module
 ```
-npm install https://github.com/flotiq/flotiq-components-react.git
+npm install flotiq-components-react
 ```
 
 ### 2a. Include component styles (Projects using Tailwind)
