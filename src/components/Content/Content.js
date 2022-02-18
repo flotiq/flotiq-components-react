@@ -45,7 +45,7 @@ const Content = ({
                     level={block.data.level}
                     text={block.data.text}
                     anchor={block.data.anchor}
-                    alignement={block.tunes?.alignmentTuneTool?.alignment}
+                    alignment={block.tunes?.alignmentTuneTool?.alignment}
                     {...headerProps}
                     key={block.id}
                 />
@@ -54,7 +54,7 @@ const Content = ({
             return (
                 <Paragraph
                     text={block.data.text}
-                    alignement={block.tunes?.alignementTuneTool?.alignement}
+                    alignment={block.tunes?.alignmentTuneTool?.alignment}
                     {...paragraphProps}
                     key={block.id}
                 />

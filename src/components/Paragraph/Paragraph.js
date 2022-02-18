@@ -5,22 +5,22 @@ import { sanitize } from 'isomorphic-dompurify';
 /**
  * Component for standard text
  */
-const Paragraph = ({ text, alignement, additionalClasses, ...props }) => {
-    const alignementClass = {
+const Paragraph = ({ text, alignment, additionalClasses, ...props }) => {
+    const alignmentClass = {
         left: 'text-left',
         center: 'text-center',
         right: 'text-right',
     };
     return React.isValidElement(text) ? (
         <p
-            className={['py-2', alignementClass[alignement], ...additionalClasses].join(' ')}
+            className={['py-2', alignmentClass[alignment], ...additionalClasses].join(' ')}
             {...props}
         >
             {text}
         </p>
     ) : (
         <p
-            className={['py-2', alignementClass[alignement], ...additionalClasses].join(' ')}
+            className={['py-2', alignmentClass[alignment], ...additionalClasses].join(' ')}
             dangerouslySetInnerHTML={{ __html: sanitize(text) }}
             {...props}
         />
@@ -33,9 +33,9 @@ Paragraph.propTypes = {
      */
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     /**
-     * Paragraph alignement
+     * Paragraph alignment
      */
-    alignement: PropTypes.oneOf(['left', 'center', 'right']),
+    alignment: PropTypes.oneOf(['left', 'center', 'right']),
     /**
      * Additional classes for paragraph
      */
@@ -43,7 +43,7 @@ Paragraph.propTypes = {
 };
 
 Paragraph.defaultProps = {
-    alignement: 'left',
+    alignment: 'left',
     additionalClasses: [],
 };
 

@@ -8,7 +8,7 @@ export default {
     component: Paragraph,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
-        alignement: { control: 'select' },
+        alignment: { control: 'select' },
     },
 };
 
