@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { sanitize } from 'isomorphic-dompurify';
 import { borderProps } from '../../defaultProps/border';
 
 /**
@@ -23,7 +22,7 @@ const Quote = ({
                 className={[
                     'pl-6 md:pl-10 py-4 border-l-4', borderProps.classSet[variant], ...quoteAdditionalClasses,
                 ].join(' ')}
-                dangerouslySetInnerHTML={{ __html: sanitize(text) }}
+                dangerouslySetInnerHTML={{ __html: text }}
             />
         )}
         { caption
