@@ -1,13 +1,12 @@
 {
   "name": "flotiq-components-react",
-  "version": "0.4.11",
+  "version": "0.4.12",
   "main": "dist/index.js",
   "private": false,
   "author": "Flotiq team <hello@flotiq.com>",
   "description": "Flotiq components for React",
   "license": "MIT",
   "dependencies": {
-    "isomorphic-dompurify": "^0.18.0"
   },
   "peerDependencies": {
     "highlight.js": "^11.4.0",
@@ -84,7 +83,6 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-plugin-risxss": "^2.1.0",
     "highlight.js": "^11.4.0",
     "jest": "^27.4.7",
     "jest-cucumber": "^3.0.1",

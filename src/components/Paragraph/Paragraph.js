@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { sanitize } from 'isomorphic-dompurify';
 
 /**
  * Component for standard text
@@ -21,7 +20,7 @@ const Paragraph = ({ text, alignment, additionalClasses, ...props }) => {
     ) : (
         <p
             className={['py-2', alignmentClass[alignment], ...additionalClasses].join(' ')}
-            dangerouslySetInnerHTML={{ __html: sanitize(text) }}
+            dangerouslySetInnerHTML={{ __html: text }}
             {...props}
         />
     );

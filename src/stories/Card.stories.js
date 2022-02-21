@@ -23,7 +23,7 @@ const Template = (args) => (
     </div>
 );
 
-const VerticalTemplate = (args) => (
+const HorizontalTemplate = (args) => (
     <div>
         <Card {...args}>
             <Body {...Body.args} />
@@ -46,11 +46,11 @@ Standard.args = {
     ...Card.defaultProps,
 };
 
-export const Vertical = VerticalTemplate.bind({});
+export const Horizontal = HorizontalTemplate.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Vertical.args = {
+Horizontal.args = {
     ...Card.defaultProps,
-    vertical: true,
+    horizontal: true,
 };
 
 export const WithoutImage = SimpleTemplate.bind({});
