@@ -8,7 +8,7 @@ const Header = ({
     level,
     text,
     anchor,
-    alignement,
+    alignment,
     additionalClasses,
     h1AdditionalClasses,
     h2AdditionalClasses,
@@ -28,7 +28,7 @@ const Header = ({
         5: ['text-lg font-bold pt-2 pb-1', ...h5AdditionalClasses].join(' '),
         6: ['text-base font-bold pt-1', ...h6AdditionalClasses].join(' '),
     };
-    const alignementClass = {
+    const alignmentClass = {
         left: 'text-left',
         center: 'text-center',
         right: 'text-right',
@@ -37,7 +37,7 @@ const Header = ({
     return (
         React.isValidElement(text) ? (
             <HeaderToRender
-                className={[sizeClass[safeLevel], alignementClass[alignement], ...additionalClasses].join(' ')}
+                className={[sizeClass[safeLevel], alignmentClass[alignment], ...additionalClasses].join(' ')}
                 id={anchor}
                 {...props}
             >
@@ -45,7 +45,7 @@ const Header = ({
             </HeaderToRender>
         ) : (
             <HeaderToRender
-                className={[sizeClass[safeLevel], alignementClass[alignement], ...additionalClasses].join(' ')}
+                className={[sizeClass[safeLevel], alignmentClass[alignment], ...additionalClasses].join(' ')}
                 dangerouslySetInnerHTML={{ __html: text }}
                 id={anchor}
                 {...props}
@@ -68,9 +68,9 @@ Header.propTypes = {
      */
     anchor: PropTypes.string,
     /**
-     * Header alignement
+     * Header alignment
      */
-    alignement: PropTypes.oneOf(['left', 'center', 'right']),
+    alignment: PropTypes.oneOf(['left', 'center', 'right']),
     /**
      * Additional classes for header (all levels)
      */
@@ -104,7 +104,7 @@ Header.propTypes = {
 Header.defaultProps = {
     level: 1,
     anchor: '',
-    alignement: 'left',
+    alignment: 'left',
     additionalClasses: [],
     h1AdditionalClasses: [],
     h2AdditionalClasses: [],

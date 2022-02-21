@@ -8,7 +8,7 @@ export default {
     component: Header,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
-        alignement: { control: 'select' },
+        alignment: { control: 'select' },
     },
 };
 
@@ -28,7 +28,7 @@ Level2.args = {
     ...Header.defaultProps,
     level: 2,
     text: 'What is a <b>CMS</b>',
-    alignement: 'center',
+    alignment: 'center',
 };
 
 export const Level3 = Template.bind({});
@@ -37,7 +37,7 @@ Level3.args = {
     ...Header.defaultProps,
     level: 3,
     text: 'Heading 3',
-    alignement: 'right',
+    alignment: 'right',
 };
 
 export const Level4 = Template.bind({});
