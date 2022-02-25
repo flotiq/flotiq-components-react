@@ -7,7 +7,7 @@ import LogoBadge from '../../assets/flotiq-logo-badge.svg';
  */
 const PoweredByFlotiq = ({ badge, text, additionalClasses, ...props }) => (badge ? (
     <div
-        className={['flex', 'items-center', 'font-sora', 'px-2', 'py-1',
+        className={['flex', 'items-center', 'font-inter', 'px-2', 'py-1',
             'shadow-md', 'shadow-black-400/15', 'rounded-md',
             'fixed', 'bottom-[20px]', 'right-[20px]', 'text-xs',
             'bg-white', 'border', 'border-light-blue', ...additionalClasses].join(' ')}
@@ -16,7 +16,7 @@ const PoweredByFlotiq = ({ badge, text, additionalClasses, ...props }) => (badge
         <a href="https://flotiq.com" target="_blank" rel="noreferrer">{text}</a>
     </div>
 ) : (
-    <div className={['flex', 'items-center', 'mr-12', 'font-sora', ...additionalClasses].join(' ')} {...props}>
+    <div className={['flex', 'items-center', 'mr-12', 'font-inter', ...additionalClasses].join(' ')} {...props}>
         <img
             className="block h-5 md:h-6 w-auto mr-2"
             src={LogoBadge}

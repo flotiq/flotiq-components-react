@@ -8,10 +8,6 @@ module.exports = {
                 'Inter',
                 ...defaultTheme.fontFamily.sans,
             ],
-            sora: [
-                'Sora',
-                ...defaultTheme.fontFamily.sans,
-            ],
         },
         colors: ({ colors }) => ({
             inherit: colors.inherit,
