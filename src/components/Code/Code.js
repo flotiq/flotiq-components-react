@@ -5,18 +5,18 @@ import PropTypes from 'prop-types';
  * Component for highlighting code.
  * Install highlight.js to make the component looks like in the examples, we use nord.css
  */
-const Code = ({ code, language, highlight, additionalClasses, ...props }) => {
+const Code = ({ children, language, highlight, additionalClasses, ...props }) => {
     useEffect(() => {
         if (highlight) {
             highlight.highlightAll();
         }
-    }, [highlight, language, code]);
-    let CodeToDisplay = code;
+    }, [highlight, language, children]);
+    let CodeToDisplay = children;
     let lang = language;
-    if (code.indexOf('```') === 0) {
+    if (children.indexOf('```') === 0) {
         // eslint-disable-next-line prefer-destructuring
-        lang = code.split('```')[1];
-        const blocks = code.split('\n');
+        lang = children.split('```')[1];
+        const blocks = children.split('\n');
         blocks.splice(0, 1);
         CodeToDisplay = blocks.join('\n');
     }
@@ -38,7 +38,7 @@ Code.propTypes = {
     /**
      * Code content
      */
-    code: PropTypes.string.isRequired,
+    children: PropTypes.string.isRequired,
     /**
      * Programming language name
      */

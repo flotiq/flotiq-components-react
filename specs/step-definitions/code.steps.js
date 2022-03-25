@@ -11,7 +11,7 @@ defineFeature(feature, (test) => {
     test('Show default code', ({ when, then }) => {
         let code;
         when(/^rendering code component with text "(.*)"$/, (text) => {
-            code = renderer.create(<Code code={text} />);
+            code = renderer.create(<Code>{text}</Code>);
         });
 
         then(/^the code has text "(.*)"$/, (text) => {

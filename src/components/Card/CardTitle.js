@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 /**
  * Header text of body in card like component
  */
-const CardTitle = ({ children, additionalClasses = [] }) => (
-    <h2 className={['text-3xl', 'font-semibold', 'leading-10', ...additionalClasses].join(' ')}>
+const CardTitle = ({ children, additionalClasses = [], ...props }) => (
+    <h2 className={['text-3xl', 'font-semibold', 'leading-10', ...additionalClasses].join(' ')} {...props}>
         {children}
     </h2>
 );

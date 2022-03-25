@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  */
 const Header = ({
     level,
-    text,
+    children,
     anchor,
     alignment,
     additionalClasses,
@@ -35,18 +35,18 @@ const Header = ({
     };
 
     return (
-        React.isValidElement(text) ? (
+        React.isValidElement(children) ? (
             <HeaderToRender
                 className={[sizeClass[safeLevel], alignmentClass[alignment], ...additionalClasses].join(' ')}
                 id={anchor}
                 {...props}
             >
-                {text}
+                {children}
             </HeaderToRender>
         ) : (
             <HeaderToRender
                 className={[sizeClass[safeLevel], alignmentClass[alignment], ...additionalClasses].join(' ')}
-                dangerouslySetInnerHTML={{ __html: text }}
+                dangerouslySetInnerHTML={{ __html: children }}
                 id={anchor}
                 {...props}
             />
@@ -62,7 +62,7 @@ Header.propTypes = {
     /**
      * Header contents
      */
-    text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     /**
      * Header anchor
      */

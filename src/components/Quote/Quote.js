@@ -10,15 +10,15 @@ const Quote = ({
 }) => (
     <div className={['flex flex-col italic', ...additionalClasses].join(' ')} {...props}>
         {React.isValidElement(text) ? (
-            <p
+            <div
                 className={[
                     'pl-6 md:pl-10 py-4 border-l-4', borderProps.classSet[variant], ...quoteAdditionalClasses,
                 ].join(' ')}
             >
                 {text}
-            </p>
+            </div>
         ) : (
-            <p
+            <div
                 className={[
                     'pl-6 md:pl-10 py-4 border-l-4', borderProps.classSet[variant], ...quoteAdditionalClasses,
                 ].join(' ')}

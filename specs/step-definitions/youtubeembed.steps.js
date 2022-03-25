@@ -19,4 +19,16 @@ defineFeature(feature, (test) => {
             expect(tree.children[0].props.src).toBe(src);
         });
     });
+
+    test('Show default youtube embed with youtu.be link', ({ when, then }) => {
+        let youtube;
+        when(/^rendering youtube component with url "(.*)"$/, (url) => {
+            youtube = renderer.create(<YouTubeEmbed url={url} />);
+        });
+
+        then(/^the youtube has src "(.*)"$/, (src) => {
+            const tree = youtube.toJSON();
+            expect(tree.children[0].props.src).toBe(src);
+        });
+    });
 });

@@ -19,7 +19,7 @@ export const Level1 = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Level1.args = {
     ...Header.defaultProps,
-    text: 'Heading 1',
+    children: 'Heading 1',
 };
 
 export const Level2 = Template.bind({});
@@ -27,7 +27,7 @@ export const Level2 = Template.bind({});
 Level2.args = {
     ...Header.defaultProps,
     level: 2,
-    text: 'What is a <b>CMS</b>',
+    children: 'What is a <b>CMS</b>',
     alignment: 'center',
 };
 
@@ -36,7 +36,7 @@ export const Level3 = Template.bind({});
 Level3.args = {
     ...Header.defaultProps,
     level: 3,
-    text: 'Heading 3',
+    children: 'Heading 3',
     alignment: 'right',
 };
 
@@ -45,7 +45,7 @@ export const Level4 = Template.bind({});
 Level4.args = {
     ...Header.defaultProps,
     level: 4,
-    text: 'Heading 4',
+    children: 'Heading 4',
 };
 
 export const Level5 = Template.bind({});
@@ -53,7 +53,7 @@ export const Level5 = Template.bind({});
 Level5.args = {
     ...Header.defaultProps,
     level: 5,
-    text: 'Heading 5',
+    children: 'Heading 5',
 };
 
 export const Level6 = Template.bind({});
@@ -61,5 +61,5 @@ export const Level6 = Template.bind({});
 Level6.args = {
     ...Header.defaultProps,
     level: 6,
-    text: 'Heading 6',
+    children: 'Heading 6',
 };

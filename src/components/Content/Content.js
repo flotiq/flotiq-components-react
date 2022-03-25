@@ -43,21 +43,23 @@ const Content = ({
             return (
                 <Header
                     level={block.data.level}
-                    text={block.data.text}
                     anchor={block.data.anchor}
                     alignment={block.tunes?.alignmentTuneTool?.alignment}
                     {...headerProps}
                     key={block.id}
-                />
+                >
+                    {block.data.text}
+                </Header>
             );
         case 'paragraph':
             return (
                 <Paragraph
-                    text={block.data.text}
                     alignment={block.tunes?.alignmentTuneTool?.alignment}
                     {...paragraphProps}
                     key={block.id}
-                />
+                >
+                    {block.data.text}
+                </Paragraph>
             );
         case 'list':
             return (
@@ -109,10 +111,11 @@ const Content = ({
         case 'code':
             return (
                 <Code
-                    code={block.data.code}
                     {...codeProps}
                     key={block.id}
-                />
+                >
+                    {block.data.code}
+                </Code>
             );
         case 'warning':
             return (

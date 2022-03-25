@@ -12,7 +12,13 @@ const PoweredByFlotiq = ({ badge, text, additionalClasses, ...props }) => (badge
             'fixed', 'bottom-[20px]', 'right-[20px]', 'text-xs',
             'bg-white', 'border', 'border-light-blue', ...additionalClasses].join(' ')}
     >
-        <img src={LogoBadge} width="11" height="11" alt="Flotiq" className="mr-1" />
+        <img
+            src={LogoBadge}
+            width={11}
+            height={11}
+            alt="Flotiq"
+            className="mr-1"
+        />
         <a href="https://flotiq.com" target="_blank" rel="noreferrer">{text}</a>
     </div>
 ) : (
@@ -21,6 +27,8 @@ const PoweredByFlotiq = ({ badge, text, additionalClasses, ...props }) => (badge
             className="block h-5 md:h-6 w-auto mr-2"
             src={LogoBadge}
             alt="Flotiq"
+            width={274.96}
+            height={276}
         />
         <p className="text-center text-xs md:text-base font-semibold">
             <a href="https://flotiq.com" target="_blank" rel="noreferrer">{text}</a>

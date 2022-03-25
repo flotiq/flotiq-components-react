@@ -25,7 +25,7 @@ const Template = (args) => <Code {...args} highlight={highlight} />;
 export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Base.args = {
-    code: 'const example = "Flotiq is great!"',
+    children: 'const example = "Flotiq is great!"',
     ...Code.defaultProps,
     language: 'javascript',
 };

@@ -11,7 +11,7 @@ defineFeature(feature, (test) => {
     test('Show default header', ({ when, then, and }) => {
         let header;
         when(/^rendering header component with text "(.*)"$/, (text) => {
-            header = renderer.create(<Header text={text} />);
+            header = renderer.create(<Header>{text}</Header>);
         });
 
         then(/^the header has classes "(.*)"$/, (classes) => {
