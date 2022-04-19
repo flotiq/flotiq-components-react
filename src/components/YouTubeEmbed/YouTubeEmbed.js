@@ -11,7 +11,8 @@ const YouTubeEmbed = ({
     additionalClasses,
     ...props
 }) => {
-    const safeUrl = url.replace('/watch?v=', '/embed/');
+    let safeUrl = url.replace('/watch?v=', '/embed/');
+    safeUrl = safeUrl.replace('youtu.be/', 'www.youtube.com/embed/');
     return (
         <div className="height-0 pb-[56.25%] relative">
             <iframe

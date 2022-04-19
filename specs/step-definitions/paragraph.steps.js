@@ -11,7 +11,7 @@ defineFeature(feature, (test) => {
     test('Show default paragraph', ({ when, then }) => {
         let paragraph;
         when(/^rendering paragraph component with text "(.*)"$/, (text) => {
-            paragraph = renderer.create(<Paragraph text={text} />);
+            paragraph = renderer.create(<Paragraph>{text}</Paragraph>);
         });
 
         then(/^the paragraph has text "(.*)"$/, (text) => {
