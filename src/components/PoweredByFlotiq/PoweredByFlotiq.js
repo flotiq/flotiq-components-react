@@ -5,7 +5,7 @@ import LogoBadge from '../../assets/flotiq-logo-badge.svg';
 /**
  * Footer element with powered by flotiq information
  */
-const PoweredByFlotiq = ({ badge, text, additionalClasses, ...props }) => (badge ? (
+const PoweredByFlotiq = ({ badge, text, additionalClasses, utmCampaign, ...props }) => (badge ? (
     <div
         className={['flex', 'items-center', 'font-inter', 'px-2', 'py-1',
             'shadow-md', 'shadow-black-400/15', 'rounded-md',
@@ -19,7 +19,15 @@ const PoweredByFlotiq = ({ badge, text, additionalClasses, ...props }) => (badge
             alt="Flotiq"
             className="mr-1"
         />
-        <a href="https://flotiq.com" target="_blank" rel="noreferrer">{text}</a>
+        <a
+            href={`https://flotiq.com/?utm_source=poweredByFlotiq&utm_medium=poweredBy${
+                utmCampaign !== '' ? `&utm_campaign=${utmCampaign}` : ''
+            }`}
+            target="_blank"
+            rel="noreferrer"
+        >
+            {text}
+        </a>
     </div>
 ) : (
     <div className={['flex', 'items-center', 'mr-12', 'font-inter', ...additionalClasses].join(' ')} {...props}>
@@ -31,7 +39,15 @@ const PoweredByFlotiq = ({ badge, text, additionalClasses, ...props }) => (badge
             height={276}
         />
         <p className="text-center text-xs md:text-base font-semibold">
-            <a href="https://flotiq.com" target="_blank" rel="noreferrer">{text}</a>
+            <a
+                href={`https://flotiq.com/?utm_source=poweredByFlotiq&utm_medium=poweredBy${
+                    utmCampaign !== '' ? `&utm_campaign=${utmCampaign}` : ''
+                }`}
+                target="_blank"
+                rel="noreferrer"
+            >
+                {text}
+            </a>
         </p>
     </div>
 ));
@@ -49,12 +65,17 @@ PoweredByFlotiq.propTypes = {
      * Additional classes for delimiter
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
+    /**
+     * UTM campaign name
+     */
+    utmCampaign: PropTypes.string,
 };
 
 PoweredByFlotiq.defaultProps = {
     badge: false,
     text: 'Powered by Flotiq',
     additionalClasses: [],
+    utmCampaign: '',
 };
 
 export default PoweredByFlotiq;
