@@ -7,18 +7,15 @@ jobs:
   npm-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: "Workaround git permissions issue"
-        shell: bash
-        run: "git config --global --add safe.directory /github/workspace"
       - uses: actions/checkout@v3
       - run: yarn install
       - run: yarn compile
       - name: Publish if version has been updated
-        uses: pascalgn/npm-publish-action@1.3.8
+        uses: pascalgn/npm-publish-action@99edcbddc04403efe904d1ad125c867d4dcabdcd
         with:
           tag_name: "v%s"
           tag_message: "v%s"
-          create_tag: "false"
+          create_tag: "true"
           commit_pattern: "^Release (\\S+)"
           workspace: "."
           publish_command: "yarn"
