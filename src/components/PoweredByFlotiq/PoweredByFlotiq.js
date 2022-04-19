@@ -32,8 +32,8 @@ const PoweredByFlotiq = ({ badge, text, additionalClasses, utmCampaign, ...props
     >
         <img
             src={LogoBadge}
-            width="11"
-            height="11"
+            width={11}
+            height={11}
             alt="Flotiq"
             className="mr-1"
         />
@@ -53,6 +53,8 @@ const PoweredByFlotiq = ({ badge, text, additionalClasses, utmCampaign, ...props
             className="block h-5 md:h-6 w-auto mr-2"
             src={LogoBadge}
             alt="Flotiq"
+            width={274.96}
+            height={276}
         />
         <p className="text-center text-xs md:text-base font-semibold">
             <a

@@ -4,23 +4,23 @@ import PropTypes from 'prop-types';
 /**
  * Component for standard text
  */
-const Paragraph = ({ text, alignment, additionalClasses, ...props }) => {
+const Paragraph = ({ alignment, additionalClasses, children, ...props }) => {
     const alignmentClass = {
         left: 'text-left',
         center: 'text-center',
         right: 'text-right',
     };
-    return React.isValidElement(text) ? (
-        <p
+    return React.isValidElement(children) ? (
+        <div
             className={['py-2', alignmentClass[alignment], ...additionalClasses].join(' ')}
             {...props}
         >
-            {text}
-        </p>
+            {children}
+        </div>
     ) : (
-        <p
+        <div
             className={['py-2', alignmentClass[alignment], ...additionalClasses].join(' ')}
-            dangerouslySetInnerHTML={{ __html: text }}
+            dangerouslySetInnerHTML={{ __html: children }}
             {...props}
         />
     );
@@ -30,7 +30,7 @@ Paragraph.propTypes = {
     /**
      * Paragraph content
      */
-    text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     /**
      * Paragraph alignment
      */

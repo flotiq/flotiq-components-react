@@ -5,16 +5,25 @@ import { Context } from './Context';
 /**
  * Component for image in card like component
  */
-const CardImg = ({ src, alt, additionalClasses = [], additionalContainerClasses = [] }) => {
+const CardImg = ({
+    src,
+    alt,
+    additionalClasses = [],
+    additionalContainerClasses = [],
+    imageAdditionalProps = {},
+    ...props
+}) => {
     const context = useContext(Context);
 
     return (
-        <div className={[
-            context.basisClassImage,
-            ...additionalContainerClasses,
-        ].join(' ')}
+        <div
+            className={[
+                context.basisClassImage,
+                ...additionalContainerClasses,
+            ].join(' ')}
+            {...props}
         >
-            <img src={src} alt={alt} className={additionalClasses.join(' ')} />
+            <img src={src} alt={alt} className={additionalClasses.join(' ')} {...imageAdditionalProps} />
         </div>
     );
 };
@@ -36,12 +45,17 @@ CardImg.propTypes = {
      * Additional classes for image container
      */
     additionalContainerClasses: PropTypes.arrayOf(PropTypes.string),
+    /**
+     * Additional props for image
+     */
+    imageAdditionalProps: PropTypes.shape({}),
 };
 
 CardImg.defaultProps = {
     additionalClasses: [],
     additionalContainerClasses: [],
     alt: false,
+    imageAdditionalProps: {},
 };
 
 export default CardImg;
