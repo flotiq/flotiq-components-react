@@ -19,5 +19,12 @@ const Template = (args) => (
 export const Standard = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Standard.args = {
+    title: 'Kyan - blog screenshot',
+    // eslint-disable-next-line max-len
+    exceptr: 'The total package with which you can build beautiful, high converting and professional The total package witch you can build',
+    src: 'https://api.flotiq.com/image/0x0/_media-3a62e398-fbe3-46e8-ba5b-05a2690390ae.png',
+    githubUrl: 'https://github.com',
+    predefinedCTUrl: 'https://google.pl',
+    srcAlt: 'Kyan blog screenshot',
     ...ShowcaseCard.defaultProps,
 };
