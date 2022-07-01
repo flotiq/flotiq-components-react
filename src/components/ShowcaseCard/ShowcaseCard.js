@@ -33,11 +33,11 @@ const ShowcaseCard = ({ title, exceptr, src, srcAlt, githubUrl, predefinedCTUrl,
                 { exceptr.length >= 110 && '...' }
             </p>
             <Delimiter variant="light" />
-            <a href={githubUrl} className="text-base font-medium mr-5">
+            <a href={githubUrl} className="text-base font-medium mr-5" target="_blank" rel="noreferrer">
                 Github
                 <span className="text-blue-700 hover:text-blue-600" aria-hidden="true"> &rarr;</span>
             </a>
-            <a href={predefinedCTUrl} className="text-base font-medium">
+            <a href={predefinedCTUrl} className="text-base font-medium" target="_blank" rel="noreferrer">
                 Start with predefined CT
                 <span aria-hidden="true" className="text-blue-700 hover:text-blue-600">&rarr;</span>
             </a>
