@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
 import Delimiter from '../Delimiter/Delimiter';
-import Header from '../Header/Header'; 
-import Base64Icon from '../../assets/base64/svgToBase64.json'
+import Header from '../Header/Header';
+import Base64Icon from '../../assets/base64/svgToBase64.json';
 
 /**
  * Component for displaying product showcase card
@@ -97,12 +97,16 @@ const ShowcaseCard = ({
                         'no-underline',
                         'hover:opacity-[1]',
                         'hover:no-underline',
-                        'hover:text-black', 
+                        'hover:text-black',
                         ...additionalLiveDemoClasses,
                     ].join(' ')}
                 >
-                    Live Demo 
-                    <img src={"data:" + Base64Icon['live-demo'].mime + ";base64," + Base64Icon['live-demo'].data} />
+                    Live Demo
+                    <img
+                        src={`data:${Base64Icon['live-demo'].mime};base64,${Base64Icon['live-demo'].data}`}
+                        alt="Live Demo"
+                        className="ml-2"
+                    />
                 </a>
             )}
 
@@ -126,7 +130,7 @@ const ShowcaseCard = ({
             href={starterPageUrl}
             target="_blank"
             rel="noreferrer"
-            className='no-underline hover:no-underline'
+            className="no-underline hover:no-underline"
         >
             <div className="ml-1 px-6 pb-6">
                 <Header level={4}>{title}</Header>
@@ -140,13 +144,14 @@ const ShowcaseCard = ({
             <Delimiter variant="light" className="mb-[20px]" />
             <a
                 href={githubUrl}
-                className="text-base hover:text-blue-600 font-400 mr-12 inline-flex items-center no-underline hover:no-underline"
+                className="text-base hover:text-blue-600 font-400 mr-12
+                inline-flex items-center no-underline hover:no-underline"
                 target="_blank"
                 rel="noreferrer"
             >
                 Github
-                <img 
-                    src={"data:" + Base64Icon['arrow-top-right'].mime + ";base64," + Base64Icon['arrow-top-right'].data}
+                <img
+                    src={`data:${Base64Icon['arrow-top-right'].mime};base64,${Base64Icon['arrow-top-right'].data}`}
                     alt="Arrow Top Right"
                     className="ml-1"
                 />
@@ -154,13 +159,14 @@ const ShowcaseCard = ({
 
             <a
                 href={predefinedCTUrl}
-                className="text-base hover:text-blue-600 font-400 inline-flex items-center no-underline hover:no-underline"
+                className="text-base hover:text-blue-600 font-400
+                inline-flex items-center no-underline hover:no-underline"
                 target="_blank"
                 rel="noreferrer"
             >
                 Start with predefined CT
-                <img 
-                    src={"data:" + Base64Icon['arrow-top-right'].mime + ";base64," + Base64Icon['arrow-top-right'].data}
+                <img
+                    src={`data:${Base64Icon['arrow-top-right'].mime};base64,${Base64Icon['arrow-top-right'].data}`}
                     alt="Arrow Top Right"
                     className="ml-1"
                 />
