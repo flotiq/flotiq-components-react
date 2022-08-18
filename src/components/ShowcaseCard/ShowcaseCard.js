@@ -3,7 +3,30 @@ import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
 import Delimiter from '../Delimiter/Delimiter';
 import Header from '../Header/Header';
-import Base64Icon from '../../assets/base64/svgToBase64.json';
+
+const ArrowTopRightIcon = 'data:image/svg+xml;base64,PHN2ZyB3aWR'
++ '0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9u'
++ 'ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9I'
++ 'k0zLjA4MzAxIDEyLjkxNjhMMTIuOTE2MyAzLjA4MzUiIHN0cm9rZT0iIzAwODNGQy'
++ 'Igc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1'
++ 'saW5lam9pbj0icm91bmQiLz4NCjxwYXRoIGQ9Ik0xMi45MTY1IDEwLjA0MVYzLjA4'
++ 'MzVINS45NTg5OCIgc3Ryb2tlPSIjMDA4M0ZDIiBzdHJva2Utd2lkdGg9IjIiIHN0c'
++ 'm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPg0KPC'
++ '9zdmc+DQo=';
+
+const LiveDemoIcon = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAi'
++ 'IGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9I'
++ 'mh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwIDQuMzc0NTFDMy'
++ '43NSA0LjM3NDUxIDEuMjUgMTAuMDAwMSAxLjI1IDEwLjAwMDFDMS4yNSAxMC4wMDAxIDM'
++ 'uNzUgMTUuNjI0NSAxMCAxNS42MjQ1QzE2LjI1IDE1LjYyNDUgMTguNzUgMTAuMDAwMSAx'
++ 'OC43NSAxMC4wMDAxQzE4Ljc1IDEwLjAwMDEgMTYuMjUgNC4zNzQ1MSAxMCA0LjM3NDUxW'
++ 'iIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZW'
++ 'pvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMCAxMy4xMjVDMTEuNzI1OSAxMy4xMjUgMTM'
++ 'uMTI1IDExLjcyNTkgMTMuMTI1IDEwQzEzLjEyNSA4LjI3NDExIDExLjcyNTkgNi44NzUg'
++ 'MTAgNi44NzVDOC4yNzQxMSA2Ljg3NSA2Ljg3NSA4LjI3NDExIDYuODc1IDEwQzYuODc1I'
++ 'DExLjcyNTkgOC4yNzQxMSAxMy4xMjUgMTAgMTMuMTI1WiIgc3Ryb2tlPSJibGFjayIgc3'
++ 'Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3Z'
++ 'nPgo=';
 
 /**
  * Component for displaying product showcase card
@@ -103,7 +126,7 @@ const ShowcaseCard = ({
                 >
                     Live Demo
                     <img
-                        src={`data:${Base64Icon['live-demo'].mime};base64,${Base64Icon['live-demo'].data}`}
+                        src={LiveDemoIcon}
                         alt="Live Demo"
                         className="ml-2"
                     />
@@ -151,7 +174,7 @@ const ShowcaseCard = ({
             >
                 Github
                 <img
-                    src={`data:${Base64Icon['arrow-top-right'].mime};base64,${Base64Icon['arrow-top-right'].data}`}
+                    src={ArrowTopRightIcon}
                     alt="Arrow Top Right"
                     className="ml-1"
                 />
@@ -166,7 +189,7 @@ const ShowcaseCard = ({
             >
                 Start with predefined CT
                 <img
-                    src={`data:${Base64Icon['arrow-top-right'].mime};base64,${Base64Icon['arrow-top-right'].data}`}
+                    src={ArrowTopRightIcon}
                     alt="Arrow Top Right"
                     className="ml-1"
                 />
