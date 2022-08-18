@@ -25,6 +25,10 @@ Standard.args = {
     src: 'https://api.flotiq.com/image/0x0/_media-3a62e398-fbe3-46e8-ba5b-05a2690390ae.png',
     githubUrl: 'https://github.com',
     predefinedCTUrl: 'https://google.pl',
+    demoUrl: 'https://google.pl',
+    category: 'Blog',
+    tagIcon: 'https://api.flotiq.com/image/_media-1e61700a-80a9-4e0c-96ef-47fd5b165035.svg',
     srcAlt: 'Kyan blog screenshot',
+    starterPageUrl: 'https://google.pl',
     ...ShowcaseCard.defaultProps,
 };
