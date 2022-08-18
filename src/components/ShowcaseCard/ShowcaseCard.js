@@ -75,7 +75,7 @@ const ShowcaseCard = ({
                 rel="noreferrer"
             >
                 <div className="absolute w-full top-0 left-0 h-full z-index-1
-                opacity-[0.6] bg-secondary children-display-anchor"
+                opacity-[0.6] bg-secondary-500 children-display-anchor"
                 />
             </a>
             {category && src && (
@@ -153,7 +153,7 @@ const ShowcaseCard = ({
             href={starterPageUrl}
             target="_blank"
             rel="noreferrer"
-            className="no-underline hover:no-underline"
+            className="no-underline hover:no-underline hover:text-black"
         >
             <div className="ml-1 px-6 pb-6">
                 <Header level={4}>{title}</Header>
