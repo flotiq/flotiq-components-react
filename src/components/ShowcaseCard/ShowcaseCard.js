@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
 import Delimiter from '../Delimiter/Delimiter';
 import Header from '../Header/Header';
-import LiveDemoIcon from '../../stories/assets/live-demo.svg';
-import ArrowTopRightIcon from '../../stories/assets/arrow-top-right.svg';
+// import LiveDemoIcon from '../../stories/assets/live-demo.svg';
+// import ArrowTopRightIcon from '../../stories/assets/arrow-top-right.svg';
 
 /**
  * Component for displaying product showcase card
@@ -101,7 +101,7 @@ const ShowcaseCard = ({
                     ].join(' ')}
                 >
                     Live Demo
-                    <img src={LiveDemoIcon} alt="Live Demo" className="ml-2" />
+                    {/* <img src={LiveDemoIcon} alt="Live Demo" className="ml-2" /> */}
                 </a>
             )}
 
@@ -143,11 +143,11 @@ const ShowcaseCard = ({
                 rel="noreferrer"
             >
                 Github
-                <img
+                {/* <img
                     src={ArrowTopRightIcon}
                     alt="Arrow Top Right"
                     className="ml-1"
-                />
+                /> */}
             </a>
 
             <a
@@ -157,11 +157,11 @@ const ShowcaseCard = ({
                 rel="noreferrer"
             >
                 Start with predefined CT
-                <img
+                {/* <img
                     src={ArrowTopRightIcon}
                     alt="Arrow Top Right"
                     className="ml-1"
-                />
+                /> */}
             </a>
         </div>
     </div>

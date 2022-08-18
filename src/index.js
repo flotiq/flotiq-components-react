@@ -17,6 +17,7 @@ import Table from './components/Table/Table';
 import Video from './components/Video/Video';
 import Warning from './components/Warning/Warning';
 import YouTubeEmbed from './components/YouTubeEmbed/YouTubeEmbed';
+import ShowcaseCard from './components/ShowcaseCard/ShowcaseCard';
 
 export {
     Announcement,
@@ -38,4 +39,5 @@ export {
     Video,
     Warning,
     YouTubeEmbed,
+    ShowcaseCard,
 };
