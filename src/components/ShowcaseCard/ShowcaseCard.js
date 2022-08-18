@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
 import Delimiter from '../Delimiter/Delimiter';
 import Header from '../Header/Header';
-// import LiveDemoIcon from '../../stories/assets/live-demo.svg';
-// import ArrowTopRightIcon from '../../stories/assets/arrow-top-right.svg';
+import LiveDemoIcon from '../../stories/assets/live-demo.svg';
+import ArrowTopRightIcon from '../../stories/assets/arrow-top-right.svg';
 
 /**
  * Component for displaying product showcase card
@@ -95,13 +95,15 @@ const ShowcaseCard = ({
                         'flex',
                         'items-center',
                         'opacity-[0.5]',
+                        'no-underline',
                         'hover:opacity-[1]',
-                        roundedProps.classSet[rounded],
+                        'hover:no-underline',
+                        'hover:text-black', 
                         ...additionalLiveDemoClasses,
                     ].join(' ')}
                 >
                     Live Demo
-                    {/* <img src={LiveDemoIcon} alt="Live Demo" className="ml-2" /> */}
+                    <img src={LiveDemoIcon} alt="Live Demo" className="ml-2" />
                 </a>
             )}
 
@@ -125,6 +127,7 @@ const ShowcaseCard = ({
             href={starterPageUrl}
             target="_blank"
             rel="noreferrer"
+            className='no-underline hover:no-underline'
         >
             <div className="ml-1 px-6 pb-6">
                 <Header level={4}>{title}</Header>
@@ -135,33 +138,33 @@ const ShowcaseCard = ({
             </div>
         </a>
         <div className="ml-1 px-6 pb-6 flex-wrap">
-            <Delimiter variant="light" className="mb-5" />
+            <Delimiter variant="light" className="mb-[20px]" />
             <a
                 href={githubUrl}
-                className="text-base hover:text-blue-600 font-400 mr-12 inline-flex items-center"
+                className="text-base hover:text-blue-600 font-400 mr-12 inline-flex items-center no-underline hover:no-underline"
                 target="_blank"
                 rel="noreferrer"
             >
                 Github
-                {/* <img
+                <img
                     src={ArrowTopRightIcon}
                     alt="Arrow Top Right"
                     className="ml-1"
-                /> */}
+                />
             </a>
 
             <a
                 href={predefinedCTUrl}
-                className="text-base hover:text-blue-600 font-400 inline-flex items-center"
+                className="text-base hover:text-blue-600 font-400 inline-flex items-center no-underline hover:no-underline"
                 target="_blank"
                 rel="noreferrer"
             >
                 Start with predefined CT
-                {/* <img
+                <img
                     src={ArrowTopRightIcon}
                     alt="Arrow Top Right"
                     className="ml-1"
-                /> */}
+                />
             </a>
         </div>
     </div>
