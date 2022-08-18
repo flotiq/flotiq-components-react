@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
 import Delimiter from '../Delimiter/Delimiter';
 import Header from '../Header/Header';
-import LiveDemoIcon from '../../stories/assets/live-demo.svg';
-import ArrowTopRightIcon from '../../stories/assets/arrow-top-right.svg';
+import LiveDemoIcon from '../../assets/svg/arrow-top-right.svg';
+import ArrowTopRightIcon from '../../assets/svg/arrow-top-right.svg';
+import Base64Icon from '../../assets/base64/svgToBase64.json'
 
 /**
  * Component for displaying product showcase card
@@ -102,8 +103,8 @@ const ShowcaseCard = ({
                         ...additionalLiveDemoClasses,
                     ].join(' ')}
                 >
-                    Live Demo
-                    <img src={LiveDemoIcon} alt="Live Demo" className="ml-2" />
+                    Live Demo 
+                    <img src={"data:" + Base64Icon['live-demo'].mime + ";base64," + Base64Icon['live-demo'].data} />
                 </a>
             )}
 
@@ -146,8 +147,8 @@ const ShowcaseCard = ({
                 rel="noreferrer"
             >
                 Github
-                <img
-                    src={ArrowTopRightIcon}
+                <img 
+                    src={"data:" + Base64Icon['arrow-top-right'].mime + ";base64," + Base64Icon['arrow-top-right'].data}
                     alt="Arrow Top Right"
                     className="ml-1"
                 />
@@ -160,8 +161,8 @@ const ShowcaseCard = ({
                 rel="noreferrer"
             >
                 Start with predefined CT
-                <img
-                    src={ArrowTopRightIcon}
+                <img 
+                    src={"data:" + Base64Icon['arrow-top-right'].mime + ";base64," + Base64Icon['arrow-top-right'].data}
                     alt="Arrow Top Right"
                     className="ml-1"
                 />
