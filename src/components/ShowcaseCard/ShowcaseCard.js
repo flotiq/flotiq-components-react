@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
 import Delimiter from '../Delimiter/Delimiter';
-import Header from '../Header/Header';
-import LiveDemoIcon from '../../assets/svg/arrow-top-right.svg';
-import ArrowTopRightIcon from '../../assets/svg/arrow-top-right.svg';
+import Header from '../Header/Header'; 
 import Base64Icon from '../../assets/base64/svgToBase64.json'
 
 /**
