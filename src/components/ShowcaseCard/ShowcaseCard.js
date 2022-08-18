@@ -163,11 +163,13 @@ const ShowcaseCard = ({
                 </p>
             </div>
         </a>
-        <div className="ml-1 px-6 pb-6 flex-wrap">
-            <Delimiter variant="light" className="mb-[20px]" />
+
+        <Delimiter variant="light" className="mb-[20px] mx-6" />
+
+        <div className="ml-1 px-6 pb-6 flex flex-wrap justify-between">
             <a
                 href={githubUrl}
-                className="text-base hover:text-blue-600 font-400 mr-12
+                className="text-base hover:text-blue-600 font-400
                 inline-flex items-center no-underline hover:no-underline"
                 target="_blank"
                 rel="noreferrer"
