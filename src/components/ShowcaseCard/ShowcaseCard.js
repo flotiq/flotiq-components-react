@@ -59,7 +59,7 @@ const ShowcaseCard = ({
             'transform',
             'duration-300',
             'overflow-hidden',
-            'parent-hover-display-anchor',
+            'parent-hover-opacity-anchor',
             roundedProps.classSet[rounded],
             ...additionalClasses,
         ].join(' ')}
@@ -75,7 +75,7 @@ const ShowcaseCard = ({
                 rel="noreferrer"
             >
                 <div className="absolute w-full top-0 left-0 h-full z-index-1
-                opacity-[0.6] bg-secondary-500 children-display-anchor"
+                opacity-[0.6] bg-secondary-500 children-opacity-anchor transition-all transform duration-300"
                 />
             </a>
             {category && thumbnailSrc && (

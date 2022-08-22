@@ -11,12 +11,12 @@ code {
     monospace;
 }
 
-.parent-hover-display-anchor .children-display-anchor{
-  display: none;
+.parent-hover-opacity-anchor .children-opacity-anchor{
+  opacity: 0;
 }
 
-.parent-hover-display-anchor:hover .children-display-anchor{
-  display: block;
+.parent-hover-opacity-anchor:hover .children-opacity-anchor{
+  opacity: 0.6;
 }
 
 
