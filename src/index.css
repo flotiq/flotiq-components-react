@@ -10,3 +10,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.parent-hover-opacity-anchor .children-opacity-anchor{
+  opacity: 0;
+}
+
+.parent-hover-opacity-anchor:hover .children-opacity-anchor{
+  opacity: 0.6;
+}
+
+
