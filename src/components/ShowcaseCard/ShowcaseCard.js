@@ -36,8 +36,6 @@ const ShowcaseCard = ({
     excerpt,
     thumbnailSrc,
     thumbnailSrcAlt,
-    githubUrl,
-    predefinedCTUrl,
     starterPageUrl,
     demoUrl,
     rounded,
@@ -46,6 +44,7 @@ const ShowcaseCard = ({
     additionalLiveDemoClasses,
     category,
     tagIcon,
+    footerLinks,
     ...props
 }) => (
 
@@ -167,35 +166,22 @@ const ShowcaseCard = ({
         <Delimiter variant="light" className="mb-[20px] mx-6" />
 
         <div className="ml-1 px-6 pb-6 flex flex-wrap justify-between">
-            <a
-                href={githubUrl}
-                className="text-base hover:text-blue-600 font-400
-                inline-flex items-center no-underline hover:no-underline"
-                target="_blank"
-                rel="noreferrer"
-            >
-                Github
-                <img
-                    src={ArrowTopRightIcon}
-                    alt="Arrow Top Right"
-                    className="ml-1"
-                />
-            </a>
-
-            <a
-                href={predefinedCTUrl}
-                className="text-base hover:text-blue-600 font-400
-                inline-flex items-center no-underline hover:no-underline"
-                target="_blank"
-                rel="noreferrer"
-            >
-                Start with predefined CT
-                <img
-                    src={ArrowTopRightIcon}
-                    alt="Arrow Top Right"
-                    className="ml-1"
-                />
-            </a>
+            {footerLinks?.map((footer) => (
+                <a
+                    href={footer.link}
+                    className="text-base hover:text-blue-600 font-400
+                    inline-flex items-center no-underline hover:no-underline"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    {footer.text}
+                    <img
+                        src={ArrowTopRightIcon}
+                        alt="Arrow Top Right"
+                        className="ml-1"
+                    />
+                </a>
+            ))}
         </div>
     </div>
 
