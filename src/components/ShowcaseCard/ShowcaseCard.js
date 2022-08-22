@@ -70,7 +70,6 @@ const ShowcaseCard = ({
         >
             <a
                 href={cardUrl}
-                target="_blank"
                 rel="noreferrer"
             >
                 <div className="absolute w-full top-0 left-0 h-full z-index-1
@@ -150,7 +149,6 @@ const ShowcaseCard = ({
         </div>
         <a
             href={cardUrl}
-            target="_blank"
             rel="noreferrer"
             className="no-underline hover:no-underline hover:text-black"
         >
