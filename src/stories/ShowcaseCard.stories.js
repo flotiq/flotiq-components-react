@@ -27,7 +27,7 @@ Standard.args = {
     demoUrl: 'https://google.pl',
     category: 'Blog',
     tagIcon: 'https://api.flotiq.com/image/_media-1e61700a-80a9-4e0c-96ef-47fd5b165035.svg',
-    starterPageUrl: 'https://google.pl',
+    cardUrl: 'https://google.pl',
     footerLinks: [
         { link: 'https://github.com', text: 'Github' },
         { link: 'https://google.pl', text: 'Start with predefined CT' },

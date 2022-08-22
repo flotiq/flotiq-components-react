@@ -36,7 +36,7 @@ const ShowcaseCard = ({
     excerpt,
     thumbnailSrc,
     thumbnailSrcAlt,
-    starterPageUrl,
+    cardUrl,
     demoUrl,
     rounded,
     additionalClasses,
@@ -69,7 +69,7 @@ const ShowcaseCard = ({
         bg-gray-200 overflow-hidden xl:aspect-w-7 xl:aspect-h-8 relative"
         >
             <a
-                href={starterPageUrl}
+                href={cardUrl}
                 target="_blank"
                 rel="noreferrer"
             >
@@ -149,7 +149,7 @@ const ShowcaseCard = ({
             )}
         </div>
         <a
-            href={starterPageUrl}
+            href={cardUrl}
             target="_blank"
             rel="noreferrer"
             className="no-underline hover:no-underline hover:text-black"
