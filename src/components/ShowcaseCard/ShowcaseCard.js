@@ -32,7 +32,7 @@ const LiveDemoIcon = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAi'
  * Component for displaying product showcase card
  */
 const ShowcaseCard = ({
-    title, 
+    title,
     excerpt,
     thumbnailSrc,
     thumbnailSrcAlt,
