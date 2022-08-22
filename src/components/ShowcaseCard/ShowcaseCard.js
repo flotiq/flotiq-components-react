@@ -155,7 +155,7 @@ const ShowcaseCard = ({
             rel="noreferrer"
             className="no-underline hover:no-underline hover:text-black"
         >
-            <div className="ml-1 px-6 pb-6">
+            <div className="ml-1 px-6 pb-6 pt-2">
                 <Header level={4}>{title}</Header>
                 <p>
                     { excerpt.substring(0, 110) }
