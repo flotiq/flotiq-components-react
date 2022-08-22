@@ -32,8 +32,8 @@ const LiveDemoIcon = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAi'
  * Component for displaying product showcase card
  */
 const ShowcaseCard = ({
-    title,
-    exceptr,
+    title, 
+    excerpt,
     src,
     srcAlt,
     githubUrl,
@@ -158,8 +158,8 @@ const ShowcaseCard = ({
             <div className="ml-1 px-6 pb-6">
                 <Header level={4}>{title}</Header>
                 <p>
-                    { exceptr.substring(0, 110) }
-                    { exceptr.length >= 110 && '...' }
+                    { excerpt.substring(0, 110) }
+                    { excerpt.length >= 110 && '...' }
                 </p>
             </div>
         </a>
