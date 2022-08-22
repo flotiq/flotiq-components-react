@@ -34,8 +34,8 @@ const LiveDemoIcon = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAi'
 const ShowcaseCard = ({
     title, 
     excerpt,
-    src,
-    srcAlt,
+    thumbnailSrc,
+    thumbnailSrcAlt,
     githubUrl,
     predefinedCTUrl,
     starterPageUrl,
@@ -78,7 +78,7 @@ const ShowcaseCard = ({
                 opacity-[0.6] bg-secondary-500 children-display-anchor"
                 />
             </a>
-            {category && src && (
+            {category && thumbnailSrc && (
                 <span className={[
                     'absolute',
                     'text-white',
@@ -98,7 +98,7 @@ const ShowcaseCard = ({
                 </span>
             )}
 
-            {demoUrl && src && (
+            {demoUrl && thumbnailSrc && (
                 <a
                     href={demoUrl}
                     target="_blank"
@@ -133,7 +133,7 @@ const ShowcaseCard = ({
                 </a>
             )}
 
-            {tagIcon && src && (
+            {tagIcon && thumbnailSrc && (
                 <img
                     src={tagIcon}
                     alt="Tag Icon"
@@ -141,10 +141,10 @@ const ShowcaseCard = ({
                 />
             )}
 
-            {src && (
+            {thumbnailSrc && (
                 <img
-                    src={src}
-                    alt={srcAlt}
+                    src={thumbnailSrc}
+                    alt={thumbnailSrcAlt}
                     className="w-full h-full object-center object-cover group-hover:opacity-75"
                 />
             )}

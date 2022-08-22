@@ -22,13 +22,13 @@ Standard.args = {
     title: 'Kyan - blog screenshot',
     // eslint-disable-next-line max-len
     excerpt: 'The total package with which you can build beautiful, high converting and professional The total package witch you can build',
-    src: 'https://api.flotiq.com/image/0x0/_media-3a62e398-fbe3-46e8-ba5b-05a2690390ae.png',
+    thumbnailSrc: 'https://api.flotiq.com/image/0x0/_media-3a62e398-fbe3-46e8-ba5b-05a2690390ae.png',
+    thumbnailSrcAlt: 'Kyan blog screenshot',
     githubUrl: 'https://github.com',
     predefinedCTUrl: 'https://google.pl',
     demoUrl: 'https://google.pl',
     category: 'Blog',
-    tagIcon: 'https://api.flotiq.com/image/_media-1e61700a-80a9-4e0c-96ef-47fd5b165035.svg',
-    srcAlt: 'Kyan blog screenshot',
+    tagIcon: 'https://api.flotiq.com/image/_media-1e61700a-80a9-4e0c-96ef-47fd5b165035.svg', 
     starterPageUrl: 'https://google.pl',
     ...ShowcaseCard.defaultProps,
 };
