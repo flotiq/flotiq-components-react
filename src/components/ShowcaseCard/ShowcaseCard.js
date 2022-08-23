@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
 import Delimiter from '../Delimiter/Delimiter';
 import Header from '../Header/Header';
+import Paragraph from '../Paragraph/Paragraph';
 
 const ArrowTopRightIcon = 'data:image/svg+xml;base64,PHN2ZyB3aWR'
 + '0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9u'
@@ -33,6 +34,7 @@ const LiveDemoIcon = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAi'
  */
 const ShowcaseCard = ({
     title,
+    titleLevel = 5,
     excerpt,
     thumbnailSrc,
     thumbnailSrcAlt,
@@ -42,6 +44,9 @@ const ShowcaseCard = ({
     additionalClasses,
     additionalCategoryClasses,
     additionalLiveDemoClasses,
+    additionalExcerptClasses,
+    additionalHeaderClasses,
+    additionalFooterLinkClasses,
     category,
     tagIcon,
     footerLinks,
@@ -59,6 +64,8 @@ const ShowcaseCard = ({
             'duration-300',
             'overflow-hidden',
             'parent-hover-opacity-anchor',
+            'flex',
+            'flex-col',
             roundedProps.classSet[rounded],
             ...additionalClasses,
         ].join(' ')}
@@ -119,7 +126,7 @@ const ShowcaseCard = ({
                         'hover:opacity-[1]',
                         'hover:no-underline',
                         'hover:text-black',
-                        ...additionalLiveDemoClasses,
+                        ...additionalFooterLinkClasses,
                     ].join(' ')}
                 >
                     Live Demo
@@ -135,7 +142,7 @@ const ShowcaseCard = ({
                 <img
                     src={tagIcon}
                     alt="Tag Icon"
-                    className="absolute top-5 right-5"
+                    className="absolute top-5 right-5 max-h-[30px]"
                 />
             )}
 
@@ -147,45 +154,109 @@ const ShowcaseCard = ({
                 />
             )}
         </div>
+
         <a
             href={cardUrl}
             rel="noreferrer"
-            className="no-underline hover:no-underline hover:text-black"
+            className="grow no-underline hover:no-underline hover:text-black"
         >
             <div className="ml-1 px-6 pb-6 pt-2">
-                <Header level={4}>{title}</Header>
-                <p>
-                    { excerpt.substring(0, 110) }
-                    { excerpt.length >= 110 && '...' }
-                </p>
+                <Header level={titleLevel} additionalClasses={[...additionalHeaderClasses].join(' ')}>
+                    {title}
+                </Header>
+                <Paragraph
+                    className={['text-sm', ...additionalExcerptClasses].join(' ')}
+                >
+                    <>
+                        {excerpt.substring(0, 110)}
+                        {excerpt?.length >= 110 ? '...' : ''}
+                    </>
+                </Paragraph>
             </div>
         </a>
 
-        <Delimiter variant="light" className="mb-[20px] mx-6" />
+        {footerLinks?.length > 0 && (
+            <>
+                <Delimiter variant="light" className="mb-[20px] mx-6" />
+                <div className="ml-1 px-6 pb-6 flex flex-wrap justify-between">
+                    {footerLinks?.map((footer) => (
+                        <a
+                            href={footer.link}
+                            className={[
+                                'text-sm',
+                                'hover:text-blue-600',
+                                'font-400',
+                                'inline-flex',
+                                'items-center',
+                                'no-underline',
+                                'hover:no-underline',
+                                ...additionalExcerptClasses,
+                            ].join(' ')}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            {footer.text}
+                            <img
+                                src={ArrowTopRightIcon}
+                                alt="Arrow Top Right"
+                                className="ml-1"
+                            />
+                        </a>
+                    ))}
+                </div>
+            </>
+        )}
 
-        <div className="ml-1 px-6 pb-6 flex flex-wrap justify-between">
-            {footerLinks?.map((footer) => (
-                <a
-                    href={footer.link}
-                    className="text-base hover:text-blue-600 font-400
-                    inline-flex items-center no-underline hover:no-underline"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    {footer.text}
-                    <img
-                        src={ArrowTopRightIcon}
-                        alt="Arrow Top Right"
-                        className="ml-1"
-                    />
-                </a>
-            ))}
-        </div>
     </div>
 
 );
 
+const Footers = {
+    link: PropTypes.string,
+    text: PropTypes.string,
+};
+
 ShowcaseCard.propTypes = {
+    /**
+     * Title contents
+     */
+    title: PropTypes.string,
+    /**
+     * Title variant
+     */
+    titleLevel: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+    /**
+     * Excerpt contents
+     */
+    excerpt: PropTypes.string,
+    /**
+     * Image url
+     */
+    thumbnailSrc: PropTypes.string,
+    /**
+     * Image alt text
+     */
+    thumbnailSrcAlt: PropTypes.string,
+    /**
+     * Demo url
+     */
+    demoUrl: PropTypes.string,
+    /**
+     * Category contents
+     */
+    category: PropTypes.string,
+    /**
+     * Tag icon url
+     */
+    tagIcon: PropTypes.string,
+    /**
+     * Card url
+     */
+    cardUrl: PropTypes.string,
+    /**
+     * Footer content
+     */
+    footerLinks: PropTypes.arrayOf(PropTypes.shape(Footers)),
     /**
      * Is this the rounded card?
      */
@@ -194,15 +265,46 @@ ShowcaseCard.propTypes = {
      * Additional classes for card
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
+    /**
+     * Additional classes for category
+     */
     additionalCategoryClasses: PropTypes.arrayOf(PropTypes.string),
+    /**
+     * Additional classes for Live Demo button
+     */
     additionalLiveDemoClasses: PropTypes.arrayOf(PropTypes.string),
+    /**
+     * Additional classes for excerpt
+     */
+    additionalExcerptClasses: PropTypes.arrayOf(PropTypes.string),
+    /**
+     * Additional classes for header
+     */
+    additionalHeaderClasses: PropTypes.arrayOf(PropTypes.string),
+    /**
+     * Additional classes for footer link
+     */
+    additionalFooterLinkClasses: PropTypes.arrayOf(PropTypes.string),
 };
 
 ShowcaseCard.defaultProps = {
+    title: undefined,
+    titleLevel: '5',
+    excerpt: undefined,
+    thumbnailSrc: undefined,
+    thumbnailSrcAlt: undefined,
+    demoUrl: undefined,
+    category: undefined,
+    tagIcon: undefined,
+    cardUrl: undefined,
+    footerLinks: undefined,
     rounded: 'lg',
     additionalClasses: [],
     additionalCategoryClasses: [],
     additionalLiveDemoClasses: [],
+    additionalExcerptClasses: [],
+    additionalHeaderClasses: [],
+    additionalFooterLinkClasses: [],
 };
 
 export default ShowcaseCard;
