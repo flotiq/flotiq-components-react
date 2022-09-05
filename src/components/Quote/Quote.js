@@ -8,11 +8,13 @@ import { borderProps } from '../../defaultProps/border';
 const Quote = ({
     text, caption, variant, additionalClasses, quoteAdditionalClasses, captionAdditionalClasses, ...props
 }) => (
-    <div className={['flex flex-col italic', ...additionalClasses].join(' ')} {...props}>
+    <div className={['fq-flex fq-flex-col fq-italic', ...additionalClasses].join(' ')} {...props}>
         {React.isValidElement(text) ? (
             <div
                 className={[
-                    'pl-6 md:pl-10 py-4 border-l-4', borderProps.classSet[variant], ...quoteAdditionalClasses,
+                    'fq-pl-6 md:fq-pl-10 fq-py-4 fq-border-l-4',
+                    borderProps.classSet[variant],
+                    ...quoteAdditionalClasses,
                 ].join(' ')}
             >
                 {text}
@@ -20,7 +22,9 @@ const Quote = ({
         ) : (
             <div
                 className={[
-                    'pl-6 md:pl-10 py-4 border-l-4', borderProps.classSet[variant], ...quoteAdditionalClasses,
+                    'fq-pl-6 md:fq-pl-10 fq-py-4 fq-border-l-4',
+                    borderProps.classSet[variant],
+                    ...quoteAdditionalClasses,
                 ].join(' ')}
                 dangerouslySetInnerHTML={{ __html: text }}
             />
@@ -29,7 +33,7 @@ const Quote = ({
             && (
                 <p
                     className={[
-                        'self-end mt-3 py-1.5 opacity-70',
+                        'fq-self-end fq-mt-3 fq-py-1.5 fq-opacity-70',
                         ...captionAdditionalClasses,
                     ].join(' ')}
                 >

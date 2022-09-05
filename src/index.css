@@ -11,11 +11,11 @@ code {
     monospace;
 }
 
-.parent-hover-opacity-anchor .children-opacity-anchor{
+.fq-parent-hover-opacity-anchor .fq-children-opacity-anchor{
   opacity: 0;
 }
 
-.parent-hover-opacity-anchor:hover .children-opacity-anchor{
+.fq-parent-hover-opacity-anchor:hover .fq-children-opacity-anchor{
   opacity: 0.6;
 }
 

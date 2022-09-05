@@ -55,46 +55,47 @@ const ShowcaseCard = ({
 
     <div
         className={[
-            'max-w-sm',
-            'p-0',
-            'bg-white',
-            'hover:shadow-xl',
-            'transition-all',
-            'transform',
-            'duration-300',
-            'overflow-hidden',
-            'parent-hover-opacity-anchor',
-            'flex',
-            'flex-col',
+            'fq-max-w-sm',
+            'fq-p-0',
+            'fq-bg-white',
+            'hover:fq-shadow-xl',
+            'fq-transition-all',
+            'fq-transform',
+            'fq-duration-300',
+            'fq-overflow-hidden',
+            'fq-parent-hover-opacity-anchor',
+            'fq-flex',
+            'fq-flex-col',
             roundedProps.classSet[rounded],
             ...additionalClasses,
         ].join(' ')}
         {...props}
     >
 
-        <div className="w-full aspect-w-1 aspect-h-1
-        bg-gray-200 overflow-hidden xl:aspect-w-7 xl:aspect-h-8 relative"
+        <div className="fq-w-full fq-aspect-w-1 fq-aspect-h-1
+        fq-bg-gray-200 fq-overflow-hidden xl:fq-aspect-w-7 xl:fq-aspect-h-8 fq-relative"
         >
             <a
                 href={cardUrl}
                 rel="noreferrer"
             >
-                <div className="absolute w-full top-0 left-0 h-full z-index-1
-                opacity-[0.6] bg-secondary-500 children-opacity-anchor transition-all transform duration-300"
+                <div className="fq-absolute fq-w-full fq-top-0 fq-left-0 fq-h-full fq-z-index-1
+                    fq-opacity-[0.6] fq-bg-secondary-500 fq-children-opacity-anchor fq-transition-all
+                    fq-transform fq-duration-300"
                 />
             </a>
             {category && thumbnailSrc && (
                 <span className={[
-                    'absolute',
-                    'text-white',
-                    'text-sm',
-                    'bg-primary-600',
-                    'px-4',
-                    'p-1',
-                    'left-5',
-                    'top-5',
-                    'rounded-[6px]',
-                    'color-primary',
+                    'fq-absolute',
+                    'fq-text-white',
+                    'fq-text-sm',
+                    'fq-bg-primary-600',
+                    'fq-px-4',
+                    'fq-p-1',
+                    'fq-left-5',
+                    'fq-top-5',
+                    'fq-rounded-[6px]',
+                    'fq-color-primary',
                     roundedProps.classSet[rounded],
                     ...additionalCategoryClasses,
                 ].join(' ')}
@@ -109,23 +110,23 @@ const ShowcaseCard = ({
                     target="_blank"
                     rel="noreferrer"
                     className={[
-                        'absolute',
-                        'text-black',
-                        'text-sm',
-                        'bg-white',
-                        'px-4',
-                        'py-2',
-                        'left-5',
-                        'bottom-5',
-                        'rounded-[40px]',
-                        'color-primary',
-                        'flex',
-                        'items-center',
-                        'opacity-[0.5]',
-                        'no-underline',
-                        'hover:opacity-[1]',
-                        'hover:no-underline',
-                        'hover:text-black',
+                        'fq-absolute',
+                        'fq-text-black',
+                        'fq-text-sm',
+                        'fq-bg-white',
+                        'fq-px-4',
+                        'fq-py-2',
+                        'fq-left-5',
+                        'fq-bottom-5',
+                        'fq-rounded-[40px]',
+                        'fq-color-primary',
+                        'fq-flex',
+                        'fq-items-center',
+                        'fq-opacity-[0.5]',
+                        'fq-no-underline',
+                        'hover:fq-opacity-[1]',
+                        'hover:fq-no-underline',
+                        'hover:fq-text-black',
                         ...additionalFooterLinkClasses,
                     ].join(' ')}
                 >
@@ -133,7 +134,7 @@ const ShowcaseCard = ({
                     <img
                         src={LiveDemoIcon}
                         alt="Live Demo"
-                        className="ml-2"
+                        className="fq-ml-2"
                     />
                 </a>
             )}
@@ -142,7 +143,7 @@ const ShowcaseCard = ({
                 <img
                     src={tagIcon}
                     alt="Tag Icon"
-                    className="absolute top-5 right-5 max-h-[30px]"
+                    className="fq-absolute fq-top-5 fq-right-5 fq-max-h-[30px]"
                 />
             )}
 
@@ -150,7 +151,7 @@ const ShowcaseCard = ({
                 <img
                     src={thumbnailSrc}
                     alt={thumbnailSrcAlt}
-                    className="w-full h-full object-center object-cover group-hover:opacity-75"
+                    className="fq-w-full fq-h-full fq-object-center fq-object-cover group-hover:fq-opacity-75"
                 />
             )}
         </div>
@@ -158,14 +159,14 @@ const ShowcaseCard = ({
         <a
             href={cardUrl}
             rel="noreferrer"
-            className="grow no-underline hover:no-underline hover:text-black"
+            className="fq-grow fq-no-underline hover:fq-no-underline hover:fq-text-black"
         >
-            <div className="ml-1 px-6 pb-6 pt-2">
+            <div className="fq-ml-1 fq-px-6 fq-pb-6 fq-pt-2">
                 <Header level={titleLevel} additionalClasses={[...additionalHeaderClasses].join(' ')}>
                     {title}
                 </Header>
                 <Paragraph
-                    className={['text-sm', ...additionalExcerptClasses].join(' ')}
+                    className={['fq-text-sm', ...additionalExcerptClasses].join(' ')}
                 >
                     <>
                         {excerpt.substring(0, 110)}
@@ -177,19 +178,19 @@ const ShowcaseCard = ({
 
         {footerLinks?.length > 0 && (
             <>
-                <Delimiter variant="light" className="mb-[20px] mx-6" />
-                <div className="ml-1 px-6 pb-6 flex flex-wrap justify-between">
+                <Delimiter variant="light" className="fq-mb-[20px] fq-mx-6" />
+                <div className="fq-ml-1 fq-px-6 fq-pb-6 fq-flex fq-flex-wrap fq-justify-between">
                     {footerLinks?.map((footer) => (
                         <a
                             href={footer.link}
                             className={[
-                                'text-sm',
-                                'hover:text-blue-600',
-                                'font-400',
-                                'inline-flex',
-                                'items-center',
-                                'no-underline',
-                                'hover:no-underline',
+                                'fq-text-sm',
+                                'hover:fq-text-blue-600',
+                                'fq-font-400',
+                                'fq-inline-flex',
+                                'fq-items-center',
+                                'fq-no-underline',
+                                'hover:fq-no-underline',
                                 ...additionalExcerptClasses,
                             ].join(' ')}
                             target="_blank"
@@ -199,7 +200,7 @@ const ShowcaseCard = ({
                             <img
                                 src={ArrowTopRightIcon}
                                 alt="Arrow Top Right"
-                                className="ml-1"
+                                className="fq-ml-1"
                             />
                         </a>
                     ))}

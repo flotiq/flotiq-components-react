@@ -7,17 +7,17 @@ import PropTypes from 'prop-types';
 const List = ({ items, style, level, additionalClasses, ...props }) => {
     const ListType = style === 'ordered' ? 'ol' : 'ul';
     const listStyleClass = {
-        ordered: 'list-decimal',
-        unordered: 'list-disc',
+        ordered: 'fq-list-decimal',
+        unordered: 'fq-list-disc',
     };
     const safeLevel = Math.max(level, 1);
-    const marginClass = safeLevel === 1 ? 'ml-0' : 'ml-6';
+    const marginClass = safeLevel === 1 ? 'fq-ml-0' : 'fq-ml-6';
     return (
         <ListType
             className={[
-                'space-y-1',
+                'fq-space-y-1',
                 listStyleClass[style],
-                'list-inside',
+                'fq-list-inside',
                 marginClass,
                 ...additionalClasses,
             ].join(' ')}
