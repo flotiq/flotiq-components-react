@@ -161,7 +161,7 @@ const ShowcaseCard = ({
             className="grow no-underline hover:no-underline hover:text-black"
         >
             <div className="ml-1 px-6 pb-6 pt-2">
-                <Header level={titleLevel} additionalClasses={[...additionalHeaderClasses].join(' ')}>
+                <Header level={Number(titleLevel)} additionalClasses={[...additionalHeaderClasses]}>
                     {title}
                 </Header>
                 <Paragraph
@@ -181,6 +181,7 @@ const ShowcaseCard = ({
                 <div className="ml-1 px-6 pb-6 flex flex-wrap justify-between">
                     {footerLinks?.map((footer) => (
                         <a
+                            key={footer.text}
                             href={footer.link}
                             className={[
                                 'text-sm',
@@ -289,7 +290,7 @@ ShowcaseCard.propTypes = {
 
 ShowcaseCard.defaultProps = {
     title: undefined,
-    titleLevel: '5',
+    titleLevel: 5,
     excerpt: undefined,
     thumbnailSrc: undefined,
     thumbnailSrcAlt: undefined,
