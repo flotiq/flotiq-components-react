@@ -210,7 +210,7 @@ Content.defaultProps = {
     warningProps: {},
     delimiterProps: {},
     listProps: {},
-    standardPadding: 'py-2',
+    standardPadding: 'fq-py-2',
     additionalClasses: [],
 };
 

@@ -6,20 +6,20 @@ import PropTypes from 'prop-types';
  */
 const Paragraph = ({ alignment, additionalClasses, children, ...props }) => {
     const alignmentClass = {
-        left: 'text-left',
-        center: 'text-center',
-        right: 'text-right',
+        left: 'fq-text-left',
+        center: 'fq-text-center',
+        right: 'fq-text-right',
     };
     return React.isValidElement(children) ? (
         <div
-            className={['py-2', alignmentClass[alignment], ...additionalClasses].join(' ')}
+            className={['fq-py-2', alignmentClass[alignment], ...additionalClasses].join(' ')}
             {...props}
         >
             {children}
         </div>
     ) : (
         <div
-            className={['py-2', alignmentClass[alignment], ...additionalClasses].join(' ')}
+            className={['fq-py-2', alignmentClass[alignment], ...additionalClasses].join(' ')}
             dangerouslySetInnerHTML={{ __html: children }}
             {...props}
         />

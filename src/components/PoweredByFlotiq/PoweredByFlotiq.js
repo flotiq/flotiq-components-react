@@ -25,17 +25,17 @@ const LogoBadge = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGl
  */
 const PoweredByFlotiq = ({ badge, text, additionalClasses, utmCampaign, ...props }) => (badge ? (
     <div
-        className={['flex', 'items-center', 'font-inter', 'px-2', 'py-1',
-            'shadow-md', 'shadow-black-400/15', 'rounded-md',
-            'fixed', 'bottom-[20px]', 'right-[20px]', 'text-xs',
-            'bg-white', 'border', 'border-light-blue', ...additionalClasses].join(' ')}
+        className={['fq-flex', 'fq-items-center', 'fq-font-inter', 'fq-px-2', 'fq-py-1',
+            'fq-shadow-md', 'fq-shadow-black-400/15', 'fq-rounded-md',
+            'fq-fixed', 'fq-bottom-[20px]', 'fq-right-[20px]', 'fq-text-xs',
+            'fq-bg-white', 'fq-border', 'fq-border-light-blue', ...additionalClasses].join(' ')}
     >
         <img
             src={LogoBadge}
             width={11}
             height={11}
             alt="Flotiq"
-            className="mr-1"
+            className="fq-mr-1"
         />
         <a
             href={`https://flotiq.com/?utm_source=poweredByFlotiq&utm_medium=poweredBy${
@@ -48,15 +48,21 @@ const PoweredByFlotiq = ({ badge, text, additionalClasses, utmCampaign, ...props
         </a>
     </div>
 ) : (
-    <div className={['flex', 'items-center', 'mr-12', 'font-inter', ...additionalClasses].join(' ')} {...props}>
+    <div
+        className={[
+            'fq-flex', 'fq-items-center', 'fq-mr-12', 'fq-font-inter',
+            ...additionalClasses,
+        ].join(' ')}
+        {...props}
+    >
         <img
-            className="block h-5 md:h-6 w-auto mr-2"
+            className="fq-block fq-h-5 md:fq-h-6 fq-w-auto fq-mr-2"
             src={LogoBadge}
             alt="Flotiq"
             width={274.96}
             height={276}
         />
-        <p className="text-center text-xs md:text-base font-semibold">
+        <p className="fq-text-center fq-text-xs md:fq-text-base fq-font-semibold">
             <a
                 href={`https://flotiq.com/?utm_source=poweredByFlotiq&utm_medium=poweredBy${
                     utmCampaign !== '' ? `&utm_campaign=${utmCampaign}` : ''

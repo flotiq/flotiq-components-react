@@ -9,7 +9,7 @@ import { roundedProps } from '../../defaultProps/rounded';
 
 const calcBasisClass = (scale, isHorizontal, breakpoint = 'md') => {
     if (scale && isHorizontal) {
-        return `${breakpoint}:basis-${scale}`;
+        return `${breakpoint}:fq-basis-${scale}`;
     }
     return '';
 };
@@ -24,8 +24,8 @@ const Card = ({ children,
     proportionsForHorizontal,
     additionalClasses,
     ...props }) => {
-    const borderedClass = bordered ? 'border border-gray-200' : '';
-    const directionClasses = horizontal ? 'flex flex-wrap justify-between align-start' : 'flex-none';
+    const borderedClass = bordered ? 'fq-border fq-border-gray-200' : '';
+    const directionClasses = horizontal ? 'fq-flex fq-flex-wrap fq-justify-between fq-align-start' : 'fq-flex-none';
 
     const context = useMemo(() => ({
         horizontal,
@@ -46,8 +46,8 @@ const Card = ({ children,
             <div
                 className={[
                     directionClasses,
-                    'bg-white',
-                    'overflow-hidden',
+                    'fq-bg-white',
+                    'fq-overflow-hidden',
                     roundedProps.classSet[rounded],
                     borderedClass,
                     ...additionalClasses,

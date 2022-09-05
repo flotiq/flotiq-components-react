@@ -22,71 +22,71 @@ const Pagination = ({ variant = 'primary',
     page,
     numOfPages }) => {
     const sizeClass = {
-        sm: 'w-6 h-6 md:w-8 md:h-8 text-sm',
-        md: 'w-8 h-8 md:w-10 md:h-10 text-sm md:text-base',
-        lg: 'w-10 h-10 md:w-12 md:h-12 text-md md:text-lg',
+        sm: 'fq-w-6 fq-h-6 md:fq-w-8 md:fq-h-8 fq-text-sm',
+        md: 'fq-w-8 fq-h-8 md:fq-w-10 md:fq-h-10 fq-text-sm md:fq-text-base',
+        lg: 'fq-w-10 fq-h-10 md:fq-w-12 md:fq-h-12 fq-text-md md:fq-text-lg',
     };
     const sizeClassPrevNext = {
-        sm: 'w-16 h-6 md:w-20 md:h-8 text-sm',
-        md: 'w-20 h-8 md:w-24 md:h-10 text-sm md:text-base',
-        lg: 'w-24 h-10 md:w-28 md:h-12 text-md md:text-lg',
+        sm: 'fq-w-16 fq-h-6 md:fq-w-20 md:fq-h-8 fq-text-sm',
+        md: 'fq-w-20 fq-h-8 md:fq-w-24 md:fq-h-10 fq-text-sm md:fq-text-base',
+        lg: 'fq-w-24 fq-h-10 md:fq-w-28 md:fq-h-12 fq-text-md md:fq-text-lg',
     };
     const bgClasses = {
-        primary: 'bg-white hover:bg-primary text-black hover:text-white',
-        secondary: 'bg-white hover:bg-secondary text-black hover:text-white',
-        info: 'bg-white hover:bg-info text-black',
-        light: 'bg-white hover:bg-light text-black',
-        dark: 'bg-white hover:bg-dark text-black hover:text-white',
-        transparent: 'bg-transparent text-black',
+        primary: 'fq-bg-white hover:fq-bg-primary fq-text-black hover:fq-text-white',
+        secondary: 'fq-bg-white hover:fq-bg-secondary fq-text-black hover:fq-text-white',
+        info: 'fq-bg-white hover:fq-bg-info fq-text-black',
+        light: 'fq-bg-white hover:fq-bg-light fq-text-black',
+        dark: 'fq-bg-white hover:fq-bg-dark fq-text-black hover:fq-text-white',
+        transparent: 'fq-bg-transparent fq-text-black',
     };
     const borderClasses = {
-        primary: ['border', borderProps.classSet[borderVariant], 'hover:border-primary'].join(' '),
-        secondary: ['border', borderProps.classSet[borderVariant], 'hover:border-secondary'].join(' '),
-        info: ['border', borderProps.classSet[borderVariant], 'hover:border-info'].join(' '),
-        light: ['border', borderProps.classSet[borderVariant], 'hover:border-light'].join(' '),
-        dark: ['border', borderProps.classSet[borderVariant], 'hover:border-dark'].join(' '),
-        transparent: ['border', borderProps.classSet[borderVariant], 'hover:border-transparent'].join(' '),
+        primary: ['fq-border', borderProps.classSet[borderVariant], 'hover:fq-border-primary'].join(' '),
+        secondary: ['fq-border', borderProps.classSet[borderVariant], 'hover:fq-border-secondary'].join(' '),
+        info: ['fq-border', borderProps.classSet[borderVariant], 'hover:fq-border-info'].join(' '),
+        light: ['fq-border', borderProps.classSet[borderVariant], 'hover:fq-border-light'].join(' '),
+        dark: ['fq-border', borderProps.classSet[borderVariant], 'hover:fq-border-dark'].join(' '),
+        transparent: ['fq-border', borderProps.classSet[borderVariant], 'hover:fq-border-transparent'].join(' '),
     };
     const activeBorderClasses = {
-        primary: 'border border-primary',
-        secondary: 'border border-secondary',
-        info: 'border border-info',
-        light: 'border border-light',
-        dark: 'border border-dark',
-        transparent: 'border border-transparent',
+        primary: 'fq-border fq-border-primary',
+        secondary: 'fq-border fq-border-secondary',
+        info: 'fq-border fq-border-info',
+        light: 'fq-border fq-border-light',
+        dark: 'fq-border fq-border-dark',
+        transparent: 'fq-border fq-border-transparent',
     };
 
     const safePage = Math.min(Math.max(page, 1), numOfPages);
 
     return (
         <div className={[
-            'px-1',
-            'py-3',
-            'flex',
-            'items-center',
-            'justify-between',
-            'sm:px-6',
-            'mt-10',
+            'fq-px-1',
+            'fq-py-3',
+            'fq-flex',
+            'fq-items-center',
+            'fq-justify-between',
+            'sm:fq-px-6',
+            'fq-mt-10',
             ...containerAdditionalClasses,
         ].join(' ')}
         >
-            <div className="flex-1 flex items-center justify-center">
-                <nav className="relative z-0 inline-flex space-x-2" aria-label="Pagination">
+            <div className="fq-flex-1 fq-flex fq-items-center fq-justify-center">
+                <nav className="fq-relative fq-z-0 fq-inline-flex fq-space-x-2" aria-label="Pagination">
                     { safePage > 1 && (
                         <>
                             <a
                                 href={safePage > 2 ? `${baseUrl}${safePage - 1}` : baseUrl}
                                 className={[
-                                    'relative',
-                                    'inline-flex',
-                                    'items-center',
-                                    'justify-center',
+                                    'fq-relative',
+                                    'fq-inline-flex',
+                                    'fq-items-center',
+                                    'fq-justify-center',
                                     sizeClassPrevNext[size],
                                     bgClasses[variant],
                                     borderClasses[variant],
                                     roundedProps.classSet[rounded],
-                                    'leading-6',
-                                    'font-medium',
+                                    'fq-leading-6',
+                                    'fq-font-medium',
                                     ...prevNextAdditionalClasses,
                                 ].join(' ')}
                             >
@@ -95,17 +95,17 @@ const Pagination = ({ variant = 'primary',
                             <a
                                 href={baseUrl}
                                 className={[
-                                    'relative',
-                                    'items-center',
-                                    'justify-center',
+                                    'fq-relative',
+                                    'fq-items-center',
+                                    'fq-justify-center',
                                     sizeClass[size],
                                     bgClasses[variant],
                                     borderClasses[variant],
                                     roundedProps.classSet[rounded],
-                                    'leading-6',
-                                    'font-medium',
-                                    safePage <= 2 ? 'inline-flex' : 'hidden',
-                                    'md:inline-flex',
+                                    'fq-leading-6',
+                                    'fq-font-medium',
+                                    safePage <= 2 ? 'fq-inline-flex' : 'fq-hidden',
+                                    'md:fq-inline-flex',
                                     ...additionalClasses,
                                 ].join(' ')}
                             >
@@ -114,17 +114,17 @@ const Pagination = ({ variant = 'primary',
                             { safePage > 4 && (
                                 <span
                                     className={[
-                                        'relative',
-                                        'items-center',
-                                        'justify-center',
+                                        'fq-relative',
+                                        'fq-items-center',
+                                        'fq-justify-center',
                                         sizeClass[size],
                                         bgClasses[variant],
                                         borderClasses[variant],
                                         roundedProps.classSet[rounded],
-                                        'leading-6',
-                                        'font-medium',
-                                        'hidden',
-                                        'md:inline-flex',
+                                        'fq-leading-6',
+                                        'fq-font-medium',
+                                        'fq-hidden',
+                                        'md:fq-inline-flex',
                                         ...additionalClasses,
                                     ].join(' ')}
                                 >
@@ -138,17 +138,17 @@ const Pagination = ({ variant = 'primary',
                         <a
                             href={`${baseUrl}${safePage - 2}`}
                             className={[
-                                'relative',
-                                'items-center',
-                                'justify-center',
+                                'fq-relative',
+                                'fq-items-center',
+                                'fq-justify-center',
                                 sizeClass[size],
                                 bgClasses[variant],
                                 borderClasses[variant],
                                 roundedProps.classSet[rounded],
-                                'leading-6',
-                                'font-medium',
-                                'hidden',
-                                'md:inline-flex',
+                                'fq-leading-6',
+                                'fq-font-medium',
+                                'fq-hidden',
+                                'md:fq-inline-flex',
                                 ...additionalClasses,
                             ].join(' ')}
                         >
@@ -159,16 +159,16 @@ const Pagination = ({ variant = 'primary',
                         <a
                             href={`${baseUrl}${safePage - 1}`}
                             className={[
-                                'relative',
-                                'inline-flex',
-                                'items-center',
-                                'justify-center',
+                                'fq-relative',
+                                'fq-inline-flex',
+                                'fq-items-center',
+                                'fq-justify-center',
                                 sizeClass[size],
                                 bgClasses[variant],
                                 borderClasses[variant],
                                 roundedProps.classSet[rounded],
-                                'leading-6',
-                                'font-medium',
+                                'fq-leading-6',
+                                'fq-font-medium',
                                 ...additionalClasses,
                             ].join(' ')}
                         >
@@ -178,16 +178,16 @@ const Pagination = ({ variant = 'primary',
                     <span
                         aria-current="page"
                         className={[
-                            'relative',
-                            'inline-flex',
-                            'items-center',
-                            'justify-center',
+                            'fq-relative',
+                            'fq-inline-flex',
+                            'fq-items-center',
+                            'fq-justify-center',
                             sizeClass[size],
                             backgroundProps.classSet[variant],
                             activeBorderClasses[variant],
                             roundedProps.classSet[rounded],
-                            'leading-6',
-                            'font-medium',
+                            'fq-leading-6',
+                            'fq-font-medium',
                             ...activeAdditionalClasses,
                         ].join(' ')}
                     >
@@ -197,16 +197,16 @@ const Pagination = ({ variant = 'primary',
                         <a
                             href={`${baseUrl}${safePage + 1}`}
                             className={[
-                                'relative',
-                                'inline-flex',
-                                'items-center',
-                                'justify-center',
+                                'fq-relative',
+                                'fq-inline-flex',
+                                'fq-items-center',
+                                'fq-justify-center',
                                 sizeClass[size],
                                 bgClasses[variant],
                                 borderClasses[variant],
                                 roundedProps.classSet[rounded],
-                                'leading-6',
-                                'font-medium',
+                                'fq-leading-6',
+                                'fq-font-medium',
                                 ...additionalClasses,
                             ].join(' ')}
                         >
@@ -217,17 +217,17 @@ const Pagination = ({ variant = 'primary',
                         <a
                             href={`${baseUrl}${safePage + 2}`}
                             className={[
-                                'relative',
-                                'items-center',
-                                'justify-center',
+                                'fq-relative',
+                                'fq-items-center',
+                                'fq-justify-center',
                                 sizeClass[size],
                                 bgClasses[variant],
                                 borderClasses[variant],
                                 roundedProps.classSet[rounded],
-                                'leading-6',
-                                'font-medium',
-                                'hidden',
-                                'md:inline-flex',
+                                'fq-leading-6',
+                                'fq-font-medium',
+                                'fq-hidden',
+                                'md:fq-inline-flex',
                                 ...additionalClasses,
                             ].join(' ')}
                         >
@@ -240,17 +240,17 @@ const Pagination = ({ variant = 'primary',
                             {safePage < numOfPages - 3 && (
                                 <span
                                     className={[
-                                        'relative',
-                                        'items-center',
-                                        'justify-center',
+                                        'fq-relative',
+                                        'fq-items-center',
+                                        'fq-justify-center',
                                         sizeClass[size],
                                         bgClasses[variant],
                                         borderClasses[variant],
                                         roundedProps.classSet[rounded],
-                                        'leading-6',
-                                        'font-medium',
-                                        'hidden',
-                                        'md:inline-flex',
+                                        'fq-leading-6',
+                                        'fq-font-medium',
+                                        'fq-hidden',
+                                        'md:fq-inline-flex',
                                         ...additionalClasses,
                                     ].join(' ')}
                                 >
@@ -260,17 +260,17 @@ const Pagination = ({ variant = 'primary',
                             <a
                                 href={`${baseUrl}${numOfPages}`}
                                 className={[
-                                    'relative',
-                                    'items-center',
-                                    'justify-center',
+                                    'fq-relative',
+                                    'fq-items-center',
+                                    'fq-justify-center',
                                     sizeClass[size],
                                     bgClasses[variant],
                                     borderClasses[variant],
                                     roundedProps.classSet[rounded],
-                                    'leading-6',
-                                    'font-medium',
-                                    safePage >= numOfPages - 1 ? 'inline-flex' : 'hidden',
-                                    'md:inline-flex',
+                                    'fq-leading-6',
+                                    'fq-font-medium',
+                                    safePage >= numOfPages - 1 ? 'fq-inline-flex' : 'fq-hidden',
+                                    'md:fq-inline-flex',
                                     ...additionalClasses,
                                 ].join(' ')}
                             >
@@ -279,16 +279,16 @@ const Pagination = ({ variant = 'primary',
                             <a
                                 href={`${baseUrl}${safePage + 1}`}
                                 className={[
-                                    'relative',
-                                    'inline-flex',
-                                    'items-center',
-                                    'justify-center',
+                                    'fq-relative',
+                                    'fq-inline-flex',
+                                    'fq-items-center',
+                                    'fq-justify-center',
                                     sizeClassPrevNext[size],
                                     bgClasses[variant],
                                     borderClasses[variant],
                                     roundedProps.classSet[rounded],
-                                    'leading-6',
-                                    'font-medium',
+                                    'fq-leading-6',
+                                    'fq-font-medium',
                                     ...prevNextAdditionalClasses,
                                 ].join(' ')}
                             >

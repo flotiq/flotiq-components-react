@@ -6,14 +6,17 @@ import PropTypes from 'prop-types';
  */
 const Table = ({ content, headers, additionalClasses, ...props }) => (
     <table
-        className={['w-full border-collapse mt-2 mb-4 border border-light', ...additionalClasses].join(' ')}
+        className={[
+            'fq-w-full fq-border-collapse fq-mt-2 fq-mb-4 fq-border fq-border-light',
+            ...additionalClasses,
+        ].join(' ')}
         {...props}
     >
         {headers.length > 0 && (
             <thead>
                 <tr>
                     {headers.map((column) => (
-                        <th className="border border-light p-3" key={column}>{column}</th>
+                        <th className="fq-border fq-border-light fq-p-3" key={column}>{column}</th>
                     ))}
                 </tr>
             </thead>
@@ -23,7 +26,7 @@ const Table = ({ content, headers, additionalClasses, ...props }) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <tr key={index}>
                     {row.map((column) => (
-                        <td className="border border-light p-3" key={column}>{column}</td>
+                        <td className="fq-border fq-border-light fq-p-3" key={column}>{column}</td>
                     ))}
                 </tr>
             ))}
