@@ -25,7 +25,7 @@ const LogoBadge = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGl
  */
 const PoweredByFlotiq = ({ badge, text, additionalClasses, utmCampaign, ...props }) => (badge ? (
     <div
-        className={['fq-flex', 'fq-items-center', 'fq-font-inter', 'fq-px-2', 'fq-py-1',
+        className={['fq-base', 'fq-flex', 'fq-items-center', 'fq-font-inter', 'fq-px-2', 'fq-py-1',
             'fq-shadow-md', 'fq-shadow-black-400/15', 'fq-rounded-md',
             'fq-fixed', 'fq-bottom-[20px]', 'fq-right-[20px]', 'fq-text-xs',
             'fq-bg-white', 'fq-border', 'fq-border-light-blue', ...additionalClasses].join(' ')}
@@ -50,7 +50,7 @@ const PoweredByFlotiq = ({ badge, text, additionalClasses, utmCampaign, ...props
 ) : (
     <div
         className={[
-            'fq-flex', 'fq-items-center', 'fq-mr-12', 'fq-font-inter',
+            'fq-base', 'fq-flex', 'fq-items-center', 'fq-mr-12', 'fq-font-inter',
             ...additionalClasses,
         ].join(' ')}
         {...props}

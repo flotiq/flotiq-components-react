@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
  * Component for displaying warnings
  */
 const Warning = ({ message, title, additionalClasses, ...props }) => (
-    <div className={['fq-bg-warning-200 fq-p-6', ...additionalClasses].join(' ')} {...props}>
+    <div className={['fq-base fq-bg-warning-200 fq-p-6', ...additionalClasses].join(' ')} {...props}>
         <p className="fq-font-bold fq-text-xl fq-text-warning-800">{title}</p>
         <hr className="fq-my-4 fq-border-warning-600" />
         <p className="fq-text-warning-800">{message}</p>

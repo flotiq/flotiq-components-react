@@ -1,3 +1,4 @@
+@import "./styles/preflight-edited.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +18,4 @@ code {
 
 .fq-parent-hover-opacity-anchor:hover .fq-children-opacity-anchor{
   opacity: 0.6;
-}
-
-
+}  

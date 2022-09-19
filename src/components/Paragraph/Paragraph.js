@@ -12,14 +12,24 @@ const Paragraph = ({ alignment, additionalClasses, children, ...props }) => {
     };
     return React.isValidElement(children) ? (
         <div
-            className={['fq-py-2', alignmentClass[alignment], ...additionalClasses].join(' ')}
+            className={[
+                'fq-base',
+                'fq-py-2',
+                alignmentClass[alignment],
+                ...additionalClasses,
+            ].join(' ')}
             {...props}
         >
             {children}
         </div>
     ) : (
         <div
-            className={['fq-py-2', alignmentClass[alignment], ...additionalClasses].join(' ')}
+            className={[
+                'fq-base',
+                'fq-py-2',
+                alignmentClass[alignment],
+                ...additionalClasses,
+            ].join(' ')}
             dangerouslySetInnerHTML={{ __html: children }}
             {...props}
         />

@@ -35,6 +35,7 @@ const Button = ({ label,
             type="button"
             onClick={onClick}
             className={[
+                'fq-base',
                 'fq-inline-flex',
                 'fq-items-center',
                 'fq-leading-4',

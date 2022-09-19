@@ -17,6 +17,7 @@ defineFeature(feature, (test) => {
         then(/^the announcement has classes "(.*)"$/, (classes) => {
             const tree = announcement.toJSON();
             expect(tree.props.className.indexOf(classes)).toBeGreaterThan(-1);
+
         });
 
         and(/^the announcement has text "(.*)"$/, (text) => {

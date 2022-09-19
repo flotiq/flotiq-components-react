@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
  * Component for video files
  */
 const Video = ({ url, caption, extension, additionalClasses, ...props }) => (
-    <div className={['fq-text-content-image fq-pt-2 fq-pb-2', ...additionalClasses].join(' ')}>
+    <div className={['fq-base fq-text-content-image fq-pt-2 fq-pb-2', ...additionalClasses].join(' ')}>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <video width="100%" controls {...props}>
             <source src={url} type={`video/${extension}`} />

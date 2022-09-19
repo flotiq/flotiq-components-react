@@ -134,7 +134,7 @@ const Content = ({
     };
 
     return (
-        <div className={additionalClasses.join(' ')} {...props}>
+        <div className={['fq-base', ...additionalClasses].join(' ')} {...props}>
             {blocks.map((block) => (
                 <div className={standardPadding} key={block.id}>
                     { getBlock(block) }

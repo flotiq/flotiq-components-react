@@ -60,6 +60,7 @@ const Pagination = ({ variant = 'primary',
 
     return (
         <div className={[
+            'fq-base',
             'fq-px-1',
             'fq-py-3',
             'fq-flex',

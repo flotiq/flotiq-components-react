@@ -8,7 +8,7 @@ import { borderProps } from '../../defaultProps/border';
 const Quote = ({
     text, caption, variant, additionalClasses, quoteAdditionalClasses, captionAdditionalClasses, ...props
 }) => (
-    <div className={['fq-flex fq-flex-col fq-italic', ...additionalClasses].join(' ')} {...props}>
+    <div className={['fq-base', 'fq-flex fq-flex-col fq-italic', ...additionalClasses].join(' ')} {...props}>
         {React.isValidElement(text) ? (
             <div
                 className={[

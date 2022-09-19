@@ -14,7 +14,13 @@ const Delimiter = ({ variant, style, additionalClasses, ...props }) => {
 
     return (
         <hr
-            className={['fq-my-2', borderProps.classSet[variant], styleClasses[style], ...additionalClasses].join(' ')}
+            className={[
+                'fq-base',
+                'fq-my-2',
+                borderProps.classSet[variant],
+                styleClasses[style],
+                ...additionalClasses,
+            ].join(' ')}
             {...props}
         />
     );

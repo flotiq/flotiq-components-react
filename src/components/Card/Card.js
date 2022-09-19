@@ -45,6 +45,7 @@ const Card = ({ children,
         <Context.Provider value={context}>
             <div
                 className={[
+                    'fq-base',
                     directionClasses,
                     'fq-bg-white',
                     'fq-overflow-hidden',

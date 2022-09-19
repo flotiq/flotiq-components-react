@@ -14,7 +14,7 @@ const YouTubeEmbed = ({
     let safeUrl = url.replace('/watch?v=', '/embed/');
     safeUrl = safeUrl.replace('youtu.be/', 'www.youtube.com/embed/');
     return (
-        <div className="fq-height-0 fq-pb-[56.25%] fq-relative">
+        <div className="fq-base fq-height-0 fq-pb-[56.25%] fq-relative">
             <iframe
                 id="ytplayer"
                 type="text/html"

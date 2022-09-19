@@ -15,6 +15,7 @@ const List = ({ items, style, level, additionalClasses, ...props }) => {
     return (
         <ListType
             className={[
+                'fq-base',
                 'fq-space-y-1',
                 listStyleClass[style],
                 'fq-list-inside',

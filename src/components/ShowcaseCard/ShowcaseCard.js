@@ -55,6 +55,7 @@ const ShowcaseCard = ({
 
     <div
         className={[
+            'fq-base',
             'fq-max-w-sm',
             'fq-p-0',
             'fq-bg-white',

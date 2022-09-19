@@ -34,7 +34,7 @@ const Announcement = ({ variant,
     return (
         <div
             className={[
-                'fq-px-12 fq-py-6',
+                'fq-base fq-px-12 fq-py-6',
                 backgroundProps.classSet[variant],
                 roundedProps.classSet[rounded],
                 alignment[textAlignment],

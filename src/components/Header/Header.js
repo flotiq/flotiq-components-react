@@ -37,7 +37,7 @@ const Header = ({
     return (
         React.isValidElement(children) ? (
             <HeaderToRender
-                className={[sizeClass[safeLevel], alignmentClass[alignment], ...additionalClasses].join(' ')}
+                className={['fq-base', sizeClass[safeLevel], alignmentClass[alignment], ...additionalClasses].join(' ')}
                 id={anchor}
                 {...props}
             >
@@ -45,7 +45,7 @@ const Header = ({
             </HeaderToRender>
         ) : (
             <HeaderToRender
-                className={[sizeClass[safeLevel], alignmentClass[alignment], ...additionalClasses].join(' ')}
+                className={['fq-base', sizeClass[safeLevel], alignmentClass[alignment], ...additionalClasses].join(' ')}
                 dangerouslySetInnerHTML={{ __html: children }}
                 id={anchor}
                 {...props}

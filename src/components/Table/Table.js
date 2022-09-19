@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const Table = ({ content, headers, additionalClasses, ...props }) => (
     <table
         className={[
-            'fq-w-full fq-border-collapse fq-mt-2 fq-mb-4 fq-border fq-border-light',
+            'fq-base fq-w-full fq-border-collapse fq-mt-2 fq-mb-4 fq-border fq-border-light',
             ...additionalClasses,
         ].join(' ')}
         {...props}

@@ -11,6 +11,7 @@ const CardBody = ({ children, additionalClasses = [], ...props }) => {
     return (
         <div
             className={[
+                'fq-base',
                 'fq-px-5',
                 'fq-pt-5',
                 'fq-pb-2',

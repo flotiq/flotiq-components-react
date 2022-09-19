@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
  * Component for audio files
  */
 const Audio = ({ url, caption, extension, additionalClasses, ...props }) => (
-    <div className={['fq-flex fq-flex-col', ...additionalClasses].join(' ')}>
+    <div className={['fq-base fq-flex fq-flex-col', ...additionalClasses].join(' ')}>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <audio controls className="fq-w-full" {...props}>
             <source src={url} type={`audio/${extension}`} />
