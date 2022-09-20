@@ -163,7 +163,7 @@ const ShowcaseCard = ({
             className="fq-grow fq-no-underline hover:fq-no-underline hover:fq-text-black"
         >
             <div className="fq-ml-1 fq-px-6 fq-pb-6 fq-pt-2">
-                <Header level={titleLevel} additionalClasses={[...additionalHeaderClasses].join(' ')}>
+                <Header level={Number(titleLevel)} additionalClasses={[...additionalHeaderClasses]}>
                     {title}
                 </Header>
                 <Paragraph
@@ -183,6 +183,7 @@ const ShowcaseCard = ({
                 <div className="fq-ml-1 fq-px-6 fq-pb-6 fq-flex fq-flex-wrap fq-justify-between">
                     {footerLinks?.map((footer) => (
                         <a
+                            key={footer.text}
                             href={footer.link}
                             className={[
                                 'fq-text-sm',
@@ -291,7 +292,7 @@ ShowcaseCard.propTypes = {
 
 ShowcaseCard.defaultProps = {
     title: undefined,
-    titleLevel: '5',
+    titleLevel: 5,
     excerpt: undefined,
     thumbnailSrc: undefined,
     thumbnailSrcAlt: undefined,
