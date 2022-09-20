@@ -6,8 +6,6 @@
   "author": "Flotiq team <hello@flotiq.com>",
   "description": "Flotiq components for React",
   "license": "MIT",
-  "dependencies": {
-  },
   "peerDependencies": {
     "highlight.js": "^11.4.0",
     "prop-types": "^15.x",
@@ -89,6 +87,7 @@
     "jest-cucumber": "^3.0.1",
     "postcss": "^8.4.6",
     "postcss-cli": "^9.1.0",
+    "postcss-import": "^15.0.0",
     "prettier": "^2.2.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
