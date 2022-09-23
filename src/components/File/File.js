@@ -6,7 +6,13 @@ import Audio from '../Audio/Audio';
 
 const File = ({ url, caption, stretched, extension, fileName, imageProps, videoProps, audioProps, imageReplace }) => {
     if (isImage(extension)) {
-        return imageReplace ? ( typeof imageReplace  === "function" ? imageReplace(url) : imageReplace ) : <Image url={url} caption={caption} stretched={stretched} {...imageProps} />;
+        if (imageReplace) {
+            if (typeof imageReplace === 'function') {
+                return imageReplace(url);
+            }
+            return imageReplace;
+        }
+        return <Image url={url} caption={caption} stretched={stretched} {...imageProps} />;
     }
     if (isMovie(extension)) {
         return (
