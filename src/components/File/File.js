@@ -4,9 +4,9 @@ import Image from '../Image/Image';
 import Video from '../Video/Video';
 import Audio from '../Audio/Audio';
 
-const File = ({ url, caption, stretched, extension, fileName, imageProps, videoProps, audioProps }) => {
+const File = ({ url, caption, stretched, extension, fileName, imageProps, videoProps, audioProps, imageReplace }) => {
     if (isImage(extension)) {
-        return <Image url={url} caption={caption} stretched={stretched} {...imageProps} />;
+        return imageReplace ? ( typeof imageReplace  === "function" ? imageReplace(url) : imageReplace ) : <Image url={url} caption={caption} stretched={stretched} {...imageProps} />;
     }
     if (isMovie(extension)) {
         return (
