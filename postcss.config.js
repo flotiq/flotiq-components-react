@@ -1,8 +1,6 @@
-module.exports = (ctx) => ({
-    map: ctx.options.map,
-    parser: ctx.options.parser,
+module.exports = () => ({
     plugins: {
-        'postcss-import': { root: ctx.file.dirname },
+        'postcss-import': {},
         tailwindcss: {},
         autoprefixer: {},
     },
