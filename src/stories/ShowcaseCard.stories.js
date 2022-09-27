@@ -34,7 +34,7 @@ export const Standard = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Standard.args = {
     title: title || 'Kyan - blog screenshot',
-    titleLevel: titleLevel || '5',
+    titleLevel: titleLevel || 5,
     // eslint-disable-next-line max-len
     excerpt: excerpt || 'The total package with which you can build beautiful, high converting and professional The total package witch you can build',
     thumbnailSrc: thumbnailSrc || 'https://api.flotiq.com/image/0x0/_media-3a62e398-fbe3-46e8-ba5b-05a2690390ae.png',

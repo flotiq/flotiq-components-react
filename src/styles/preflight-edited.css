@@ -1,0 +1,263 @@
+.fq-base {
+  font-family: theme('fontFamily.sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji") !important;
+}
+.fq-base,
+.fq-base *,
+.fq-base::before,
+.fq-base::after,
+.fq-base ::before,
+.fq-base ::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: theme('borderColor.DEFAULT', 'currentColor'); /* 2 */
+}
+.fq-base::before,
+.fq-base::after,
+.fq-base ::before,
+.fq-base ::after {
+  --tw-content: '';
+}
+hr.fq-base,
+.fq-base hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+abbr.fq-base:where([title]),
+.fq-base abbr:where([title]) {
+  text-decoration: underline dotted;
+}
+h1.fq-base,
+h2.fq-base,
+h3.fq-base,
+h4.fq-base,
+h5.fq-base,
+h6.fq-base,
+.fq-base h1,
+.fq-base h2,
+.fq-base h3,
+.fq-base h4,
+.fq-base h5,
+.fq-base h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+a.fq-base,
+.fq-base a {
+  color: inherit;
+  text-decoration: inherit;
+}
+b.fq-base,
+strong.fq-base,
+.fq-base b,
+.fq-base strong {
+  font-weight: bolder;
+}
+code.fq-base,
+kbd.fq-base,
+samp.fq-base,
+pre.fq-base,
+.fq-base code,
+.fq-base kbd,
+.fq-base samp,
+.fq-base pre {
+  font-family: theme('fontFamily.mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace); /* 1 */
+  font-size: 1em; /* 2 */
+}
+small.fq-base,
+.fq-base small {
+  font-size: 80%;
+}
+sub.fq-base,
+sup.fq-base,
+.fq-base sub,
+.fq-base sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub.fq-base,
+.fq-base sub {
+  bottom: -0.25em;
+}
+sup.fq-base,
+.fq-base sup {
+  top: -0.5em;
+}
+table.fq-base,
+.fq-base table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+button.fq-base,
+input.fq-base,
+optgroup.fq-base,
+select.fq-base,
+textarea.fq-base,
+.fq-base button,
+.fq-base input,
+.fq-base optgroup,
+.fq-base select,
+.fq-base textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+button.fq-base,
+select.fq-base,
+.fq-base button,
+.fq-base select {
+  text-transform: none;
+}
+button.fq-base,
+.fq-base[type='button'],
+.fq-base[type='reset'],
+.fq-base[type='submit'],
+.fq-base button,
+.fq-base [type='button'],
+.fq-base [type='reset'],
+.fq-base [type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+.fq-base:-moz-focusring,
+.fq-base :-moz-focusring {
+  outline: auto;
+}
+.fq-base:-moz-ui-invalid,
+.fq-base :-moz-ui-invalid {
+  box-shadow: none;
+}
+progress.fq-base,
+.fq-base progress {
+  vertical-align: baseline;
+}
+.fq-base::-webkit-inner-spin-button,
+.fq-base::-webkit-outer-spin-button,
+.fq-base ::-webkit-inner-spin-button,
+.fq-base ::-webkit-outer-spin-button {
+  height: auto;
+}
+.fq-base[type='search'],
+.fq-base [type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+.fq-base::-webkit-search-decoration,
+.fq-base ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.fq-base::-webkit-file-upload-button,
+.fq-base ::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+summary.fq-base,
+.fq-base summary {
+  display: list-item;
+}
+blockquote.fq-base,
+dl.fq-base,
+dd.fq-base,
+h1.fq-base,
+h2.fq-base,
+h3.fq-base,
+h4.fq-base,
+h5.fq-base,
+h6.fq-base,
+hr.fq-base,
+figure.fq-base,
+p.fq-base,
+pre.fq-base,
+.fq-base blockquote,
+.fq-base dl,
+.fq-base dd,
+.fq-base h1,
+.fq-base h2,
+.fq-base h3,
+.fq-base h4,
+.fq-base h5,
+.fq-base h6,
+.fq-base hr,
+.fq-base figure,
+.fq-base p,
+.fq-base pre {
+  margin: 0;
+}
+fieldset.fq-base,
+.fq-base fieldset {
+  margin: 0;
+  padding: 0;
+}
+legend.fq-base,
+.fq-base legend {
+  padding: 0;
+}
+ol.fq-base,
+ul.fq-base,
+menu.fq-base,
+.fq-base ol,
+.fq-base ul,
+.fq-base menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+textarea.fq-base,
+.fq-base textarea {
+  resize: vertical;
+}
+input.fq-base::placeholder,
+textarea.fq-base::placeholder,
+.fq-base input::placeholder,
+.fq-base textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: theme('colors.gray.400', #9ca3af); /* 2 */
+}
+button.fq-base,
+.fq-base[role="button"],
+.fq-base button,
+.fq-base [role="button"] {
+  cursor: pointer;
+}
+.fq-base:disabled,
+.fq-base :disabled {
+  cursor: default;
+}
+img.fq-base,
+svg.fq-base,
+video.fq-base,
+canvas.fq-base,
+audio.fq-base,
+iframe.fq-base,
+embed.fq-base,
+object.fq-base,
+.fq-base img,
+.fq-base svg,
+.fq-base video,
+.fq-base canvas,
+.fq-base audio,
+.fq-base iframe,
+.fq-base embed,
+.fq-base object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+img.fq-base,
+video.fq-base,
+.fq-base img,
+.fq-base video {
+  max-width: 100%;
+  height: auto;
+}
+.fq-base[hidden],
+.fq-base [hidden] {
+  display: none;
+}

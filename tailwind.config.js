@@ -8,5 +8,10 @@ module.exports = {
     theme: {
     },
     plugins: [],
+    prefix: 'fq-',
+    important: true,
+    corePlugins: {
+        preflight: false,
+    },
     safelist: require('./src/tailwind.safelist'),
 };

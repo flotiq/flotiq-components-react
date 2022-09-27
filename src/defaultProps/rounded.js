@@ -1,13 +1,13 @@
 const classSet = {
-    none: 'rounded-none',
-    sm: 'rounded-sm',
-    md: 'rounded-md',
-    lg: 'rounded-lg',
-    xl: 'rounded-xl',
-    '2xl': 'rounded-2xl',
-    '3xl': 'rounded-3xl',
-    '4xl': 'rounded-4xl',
-    full: 'rounded-full',
+    none: 'fq-rounded-none',
+    sm: 'fq-rounded-sm',
+    md: 'fq-rounded-md',
+    lg: 'fq-rounded-lg',
+    xl: 'fq-rounded-xl',
+    '2xl': 'fq-rounded-2xl',
+    '3xl': 'fq-rounded-3xl',
+    '4xl': 'fq-rounded-4xl',
+    full: 'fq-rounded-full',
 };
 const defaultValue = 'full';
 

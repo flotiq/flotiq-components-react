@@ -18,6 +18,7 @@ const CardImg = ({
     return (
         <div
             className={[
+                'fq-base',
                 context.basisClassImage,
                 ...additionalContainerClasses,
             ].join(' ')}

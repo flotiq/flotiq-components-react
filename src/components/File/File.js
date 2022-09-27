@@ -29,7 +29,7 @@ const File = ({ url, caption, stretched, extension, fileName, imageProps, videoP
         );
     }
     return (
-        <div>
+        <div className="fq-base">
             <a href={url}>{fileName}</a>
         </div>
     );

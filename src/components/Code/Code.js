@@ -22,7 +22,7 @@ const Code = ({ children, language, highlight, additionalClasses, ...props }) =>
     }
     return (
         <div
-            className={additionalClasses.join(' ')}
+            className={['fq-base', ...additionalClasses].join(' ')}
             {...props}
         >
             <pre>

@@ -1,13 +1,11 @@
 {
   "name": "flotiq-components-react",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "main": "dist/index.js",
   "private": false,
   "author": "Flotiq team <hello@flotiq.com>",
   "description": "Flotiq components for React",
   "license": "MIT",
-  "dependencies": {
-  },
   "peerDependencies": {
     "highlight.js": "^11.4.0",
     "prop-types": "^15.x",
@@ -20,7 +18,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs-build",
-    "compile": "cross-env NODE_ENV=production babel src --out-dir dist --ignore src/stories && postcss ./src/index.css -o ./dist/index-including-tailwind.css"
+    "compile": "cross-env NODE_ENV=production babel src --out-dir dist --ignore src/stories && postcss ./src/index.css -o ./dist/index-including-tailwind.css",
+    "css-preflight": "stylus src/styles/preflight-edited.stylus -o src/styles/preflight-edited.css"
   },
   "eslintConfig": {
     "extends": [
@@ -88,6 +87,7 @@
     "jest-cucumber": "^3.0.1",
     "postcss": "^8.4.6",
     "postcss-cli": "^9.1.0",
+    "postcss-import": "^15.0.0",
     "prettier": "^2.2.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",

@@ -134,7 +134,7 @@ const Content = ({
     };
 
     return (
-        <div className={additionalClasses.join(' ')} {...props}>
+        <div className={['fq-base', ...additionalClasses].join(' ')} {...props}>
             {blocks.map((block) => (
                 <div className={standardPadding} key={block.id}>
                     { getBlock(block) }
@@ -210,7 +210,7 @@ Content.defaultProps = {
     warningProps: {},
     delimiterProps: {},
     listProps: {},
-    standardPadding: 'py-2',
+    standardPadding: 'fq-py-2',
     additionalClasses: [],
 };
 

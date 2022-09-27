@@ -11,11 +11,25 @@ const Image = ({ url, caption, stretched, rounded, additionalClasses, captionAdd
             src={url}
             alt={caption}
             className={[
-                (stretched ? 'w-full' : ''), roundedProps.classSet[rounded], ...additionalClasses,
+                'fq-base',
+                (stretched ? 'fq-w-full' : ''),
+                roundedProps.classSet[rounded],
+                ...additionalClasses,
             ].join(' ')}
             {...props}
         />
-        {caption && <p className={['pt-2 opacity-70 italic', ...captionAdditionalClasses].join(' ')}>{caption}</p>}
+        {caption && (
+            <p className={[
+                'fq-base',
+                'fq-pt-2',
+                'fq-opacity-70',
+                'fq-italic',
+                ...captionAdditionalClasses,
+            ].join(' ')}
+            >
+                {caption}
+            </p>
+        )}
     </>
 );
 
