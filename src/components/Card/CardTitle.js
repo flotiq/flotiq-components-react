@@ -8,9 +8,9 @@ const CardTitle = ({ children, additionalClasses = [], ...props }) => (
     <h2
         className={[
             'fq-base',
-            'fq-text-3xl',
-            'fq-font-semibold',
-            'fq-leading-10',
+            'text-3xl',
+            'font-semibold',
+            'leading-10',
             ...additionalClasses,
         ].join(' ')}
         {...props}

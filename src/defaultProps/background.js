@@ -1,13 +1,13 @@
 const classSet = {
-    primary: 'fq-bg-primary fq-text-white',
-    secondary: 'fq-bg-secondary fq-text-white',
-    success: 'fq-bg-success fq-text-white',
-    danger: 'fq-bg-danger fq-text-white',
-    warning: 'fq-bg-warning fq-text-black',
-    info: 'fq-bg-info fq-text-black',
-    light: 'fq-bg-light fq-text-black',
-    dark: 'fq-bg-dark fq-text-white',
-    transparent: 'fq-bg-transparent',
+    primary: 'bg-primary text-white',
+    secondary: 'bg-secondary text-white',
+    success: 'bg-success text-white',
+    danger: 'bg-danger text-white',
+    warning: 'bg-warning text-black',
+    info: 'bg-info text-black',
+    light: 'bg-light text-black',
+    dark: 'bg-dark text-white',
+    transparent: 'bg-transparent',
 };
 
 const defaultValue = 'primary';

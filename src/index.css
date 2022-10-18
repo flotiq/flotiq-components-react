@@ -12,10 +12,10 @@ code {
     monospace;
 }
 
-.fq-parent-hover-opacity-anchor .fq-children-opacity-anchor{
+.parent-hover-opacity-anchor .children-opacity-anchor{
   opacity: 0;
 }
 
-.fq-parent-hover-opacity-anchor:hover .fq-children-opacity-anchor{
+.parent-hover-opacity-anchor:hover .children-opacity-anchor{
   opacity: 0.6;
-}  
+}

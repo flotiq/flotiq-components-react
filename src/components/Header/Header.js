@@ -21,17 +21,17 @@ const Header = ({
     const safeLevel = Math.min(Math.max(level, 1), 6);
     const HeaderToRender = `h${safeLevel}`;
     const sizeClass = {
-        1: ['fq-text-4xl fq-font-bold fq-pt-6 fq-pb-3', ...h1AdditionalClasses].join(' '),
-        2: ['fq-text-3xl fq-font-bold fq-pt-5 fq-pb-2.5', ...h2AdditionalClasses].join(' '),
-        3: ['fq-text-2xl fq-font-bold fq-pt-4 fq-pb-2', ...h3AdditionalClasses].join(' '),
-        4: ['fq-text-xl fq-font-bold fq-pt-3 fq-pb-1.5', ...h4AdditionalClasses].join(' '),
-        5: ['fq-text-lg fq-font-bold fq-pt-2 fq-pb-1', ...h5AdditionalClasses].join(' '),
-        6: ['fq-text-base fq-font-bold fq-pt-1', ...h6AdditionalClasses].join(' '),
+        1: ['text-4xl font-bold pt-6 pb-3', ...h1AdditionalClasses].join(' '),
+        2: ['text-3xl font-bold pt-5 pb-2.5', ...h2AdditionalClasses].join(' '),
+        3: ['text-2xl font-bold pt-4 pb-2', ...h3AdditionalClasses].join(' '),
+        4: ['text-xl font-bold pt-3 pb-1.5', ...h4AdditionalClasses].join(' '),
+        5: ['text-lg font-bold pt-2 pb-1', ...h5AdditionalClasses].join(' '),
+        6: ['text-base font-bold pt-1', ...h6AdditionalClasses].join(' '),
     };
     const alignmentClass = {
-        left: 'fq-text-left',
-        center: 'fq-text-center',
-        right: 'fq-text-right',
+        left: 'text-left',
+        center: 'text-center',
+        right: 'text-right',
     };
 
     return (

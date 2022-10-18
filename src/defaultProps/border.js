@@ -1,13 +1,13 @@
 const classSet = {
-    primary: 'fq-border-primary',
-    secondary: 'fq-border-secondary',
-    success: 'fq-border-success',
-    danger: 'fq-border-danger',
-    warning: 'fq-border-warning',
-    info: 'fq-border-info',
-    light: 'fq-border-light',
-    dark: 'fq-border-dark',
-    transparent: 'fq-border-transparent',
+    primary: 'border-primary',
+    secondary: 'border-secondary',
+    success: 'border-success',
+    danger: 'border-danger',
+    warning: 'border-warning',
+    info: 'border-info',
+    light: 'border-light',
+    dark: 'border-dark',
+    transparent: 'border-transparent',
 };
 
 const defaultValue = 'primary';

@@ -12,20 +12,20 @@ const Announcement = ({ variant,
     additionalClasses,
     rounded,
     ...props }) => {
-    const alignment = { left: 'fq-text-left', center: 'fq-text-center', right: 'fq-text-right', none: '' };
+    const alignment = { left: 'text-left', center: 'text-center', right: 'text-right', none: '' };
     const fontSize = {
-        xs: 'fq-text-xs',
-        sm: 'fq-text-sm',
-        base: 'fq-text-base',
-        lg: 'fq-text-large',
-        xl: 'fq-text-xl',
-        '2xl': 'fq-text-2xl',
-        '3xl': 'fq-text-3xl',
-        '4xl': 'fq-text-5xl',
-        '6xl': 'fq-text-6xl',
-        '7xl': 'fq-text-7xl',
-        '8xl': 'fq-text-8xl',
-        '9xl': 'fq-text-9xl',
+        xs: 'text-xs',
+        sm: 'text-sm',
+        base: 'text-base',
+        lg: 'text-large',
+        xl: 'text-xl',
+        '2xl': 'text-2xl',
+        '3xl': 'text-3xl',
+        '4xl': 'text-5xl',
+        '6xl': 'text-6xl',
+        '7xl': 'text-7xl',
+        '8xl': 'text-8xl',
+        '9xl': 'text-9xl',
         none: '',
     };
     const style = {};
@@ -34,7 +34,7 @@ const Announcement = ({ variant,
     return (
         <div
             className={[
-                'fq-base fq-px-12 fq-py-6',
+                'fq-base px-12 py-6',
                 backgroundProps.classSet[variant],
                 roundedProps.classSet[rounded],
                 alignment[textAlignment],

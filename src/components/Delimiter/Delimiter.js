@@ -7,16 +7,16 @@ import { borderProps } from '../../defaultProps/border';
  */
 const Delimiter = ({ variant, style, additionalClasses, ...props }) => {
     const styleClasses = {
-        solid: 'fq-border-solid',
-        dashed: 'fq-border-dashed',
-        dotted: 'fq-border-dotted',
+        solid: 'border-solid',
+        dashed: 'border-dashed',
+        dotted: 'border-dotted',
     };
 
     return (
         <hr
             className={[
                 'fq-base',
-                'fq-my-2',
+                'my-2',
                 borderProps.classSet[variant],
                 styleClasses[style],
                 ...additionalClasses,

@@ -8,7 +8,7 @@ module.exports = {
     theme: {
     },
     plugins: [],
-    prefix: 'fq-',
+    /*  prefix: 'fq-', */
     important: true,
     corePlugins: {
         preflight: false,

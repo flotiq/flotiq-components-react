@@ -14,7 +14,7 @@ const YouTubeEmbed = ({
     let safeUrl = url.replace('/watch?v=', '/embed/');
     safeUrl = safeUrl.replace('youtu.be/', 'www.youtube.com/embed/');
     return (
-        <div className="fq-base fq-height-0 fq-pb-[56.25%] fq-relative">
+        <div className="fq-base height-0 pb-[56.25%] relative">
             <iframe
                 id="ytplayer"
                 type="text/html"
@@ -24,7 +24,7 @@ const YouTubeEmbed = ({
                 frameBorder="0"
                 allowFullScreen={allowFullScreen}
                 title={title}
-                className={['fq-absolute', 'fq-w-full', 'fq-h-full', ...additionalClasses].join(' ')}
+                className={['absolute', 'w-full', 'h-full', ...additionalClasses].join(' ')}
                 {...props}
             />
         </div>

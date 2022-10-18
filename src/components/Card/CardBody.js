@@ -12,11 +12,11 @@ const CardBody = ({ children, additionalClasses = [], ...props }) => {
         <div
             className={[
                 'fq-base',
-                'fq-px-5',
-                'fq-pt-5',
-                'fq-pb-2',
-                'md:fq-px-6',
-                'md:fq-pt-6',
+                'px-5',
+                'pt-5',
+                'pb-2',
+                'md:px-6',
+                'md:pt-6',
                 context.basisClassBody,
                 ...additionalClasses,
             ].join(' ')}
