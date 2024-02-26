@@ -89,7 +89,7 @@ export const blocks = [
             url: 'https://api.flotiq.com/image/0x0/_media-3a62e398-fbe3-46e8-ba5b-05a2690390ae.png',
             width: 1328,
             height: 758,
-            caption: 'Example Caption',
+            caption: 'Example <b>Caption</b> <i>with</i> link to <a href="http://flotiq.com">flotiq.com</a>',
             fileName: 'example.png',
             extension: 'png',
             stretched: true,
