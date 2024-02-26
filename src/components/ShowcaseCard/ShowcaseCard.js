@@ -78,6 +78,7 @@ const ShowcaseCard = ({
             <a
                 href={cardUrl}
                 rel="noreferrer"
+                aria-label="Card Url"
             >
                 <div className="absolute w-full top-0 left-0 h-full z-index-1
                 opacity-[0.6] bg-secondary-500 children-opacity-anchor transition-all transform duration-300"
