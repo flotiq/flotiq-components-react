@@ -15,7 +15,12 @@ const Image = ({ url, caption, stretched, rounded, additionalClasses, captionAdd
             ].join(' ')}
             {...props}
         />
-        {caption && <p className={['pt-2 opacity-70 italic', ...captionAdditionalClasses].join(' ')} dangerouslySetInnerHTML={{ __html: caption }}/>}
+        {caption && 
+            <p 
+                className={['pt-2 opacity-70 italic', ...captionAdditionalClasses].join(' ')} 
+                dangerouslySetInnerHTML={{ __html: caption }}
+            />
+        }
     </>
 );
 
