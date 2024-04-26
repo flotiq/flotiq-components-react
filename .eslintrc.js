@@ -6,7 +6,6 @@ module.exports = {
     },
     extends: [
         'react-app',
-        'plugin:react/recommended',
         'eslint:recommended',
     ],
     plugins: [
