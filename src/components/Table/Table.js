@@ -9,7 +9,7 @@ const Table = ({ content, headers, additionalClasses, ...props }) => (
         className={['w-full border-collapse mt-2 mb-4 border border-light', ...additionalClasses].join(' ')}
         {...props}
     >
-        {headers.length > 0 && (
+        {headers?.length > 0 && (
             <thead>
                 <tr>
                     {headers.map((column) => (
@@ -19,7 +19,7 @@ const Table = ({ content, headers, additionalClasses, ...props }) => (
             </thead>
         )}
         <tbody>
-            {content.map((row, index) => (
+            {content?.map((row, index) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <tr key={index}>
                     {row.map((column) => (

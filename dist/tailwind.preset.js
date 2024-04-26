@@ -1,55 +1,44 @@
 "use strict";
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
 // eslint-disable-next-line import/no-extraneous-dependencies
-var defaultTheme = require('tailwindcss/defaultTheme');
-
+const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   theme: {
     fontFamily: {
-      sans: ['Inter'].concat(_toConsumableArray(defaultTheme.fontFamily.sans))
+      sans: ['Inter', ...defaultTheme.fontFamily.sans]
     },
-    colors: function colors(_ref) {
-      var _colors = _ref.colors;
+    colors: _ref => {
+      let {
+        colors
+      } = _ref;
       return {
-        inherit: _colors.inherit,
-        current: _colors.current,
-        transparent: _colors.transparent,
-        black: _colors.black,
-        white: _colors.white,
-        slate: _colors.slate,
-        gray: _colors.gray,
-        zinc: _colors.zinc,
-        neutral: _colors.neutral,
-        stone: _colors.stone,
-        red: _colors.red,
-        orange: _colors.orange,
-        amber: _colors.amber,
-        yellow: _colors.yellow,
-        lime: _colors.lime,
-        green: _colors.green,
-        emerald: _colors.emerald,
-        teal: _colors.teal,
-        cyan: _colors.cyan,
-        sky: _colors.sky,
-        blue: _colors.blue,
-        indigo: _colors.indigo,
-        violet: _colors.violet,
-        purple: _colors.purple,
-        fuchsia: _colors.fuchsia,
-        pink: _colors.pink,
-        rose: _colors.rose,
+        inherit: colors.inherit,
+        current: colors.current,
+        transparent: colors.transparent,
+        black: colors.black,
+        white: colors.white,
+        slate: colors.slate,
+        gray: colors.gray,
+        zinc: colors.zinc,
+        neutral: colors.neutral,
+        stone: colors.stone,
+        red: colors.red,
+        orange: colors.orange,
+        amber: colors.amber,
+        yellow: colors.yellow,
+        lime: colors.lime,
+        green: colors.green,
+        emerald: colors.emerald,
+        teal: colors.teal,
+        cyan: colors.cyan,
+        sky: colors.sky,
+        blue: colors.blue,
+        indigo: colors.indigo,
+        violet: colors.violet,
+        purple: colors.purple,
+        fuchsia: colors.fuchsia,
+        pink: colors.pink,
+        rose: colors.rose,
         primary: {
           DEFAULT: '#0083FC',
           50: '#B5DBFF',

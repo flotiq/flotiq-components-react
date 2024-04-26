@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.borderProps = void 0;
-var classSet = {
+const classSet = {
   primary: 'border-primary',
   secondary: 'border-secondary',
   success: 'border-success',
@@ -15,7 +15,8 @@ var classSet = {
   dark: 'border-dark',
   transparent: 'border-transparent'
 };
-var defaultValue = 'primary';
+const defaultValue = 'primary';
+
 /**
  * Default settings for borderColor props
  * PropTypes.oneOf([
@@ -30,10 +31,8 @@ var defaultValue = 'primary';
  *         'transparent',
  *     ])
  */
-
-var borderProps = {
-  classSet: classSet,
-  defaultValue: defaultValue,
+const borderProps = exports.borderProps = {
+  classSet,
+  defaultValue,
   values: Object.keys(classSet)
 };
-exports.borderProps = borderProps;

@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.backgroundProps = void 0;
-var classSet = {
+const classSet = {
   primary: 'bg-primary text-white',
   secondary: 'bg-secondary text-white',
   success: 'bg-success text-white',
@@ -15,7 +15,8 @@ var classSet = {
   dark: 'bg-dark text-white',
   transparent: 'bg-transparent'
 };
-var defaultValue = 'primary';
+const defaultValue = 'primary';
+
 /**
  * Default settings for backgroundColor props
  * PropTypes.oneOf([
@@ -30,10 +31,8 @@ var defaultValue = 'primary';
  *         'transparent',
  *     ])
  */
-
-var backgroundProps = {
-  classSet: classSet,
-  defaultValue: defaultValue,
+const backgroundProps = exports.backgroundProps = {
+  classSet,
+  defaultValue,
   values: Object.keys(classSet)
 };
-exports.backgroundProps = backgroundProps;

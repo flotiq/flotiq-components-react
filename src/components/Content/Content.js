@@ -103,7 +103,7 @@ const Content = ({
             return (
                 <Table
                     content={block.data.withHeadings ? block.data.content.slice(1) : block.data.content}
-                    headers={block.data.withHeadings ? block.data.content[0] : null}
+                    headers={block.data.withHeadings ? block.data.content[0] : []}
                     {...tableProps}
                     key={block.id}
                 />
