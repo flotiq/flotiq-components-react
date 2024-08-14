@@ -2,11 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { borderProps } from '../../defaultProps/border';
 
+export const defaults = {
+    variant: borderProps.defaultValue,
+    additionalClasses: [],
+    quoteAdditionalClasses: [],
+    captionAdditionalClasses: [],
+};
+
 /**
  * Component for quote with caption
  */
 const Quote = ({
-    text, caption, variant, additionalClasses, quoteAdditionalClasses, captionAdditionalClasses, ...props
+    text,
+    caption,
+    variant = defaults.variant,
+    additionalClasses = defaults.additionalClasses,
+    quoteAdditionalClasses = defaults.quoteAdditionalClasses,
+    captionAdditionalClasses = defaults.captionAdditionalClasses,
+    ...props
 }) => (
     <div className={['flex flex-col italic', ...additionalClasses].join(' ')} {...props}>
         {React.isValidElement(text) ? (
@@ -74,13 +87,6 @@ Quote.propTypes = {
      * Additional classes for quote caption
      */
     captionAdditionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Quote.defaultProps = {
-    variant: borderProps.defaultValue,
-    additionalClasses: [],
-    quoteAdditionalClasses: [],
-    captionAdditionalClasses: [],
 };
 
 export default Quote;

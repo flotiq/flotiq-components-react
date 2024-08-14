@@ -4,9 +4,34 @@ import Image from '../Image/Image';
 import Video from '../Video/Video';
 import Audio from '../Audio/Audio';
 
-const File = ({ url, caption, stretched, extension, fileName, imageProps, videoProps, audioProps }) => {
+export const defaults = {
+    caption: null,
+    stretched: false,
+    fileName: '',
+    imageProps: {},
+    videoProps: {},
+    audioProps: {},
+    additionalClasses: [],
+};
+
+const File = ({
+    url,
+    caption = defaults.caption,
+    stretched = defaults.stretched,
+    extension,
+    fileName = defaults.fileName,
+    imageProps = defaults.imageProps,
+    videoProps = defaults.videoProps,
+    audioProps = defaults.audioProps,
+    additionalClasses = defaults.additionalClasses,
+}) => {
     if (isImage(extension)) {
-        return <Image url={url} caption={caption} stretched={stretched} {...imageProps} />;
+        return <Image
+            url={url}
+            caption={caption}
+            stretched={stretched}
+            {...imageProps}
+        />;
     }
     if (isMovie(extension)) {
         return (
@@ -29,7 +54,7 @@ const File = ({ url, caption, stretched, extension, fileName, imageProps, videoP
         );
     }
     return (
-        <div>
+        <div className={additionalClasses.join(' ')}>
             <a href={url}>{fileName}</a>
         </div>
     );
@@ -63,31 +88,21 @@ File.propTypes = {
      */
     fileName: PropTypes.string,
     /**
-     * Additional props for image components
+     * Additional props for image components, for more information check Image component
      */
-    imageProps: PropTypes.shape({}),
+    imageProps: Image.propTypes,
     /**
-     * Additional props for video components
+     * Additional props for video components, for more information check Video component
      */
-    videoProps: PropTypes.shape({}),
+    videoProps: Video.propTypes,
     /**
-     * Additional props for audio components
+     * Additional props for audio components, for more information check Audio component
      */
-    audioProps: PropTypes.shape({}),
+    audioProps: Audio.propTypes,
     /**
      * Additional classes for file
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-File.defaultProps = {
-    caption: null,
-    stretched: false,
-    fileName: '',
-    imageProps: {},
-    videoProps: {},
-    audioProps: {},
-    additionalClasses: [],
 };
 
 export default File;

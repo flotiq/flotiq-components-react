@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Delimiter } from '../index';
+import Delimiter, { defaults } from '../components/Delimiter/Delimiter';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const DelimiterStory = {
     title: 'Flotiq components/Delimiter',
     component: Delimiter,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
@@ -11,19 +11,21 @@ export default {
     },
 };
 
+export default DelimiterStory;
+
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Delimiter {...args} />;
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-    ...Delimiter.defaultProps,
+    ...defaults,
 };
 
 export const Secondary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Secondary.args = {
-    ...Delimiter.defaultProps,
+    ...defaults,
     variant: 'secondary',
     style: 'dashed',
 };
@@ -31,7 +33,7 @@ Secondary.args = {
 export const Success = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Success.args = {
-    ...Delimiter.defaultProps,
+    ...defaults,
     variant: 'success',
     style: 'dotted',
 };
@@ -39,34 +41,34 @@ Success.args = {
 export const Danger = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Danger.args = {
-    ...Delimiter.defaultProps,
+    ...defaults,
     variant: 'danger',
 };
 
 export const Warning = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Warning.args = {
-    ...Delimiter.defaultProps,
+    ...defaults,
     variant: 'warning',
 };
 
 export const Info = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Info.args = {
-    ...Delimiter.defaultProps,
+    ...defaults,
     variant: 'info',
 };
 
 export const Light = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Light.args = {
-    ...Delimiter.defaultProps,
+    ...defaults,
     variant: 'light',
 };
 
 export const Dark = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Dark.args = {
-    ...Delimiter.defaultProps,
+    ...defaults,
     variant: 'dark',
 };

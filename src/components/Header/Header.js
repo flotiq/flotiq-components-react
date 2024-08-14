@@ -1,21 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+export const defaults = {
+    level: 1,
+    anchor: '',
+    alignment: 'left',
+    additionalClasses: [],
+    h1AdditionalClasses: [],
+    h2AdditionalClasses: [],
+    h3AdditionalClasses: [],
+    h4AdditionalClasses: [],
+    h5AdditionalClasses: [],
+    h6AdditionalClasses: [],
+};
+
 /**
  * Component for headings
  */
 const Header = ({
-    level,
+    level = defaults.level,
     children,
-    anchor,
-    alignment,
-    additionalClasses,
-    h1AdditionalClasses,
-    h2AdditionalClasses,
-    h3AdditionalClasses,
-    h4AdditionalClasses,
-    h5AdditionalClasses,
-    h6AdditionalClasses,
+    anchor = defaults.anchor,
+    alignment = defaults.alignment,
+    additionalClasses = defaults.additionalClasses,
+    h1AdditionalClasses = defaults.h1AdditionalClasses,
+    h2AdditionalClasses = defaults.h2AdditionalClasses,
+    h3AdditionalClasses = defaults.h3AdditionalClasses,
+    h4AdditionalClasses = defaults.h4AdditionalClasses,
+    h5AdditionalClasses = defaults.h5AdditionalClasses,
+    h6AdditionalClasses = defaults.h6AdditionalClasses,
     ...props
 }) => {
     const safeLevel = Math.min(Math.max(level, 1), 6);
@@ -99,19 +112,6 @@ Header.propTypes = {
      * Additional classes for level 6 header
      */
     h6AdditionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Header.defaultProps = {
-    level: 1,
-    anchor: '',
-    alignment: 'left',
-    additionalClasses: [],
-    h1AdditionalClasses: [],
-    h2AdditionalClasses: [],
-    h3AdditionalClasses: [],
-    h4AdditionalClasses: [],
-    h5AdditionalClasses: [],
-    h6AdditionalClasses: [],
 };
 
 export default Header;

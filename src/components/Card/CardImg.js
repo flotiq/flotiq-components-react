@@ -2,15 +2,22 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Context } from './Context';
 
+export const defaults = {
+    additionalClasses: [],
+    additionalContainerClasses: [],
+    alt: false,
+    imageAdditionalProps: {},
+};
+
 /**
  * Component for image in card like component
  */
 const CardImg = ({
     src,
-    alt,
-    additionalClasses = [],
-    additionalContainerClasses = [],
-    imageAdditionalProps = {},
+    alt = defaults.alt,
+    additionalClasses = defaults.additionalClasses,
+    additionalContainerClasses = defaults.additionalContainerClasses,
+    imageAdditionalProps = defaults.imageAdditionalProps,
     ...props
 }) => {
     const context = useContext(Context);
@@ -49,13 +56,6 @@ CardImg.propTypes = {
      * Additional props for image
      */
     imageAdditionalProps: PropTypes.shape({}),
-};
-
-CardImg.defaultProps = {
-    additionalClasses: [],
-    additionalContainerClasses: [],
-    alt: false,
-    imageAdditionalProps: {},
 };
 
 export default CardImg;

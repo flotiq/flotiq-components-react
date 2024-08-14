@@ -20,10 +20,23 @@ const LogoBadge = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGl
 + 'jIKCXMyLjIsNS4yLDQuOSw1LjJjMi43LDAsNC45LTIuMyw0LjktNS4yUzcuNiwyNy42LDQuOSwyNy42eiIvPgo8L'
 + '3N2Zz4K';
 
+export const defaults = {
+    badge: false,
+    text: 'Powered by Flotiq',
+    additionalClasses: [],
+    utmCampaign: '',
+};
+
 /**
  * Footer element with powered by flotiq information
  */
-const PoweredByFlotiq = ({ badge, text, additionalClasses, utmCampaign, ...props }) => (badge ? (
+const PoweredByFlotiq = ({
+    badge = defaults.badge,
+    text = defaults.text,
+    additionalClasses = defaults.additionalClasses,
+    utmCampaign = defaults.utmCampaign,
+    ...props
+}) => (badge ? (
     <div
         className={['flex', 'items-center', 'font-inter', 'px-2', 'py-1',
             'shadow-md', 'shadow-black-400/15', 'rounded-md',
@@ -87,13 +100,6 @@ PoweredByFlotiq.propTypes = {
      * UTM campaign name
      */
     utmCampaign: PropTypes.string,
-};
-
-PoweredByFlotiq.defaultProps = {
-    badge: false,
-    text: 'Powered by Flotiq',
-    additionalClasses: [],
-    utmCampaign: '',
 };
 
 export default PoweredByFlotiq;

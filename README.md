@@ -13,7 +13,7 @@ In the project directory, you can run:
 
 To install all dependencies. Please DO NOT use npm for that.
 
-### `yarn storybook`
+### `yarn dev`
 
 To start storybook server. It will be available on [http://localhost:6006/](http://localhost:6006/)
 
@@ -48,7 +48,7 @@ To include this library in your own project you should follow these steps.
 
 Add Flotiq Components module
 ```
-npm install flotiq-components-react
+yarn add flotiq-components-react
 ```
 
 ### 2a. Include component styles (Projects using Tailwind)

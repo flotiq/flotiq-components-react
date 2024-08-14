@@ -1,11 +1,22 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+export const defaults = {
+    language: 'bash',
+    additionalClasses: [],
+};
+
 /**
  * Component for highlighting code.
  * Install highlight.js to make the component looks like in the examples, we use nord.css
  */
-const Code = ({ children, language, highlight, additionalClasses, ...props }) => {
+const Code = ({
+    children,
+    language = defaults.language,
+    highlight,
+    additionalClasses = defaults.additionalClasses,
+    ...props
+}) => {
     useEffect(() => {
         if (highlight) {
             highlight.highlightAll();
@@ -47,11 +58,6 @@ Code.propTypes = {
      * Additional classes for code
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Code.defaultProps = {
-    language: 'bash',
-    additionalClasses: [],
 };
 
 export default Code;

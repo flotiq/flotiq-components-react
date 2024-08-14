@@ -143,4 +143,4 @@ var _Video = _interopRequireDefault(require("./components/Video/Video"));
 var _Warning = _interopRequireDefault(require("./components/Warning/Warning"));
 var _YouTubeEmbed = _interopRequireDefault(require("./components/YouTubeEmbed/YouTubeEmbed"));
 var _ShowcaseCard = _interopRequireDefault(require("./components/ShowcaseCard/ShowcaseCard"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }

@@ -1,15 +1,18 @@
 import React from 'react';
 
 import { Quote } from '../index';
+import { defaults } from '../components/Quote/Quote';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const QuoteStory = {
     title: 'Flotiq components/Quote',
     component: Quote,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
     },
 };
+
+export default QuoteStory;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Quote {...args} />;
@@ -23,7 +26,7 @@ Primary.args = {
         + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
         + ' Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
     caption: 'lorem',
-    ...Quote.defaultProps,
+    ...defaults,
 };
 
 export const Secondary = Template.bind({});
@@ -35,7 +38,7 @@ Secondary.args = {
         + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
         + ' Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
     caption: 'lorem',
-    ...Quote.defaultProps,
+    ...defaults,
     variant: 'secondary',
 };
 
@@ -48,7 +51,7 @@ Success.args = {
         + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
         + ' Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
     caption: 'lorem',
-    ...Quote.defaultProps,
+    ...defaults,
     variant: 'success',
 };
 
@@ -61,7 +64,7 @@ Danger.args = {
         + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
         + ' Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
     caption: 'lorem',
-    ...Quote.defaultProps,
+    ...defaults,
     variant: 'danger',
 };
 
@@ -74,7 +77,7 @@ Warning.args = {
         + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
         + ' Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
     caption: 'lorem',
-    ...Quote.defaultProps,
+    ...defaults,
     variant: 'warning',
 };
 
@@ -87,7 +90,7 @@ Info.args = {
         + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
         + ' Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
     caption: 'lorem',
-    ...Quote.defaultProps,
+    ...defaults,
     variant: 'info',
 };
 
@@ -100,7 +103,7 @@ Light.args = {
         + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
         + ' Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
     caption: 'lorem',
-    ...Quote.defaultProps,
+    ...defaults,
     variant: 'light',
 };
 
@@ -113,7 +116,7 @@ Dark.args = {
         + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
         + ' Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
     caption: 'lorem',
-    ...Quote.defaultProps,
+    ...defaults,
     variant: 'dark',
 };
 
@@ -126,6 +129,6 @@ Transparent.args = {
         + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
         + ' Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
     caption: 'lorem',
-    ...Quote.defaultProps,
+    ...defaults,
     variant: 'transparent',
 };

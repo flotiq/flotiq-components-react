@@ -3,16 +3,26 @@ import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
 import { backgroundProps } from '../../defaultProps/background';
 
+export const defaults = {
+    onClick: undefined,
+    size: 'md',
+    additionalClasses: [],
+    variant: backgroundProps.defaultValue,
+    rounded: roundedProps.defaultValue,
+};
+
 /**
  * Primary UI component for user interaction
  */
-const Button = ({ label,
-    onClick,
-    variant,
-    size,
-    rounded,
-    additionalClasses,
-    ...props }) => {
+const Button = ({
+    label,
+    onClick = defaults.onClick,
+    variant = defaults.variant,
+    size = defaults.size,
+    rounded = defaults.rounded,
+    additionalClasses = defaults.additionalClasses,
+    ...props 
+}) => {
     const sizeClass = {
         sm: 'px-8 py-3 text-sm',
         md: 'px-12 py-4 text-base',
@@ -77,8 +87,8 @@ Button.propTypes = {
      */
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
     /**
-   * Button contents
-   */
+     * Button contents
+     */
     label: PropTypes.string.isRequired,
     /**
      * Is this the rounded button?
@@ -89,17 +99,9 @@ Button.propTypes = {
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
     /**
-   * Optional click handler
-   */
+     * Optional click handler
+     */
     onClick: PropTypes.func,
-};
-
-Button.defaultProps = {
-    onClick: undefined,
-    size: 'md',
-    additionalClasses: [],
-    variant: backgroundProps.defaultValue,
-    rounded: roundedProps.defaultValue,
 };
 
 export default Button;

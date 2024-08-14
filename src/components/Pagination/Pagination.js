@@ -5,22 +5,38 @@ import { roundedProps } from '../../defaultProps/rounded';
 import { borderProps } from '../../defaultProps/border';
 import { backgroundProps } from '../../defaultProps/background';
 
+export const defaults = {
+    size: 'md',
+    variant: 'primary',
+    borderVariant: 'primary',
+    rounded: roundedProps.defaultValue,
+    prev: 'Previous',
+    next: 'Next',
+    baseUrl: '/',
+    additionalClasses: [],
+    activeAdditionalClasses: [],
+    prevNextAdditionalClasses: [],
+    containerAdditionalClasses: [],
+};
+
 /**
  * Component for pagination navigation
  */
-const Pagination = ({ variant = 'primary',
-    borderVariant,
-    size,
-    rounded,
-    additionalClasses,
-    activeAdditionalClasses,
-    prevNextAdditionalClasses,
-    containerAdditionalClasses,
-    prev,
-    next,
-    baseUrl,
+const Pagination = ({
+    variant = defaults.variant,
+    borderVariant = defaults.borderVariant,
+    size = defaults.size,
+    rounded = defaults.rounded,
+    additionalClasses = defaults.additionalClasses,
+    activeAdditionalClasses = defaults.activeAdditionalClasses,
+    prevNextAdditionalClasses = defaults.prevNextAdditionalClasses,
+    containerAdditionalClasses = defaults.containerAdditionalClasses,
+    prev = defaults.prev,
+    next = defaults.next,
+    baseUrl = defaults.baseUrl,
     page,
-    numOfPages }) => {
+    numOfPages,
+}) => {
     const sizeClass = {
         sm: 'w-6 h-6 md:w-8 md:h-8 text-sm',
         md: 'w-8 h-8 md:w-10 md:h-10 text-sm md:text-base',
@@ -371,20 +387,6 @@ Pagination.propTypes = {
      * Additional classes for pagination container
      */
     containerAdditionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Pagination.defaultProps = {
-    size: 'md',
-    variant: 'primary',
-    borderVariant: 'primary',
-    rounded: roundedProps.defaultValue,
-    prev: 'Previous',
-    next: 'Next',
-    baseUrl: '/',
-    additionalClasses: [],
-    activeAdditionalClasses: [],
-    prevNextAdditionalClasses: [],
-    containerAdditionalClasses: [],
 };
 
 export default Pagination;

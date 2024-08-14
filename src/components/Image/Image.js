@@ -2,10 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
 
+export const defaults = {
+    caption: null,
+    stretched: false,
+    rounded: 'none',
+    additionalClasses: [],
+    captionAdditionalClasses: [],
+};
+
 /**
  * Component for displaying images
  */
-const Image = ({ url, caption, stretched, rounded, additionalClasses, captionAdditionalClasses, ...props }) => (
+const Image = ({
+    url,
+    caption = defaults.caption,
+    stretched = defaults.stretched,
+    rounded = defaults.rounded,
+    additionalClasses = defaults.additionalClasses,
+    captionAdditionalClasses = defaults.captionAdditionalClasses,
+    ...props
+}) => (
     <>
         <img
             src={url}
@@ -49,14 +65,6 @@ Image.propTypes = {
      * Additional classes for image caption
      */
     captionAdditionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Image.defaultProps = {
-    caption: null,
-    stretched: false,
-    rounded: 'none',
-    additionalClasses: [],
-    captionAdditionalClasses: [],
 };
 
 export default Image;

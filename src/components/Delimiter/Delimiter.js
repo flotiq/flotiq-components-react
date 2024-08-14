@@ -2,10 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { borderProps } from '../../defaultProps/border';
 
+export const defaults = {
+    variant: borderProps.defaultValue,
+    style: 'solid',
+    additionalClasses: [],
+};
+
 /**
  * Component for separating content
  */
-const Delimiter = ({ variant, style, additionalClasses, ...props }) => {
+const Delimiter = ({
+    variant = defaults.variant,
+    style = defaults.style,
+    additionalClasses = defaults.additionalClasses,
+    ...props
+}) => {
     const styleClasses = {
         solid: 'border-solid',
         dashed: 'border-dashed',
@@ -42,12 +53,6 @@ Delimiter.propTypes = {
      * Additional classes for delimiter
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Delimiter.defaultProps = {
-    variant: borderProps.defaultValue,
-    style: 'solid',
-    additionalClasses: [],
 };
 
 export default Delimiter;

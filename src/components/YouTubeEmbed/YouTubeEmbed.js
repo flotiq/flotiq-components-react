@@ -1,14 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+export const defaults = {
+    title: 'Youtube video',
+    allowFullScreen: true,
+    additionalClasses: [],
+};
+
 /**
  * Component for displaying iframe with YouTube video
  */
 const YouTubeEmbed = ({
     url,
-    title,
-    allowFullScreen,
-    additionalClasses,
+    title = defaults.title,
+    allowFullScreen = defaults.allowFullScreen,
+    additionalClasses = defaults.additionalClasses,
     ...props
 }) => {
     let safeUrl = url.replace('/watch?v=', '/embed/');
@@ -48,12 +54,6 @@ YouTubeEmbed.propTypes = {
      * Additional classes for embed
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-YouTubeEmbed.defaultProps = {
-    title: 'Youtube video',
-    allowFullScreen: true,
-    additionalClasses: [],
 };
 
 export default YouTubeEmbed;

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.defaults = exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _CardBody = _interopRequireDefault(require("./CardBody"));
@@ -12,16 +12,27 @@ var _CardImg = _interopRequireDefault(require("./CardImg"));
 var _CardText = _interopRequireDefault(require("./CardText"));
 var _Context = require("./Context");
 var _rounded = require("../../defaultProps/rounded");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const calcBasisClass = function (scale, isHorizontal) {
   let breakpoint = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'md';
   if (scale && isHorizontal) {
-    return "".concat(breakpoint, ":basis-").concat(scale);
+    return `${breakpoint}:basis-${scale}`;
   }
   return '';
+};
+const defaults = exports.defaults = {
+  rounded: 'lg',
+  bordered: true,
+  horizontal: false,
+  additionalClasses: [],
+  proportionsForHorizontal: {
+    body: '1/2',
+    img: '1/2',
+    breakpoint: 'md'
+  }
 };
 
 /**
@@ -30,19 +41,19 @@ const calcBasisClass = function (scale, isHorizontal) {
 const Card = _ref => {
   let {
     children,
-    rounded,
-    bordered,
-    horizontal,
-    proportionsForHorizontal,
-    additionalClasses,
+    rounded = defaults.rounded,
+    bordered = defaults.bordered,
+    horizontal = defaults.horizontal,
+    proportionsForHorizontal = defaults.proportionsForHorizontal,
+    additionalClasses = defaults.additionalClasses,
     ...props
   } = _ref;
   const borderedClass = bordered ? 'border border-gray-200' : '';
   const directionClasses = horizontal ? 'flex flex-wrap justify-between align-start' : 'flex-none';
   const context = (0, _react.useMemo)(() => ({
     horizontal,
-    basisClassImage: calcBasisClass(proportionsForHorizontal === null || proportionsForHorizontal === void 0 ? void 0 : proportionsForHorizontal.img, horizontal, proportionsForHorizontal === null || proportionsForHorizontal === void 0 ? void 0 : proportionsForHorizontal.breakpoint),
-    basisClassBody: calcBasisClass(proportionsForHorizontal === null || proportionsForHorizontal === void 0 ? void 0 : proportionsForHorizontal.body, horizontal, proportionsForHorizontal === null || proportionsForHorizontal === void 0 ? void 0 : proportionsForHorizontal.breakpoint)
+    basisClassImage: calcBasisClass(proportionsForHorizontal?.img, horizontal, proportionsForHorizontal?.breakpoint),
+    basisClassBody: calcBasisClass(proportionsForHorizontal?.body, horizontal, proportionsForHorizontal?.breakpoint)
   }), [horizontal, proportionsForHorizontal]);
   return /*#__PURE__*/_react.default.createElement(_Context.Context.Provider, {
     value: context
@@ -75,17 +86,6 @@ Card.propTypes = {
    * Additional classes for card
    */
   additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
-};
-Card.defaultProps = {
-  rounded: 'lg',
-  bordered: true,
-  horizontal: false,
-  additionalClasses: [],
-  proportionsForHorizontal: {
-    body: '1/2',
-    img: '1/2',
-    breakpoint: 'md'
-  }
 };
 var _default = exports.default = Object.assign(Card, {
   Body: _CardBody.default,

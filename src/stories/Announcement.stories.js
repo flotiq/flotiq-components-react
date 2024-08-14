@@ -1,8 +1,8 @@
 import React from 'react';
-import Announcement from '../components/Announcement/Announcement';
+import Announcement, { defaults } from '../components/Announcement/Announcement';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const AnnouncementStory = {
     title: 'Flotiq components/Announcement',
     component: Announcement,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
@@ -15,13 +15,15 @@ export default {
     },
 };
 
+export default AnnouncementStory;
+
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Announcement {...args} />;
 
 export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Base.args = {
-    ...Announcement.defaultProps,
+    ...defaults,
     content: 'Your content here...',
     // without other, non required properties, storybook should render a good-looking basic module
 };

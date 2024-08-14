@@ -1,15 +1,17 @@
 import React from 'react';
 
-import ShowcaseCard from '../components/ShowcaseCard/ShowcaseCard';
+import ShowcaseCard, { defaults } from '../components/ShowcaseCard/ShowcaseCard';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const ShowcaseCardStory = {
     title: 'Flotiq components/ShowcaseCard',
     component: ShowcaseCard,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
     },
 };
+
+export default ShowcaseCardStory;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => (
@@ -28,7 +30,7 @@ const {
     cardUrl,
     footerLinks,
     ...other
-} = ShowcaseCard.defaultProps;
+} = defaults;
 
 export const Standard = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
