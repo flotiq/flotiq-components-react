@@ -29,27 +29,47 @@ const LiveDemoIcon = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAi'
 + 'Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3Z'
 + 'nPgo=';
 
+export const defaults = {
+    title: undefined,
+    titleLevel: '5',
+    excerpt: undefined,
+    thumbnailSrc: undefined,
+    thumbnailSrcAlt: undefined,
+    demoUrl: undefined,
+    category: undefined,
+    tagIcon: undefined,
+    cardUrl: undefined,
+    footerLinks: undefined,
+    rounded: 'lg',
+    additionalClasses: [],
+    additionalCategoryClasses: [],
+    additionalLiveDemoClasses: [],
+    additionalExcerptClasses: [],
+    additionalHeaderClasses: [],
+    additionalFooterLinkClasses: [],
+};
+
 /**
  * Component for displaying product showcase card
  */
 const ShowcaseCard = ({
-    title,
-    titleLevel = 5,
-    excerpt,
-    thumbnailSrc,
-    thumbnailSrcAlt,
-    cardUrl,
-    demoUrl,
-    rounded,
-    additionalClasses,
-    additionalCategoryClasses,
-    additionalLiveDemoClasses,
-    additionalExcerptClasses,
-    additionalHeaderClasses,
-    additionalFooterLinkClasses,
-    category,
-    tagIcon,
-    footerLinks,
+    title = defaults.title,
+    titleLevel = defaults.titleLevel,
+    excerpt = defaults.excerpt,
+    thumbnailSrc = defaults.thumbnailSrc,
+    thumbnailSrcAlt = defaults.thumbnailSrcAlt,
+    cardUrl = defaults.cardUrl,
+    demoUrl = defaults.demoUrl,
+    rounded = defaults.rounded,
+    additionalClasses = defaults.additionalClasses,
+    additionalCategoryClasses = defaults.additionalCategoryClasses,
+    additionalLiveDemoClasses = defaults.additionalLiveDemoClasses,
+    additionalExcerptClasses = defaults.additionalExcerptClasses,
+    additionalHeaderClasses = defaults.additionalHeaderClasses,
+    additionalFooterLinkClasses = defaults.additionalFooterLinkClasses,
+    category = defaults.category,
+    tagIcon = defaults.tagIcon,
+    footerLinks = defaults.footerLinks,
     ...props
 }) => (
 
@@ -223,7 +243,7 @@ ShowcaseCard.propTypes = {
      */
     title: PropTypes.string,
     /**
-     * Title variant
+     * Title level
      */
     titleLevel: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
     /**
@@ -286,26 +306,6 @@ ShowcaseCard.propTypes = {
      * Additional classes for footer link
      */
     additionalFooterLinkClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-ShowcaseCard.defaultProps = {
-    title: undefined,
-    titleLevel: '5',
-    excerpt: undefined,
-    thumbnailSrc: undefined,
-    thumbnailSrcAlt: undefined,
-    demoUrl: undefined,
-    category: undefined,
-    tagIcon: undefined,
-    cardUrl: undefined,
-    footerLinks: undefined,
-    rounded: 'lg',
-    additionalClasses: [],
-    additionalCategoryClasses: [],
-    additionalLiveDemoClasses: [],
-    additionalExcerptClasses: [],
-    additionalHeaderClasses: [],
-    additionalFooterLinkClasses: [],
 };
 
 export default ShowcaseCard;

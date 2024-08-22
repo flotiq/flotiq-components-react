@@ -3,20 +3,25 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+const defaults = exports.defaults = {
+  caption: null,
+  additionalClasses: []
+};
+
 /**
  * Component for audio files
  */
 const Audio = _ref => {
   let {
     url,
-    caption,
+    caption = defaults.caption,
     extension,
-    additionalClasses,
+    additionalClasses = defaults.additionalClasses,
     ...props
   } = _ref;
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -26,7 +31,7 @@ const Audio = _ref => {
     className: "w-full"
   }, props), /*#__PURE__*/_react.default.createElement("source", {
     src: url,
-    type: "audio/".concat(extension)
+    type: `audio/${extension}`
   }), "Your browser does not support the audio element."), caption && /*#__PURE__*/_react.default.createElement("p", {
     className: "pt-2 md:pt-5 opacity-70 italic"
   }, caption));
@@ -48,9 +53,5 @@ Audio.propTypes = {
    * Additional classes for audio
    */
   additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
-};
-Audio.defaultProps = {
-  caption: null,
-  additionalClasses: []
 };
 var _default = exports.default = Audio;

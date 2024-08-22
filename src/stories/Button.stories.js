@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Button from '../components/Button/Button';
+import Button, { defaults } from '../components/Button/Button';
 import { roundedProps } from '../defaultProps/rounded';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const ButtonStory =  {
     title: 'Flotiq components/Button',
     component: Button,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
@@ -16,26 +16,28 @@ export default {
     },
 };
 
+export default ButtonStory;
+
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-    ...Button.defaultProps,
+    ...defaults,
     label: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-    ...Button.defaultProps,
+    ...defaults,
     label: 'Button',
     variant: 'secondary',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-    ...Button.defaultProps,
+    ...defaults,
     label: 'Button',
     size: 'lg',
     variant: 'info',
@@ -43,7 +45,7 @@ Large.args = {
 
 export const MediumSquared = Template.bind({});
 MediumSquared.args = {
-    ...Button.defaultProps,
+    ...defaults,
     label: 'Button',
     variant: 'success',
     rounded: roundedProps.values[0],

@@ -3,25 +3,31 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+const defaults = exports.defaults = {
+  alignment: 'left',
+  additionalClasses: []
+};
+
 /**
  * Component for standard text
  */
 const Paragraph = _ref => {
   let {
-    alignment,
-    additionalClasses,
+    alignment = defaults.alignment,
+    additionalClasses = defaults.additionalClasses,
     children,
     ...props
   } = _ref;
   const alignmentClass = {
     left: 'text-left',
     center: 'text-center',
-    right: 'text-right'
+    right: 'text-right',
+    justify: 'text-justify'
   };
   return /*#__PURE__*/_react.default.isValidElement(children) ? /*#__PURE__*/_react.default.createElement("div", _extends({
     className: ['py-2', alignmentClass[alignment], ...additionalClasses].join(' ')
@@ -40,14 +46,10 @@ Paragraph.propTypes = {
   /**
    * Paragraph alignment
    */
-  alignment: _propTypes.default.oneOf(['left', 'center', 'right']),
+  alignment: _propTypes.default.oneOf(['left', 'center', 'right', 'justify']),
   /**
    * Additional classes for paragraph
    */
   additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
-};
-Paragraph.defaultProps = {
-  alignment: 'left',
-  additionalClasses: []
 };
 var _default = exports.default = Paragraph;

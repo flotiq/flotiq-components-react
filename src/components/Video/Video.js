@@ -1,10 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+export const defaults = {
+    caption: null,
+    additionalClasses: [],
+};
+
 /**
  * Component for video files
  */
-const Video = ({ url, caption, extension, additionalClasses, ...props }) => (
+const Video = ({
+    url,
+    caption = defaults.caption,
+    extension,
+    additionalClasses = defaults.additionalClasses,
+    ...props
+}) => (
     <div className={['text-content-image pt-2 pb-2', ...additionalClasses].join(' ')}>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <video width="100%" controls {...props}>
@@ -32,11 +43,6 @@ Video.propTypes = {
      * Additional classes for video
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Video.defaultProps = {
-    caption: null,
-    additionalClasses: [],
 };
 
 export default Video;

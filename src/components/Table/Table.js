@@ -1,10 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+export const defaults = {
+    headers: [],
+    additionalClasses: [],
+};
+
 /**
  * Multi-column multi-row table component
  */
-const Table = ({ content, headers, additionalClasses, ...props }) => (
+const Table = ({
+    content,
+    headers = defaults.headers,
+    additionalClasses = defaults.additionalClasses,
+    ...props
+}) => (
     <table
         className={['w-full border-collapse mt-2 mb-4 border border-light', ...additionalClasses].join(' ')}
         {...props}
@@ -46,11 +56,6 @@ Table.propTypes = {
      * Additional classes for table
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Table.defaultProps = {
-    headers: [],
-    additionalClasses: [],
 };
 
 export default Table;

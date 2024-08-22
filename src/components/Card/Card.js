@@ -14,16 +14,26 @@ const calcBasisClass = (scale, isHorizontal, breakpoint = 'md') => {
     return '';
 };
 
+export const defaults = {
+    rounded: 'lg',
+    bordered: true,
+    horizontal: false,
+    additionalClasses: [],
+    proportionsForHorizontal: { body: '1/2', img: '1/2', breakpoint: 'md' },
+};
+
 /**
  * Complex component for displaying card like elements
  */
-const Card = ({ children,
-    rounded,
-    bordered,
-    horizontal,
-    proportionsForHorizontal,
-    additionalClasses,
-    ...props }) => {
+const Card = ({
+    children,
+    rounded = defaults.rounded,
+    bordered = defaults.bordered,
+    horizontal = defaults.horizontal,
+    proportionsForHorizontal = defaults.proportionsForHorizontal,
+    additionalClasses = defaults.additionalClasses,
+    ...props 
+}) => {
     const borderedClass = bordered ? 'border border-gray-200' : '';
     const directionClasses = horizontal ? 'flex flex-wrap justify-between align-start' : 'flex-none';
 
@@ -85,14 +95,6 @@ Card.propTypes = {
      * Additional classes for card
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Card.defaultProps = {
-    rounded: 'lg',
-    bordered: true,
-    horizontal: false,
-    additionalClasses: [],
-    proportionsForHorizontal: { body: '1/2', img: '1/2', breakpoint: 'md' },
 };
 
 export default Object.assign(Card, {

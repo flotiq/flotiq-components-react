@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+export const defaults = {
+    additionalClasses: [],
+};
+
 /**
  * Component for displaying warnings
  */
-const Warning = ({ message, title, additionalClasses, ...props }) => (
+const Warning = ({ message, title, additionalClasses = defaults.additionalClasses, ...props }) => (
     <div className={['bg-warning-200 p-6', ...additionalClasses].join(' ')} {...props}>
         <p className="font-bold text-xl text-warning-800">{title}</p>
         <hr className="my-4 border-warning-600" />
@@ -25,10 +29,6 @@ Warning.propTypes = {
      * Additional classes for warning
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Warning.defaultProps = {
-    additionalClasses: [],
 };
 
 export default Warning;

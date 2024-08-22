@@ -3,15 +3,27 @@ import PropTypes from 'prop-types';
 import { roundedProps } from '../../defaultProps/rounded';
 import { backgroundProps } from '../../defaultProps/background';
 
-const Announcement = ({ variant,
-    backgroundColor,
-    textAlignment,
-    textSize,
-    textColor,
+export const defaults = {
+    variant: backgroundProps.defaultValue,
+    backgroundColor: null,
+    textAlignment: null,
+    textSize: 'base',
+    textColor: null,
+    rounded: 'lg',
+    additionalClasses: [],
+};
+
+const Announcement = ({
+    variant = defaults.variant,
+    backgroundColor = defaults.backgroundColor,
+    textAlignment = defaults.textAlignment,
+    textSize = defaults.textSize,
+    textColor = defaults.textSize,
     content,
-    additionalClasses,
-    rounded,
-    ...props }) => {
+    additionalClasses = defaults.additionalClasses,
+    rounded = defaults.rounded,
+    ...props
+}) => {
     const alignment = { left: 'text-left', center: 'text-center', right: 'text-right', none: '' };
     const fontSize = {
         xs: 'text-xs',
@@ -106,16 +118,6 @@ Announcement.propTypes = {
      * Additional classes for button
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Announcement.defaultProps = {
-    variant: backgroundProps.defaultValue,
-    backgroundColor: null,
-    textAlignment: null,
-    textSize: 'base',
-    textColor: null,
-    rounded: 'lg',
-    additionalClasses: [],
 };
 
 export default Announcement;

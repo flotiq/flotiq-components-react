@@ -3,31 +3,44 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+const defaults = exports.defaults = {
+  level: 1,
+  anchor: '',
+  alignment: 'left',
+  additionalClasses: [],
+  h1AdditionalClasses: [],
+  h2AdditionalClasses: [],
+  h3AdditionalClasses: [],
+  h4AdditionalClasses: [],
+  h5AdditionalClasses: [],
+  h6AdditionalClasses: []
+};
+
 /**
  * Component for headings
  */
 const Header = _ref => {
   let {
-    level,
+    level = defaults.level,
     children,
-    anchor,
-    alignment,
-    additionalClasses,
-    h1AdditionalClasses,
-    h2AdditionalClasses,
-    h3AdditionalClasses,
-    h4AdditionalClasses,
-    h5AdditionalClasses,
-    h6AdditionalClasses,
+    anchor = defaults.anchor,
+    alignment = defaults.alignment,
+    additionalClasses = defaults.additionalClasses,
+    h1AdditionalClasses = defaults.h1AdditionalClasses,
+    h2AdditionalClasses = defaults.h2AdditionalClasses,
+    h3AdditionalClasses = defaults.h3AdditionalClasses,
+    h4AdditionalClasses = defaults.h4AdditionalClasses,
+    h5AdditionalClasses = defaults.h5AdditionalClasses,
+    h6AdditionalClasses = defaults.h6AdditionalClasses,
     ...props
   } = _ref;
   const safeLevel = Math.min(Math.max(level, 1), 6);
-  const HeaderToRender = "h".concat(safeLevel);
+  const HeaderToRender = `h${safeLevel}`;
   const sizeClass = {
     1: ['text-4xl font-bold pt-6 pb-3', ...h1AdditionalClasses].join(' '),
     2: ['text-3xl font-bold pt-5 pb-2.5', ...h2AdditionalClasses].join(' '),
@@ -97,17 +110,5 @@ Header.propTypes = {
    * Additional classes for level 6 header
    */
   h6AdditionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
-};
-Header.defaultProps = {
-  level: 1,
-  anchor: '',
-  alignment: 'left',
-  additionalClasses: [],
-  h1AdditionalClasses: [],
-  h2AdditionalClasses: [],
-  h3AdditionalClasses: [],
-  h4AdditionalClasses: [],
-  h5AdditionalClasses: [],
-  h6AdditionalClasses: []
 };
 var _default = exports.default = Header;

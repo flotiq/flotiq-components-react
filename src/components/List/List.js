@@ -1,10 +1,22 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
+export const defaults = {
+    style: 'unordered',
+    level: 1,
+    additionalClasses: [],
+};
+
 /**
  * Component for listings
  */
-const List = ({ items, style, level, additionalClasses, ...props }) => {
+const List = ({
+    items,
+    style = defaults.style,
+    level = defaults.level,
+    additionalClasses = defaults.additionalClasses,
+    ...props
+}) => {
     const ListType = style === 'ordered' ? 'ol' : 'ul';
     const listStyleClass = {
         ordered: 'list-decimal',
@@ -60,12 +72,6 @@ List.propTypes = {
      * Additional classes for list
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-List.defaultProps = {
-    style: 'unordered',
-    level: 1,
-    additionalClasses: [],
 };
 
 export default List;

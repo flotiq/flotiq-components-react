@@ -18,7 +18,10 @@ module.exports = {
         /* This rule will warn when it encounters a reference to an identifier that has not yet been declared. */
         'no-use-before-define': ['error', { variables: false }],
         /* This rule enforces consistent line breaks inside braces of object literals or destructuring assignments. */
-        'object-curly-newline': ['error', { ImportDeclaration: 'never' }],
+        'object-curly-newline': ['error', {
+            ImportDeclaration: { multiline: true, consistent: true },
+            ObjectPattern: { multiline: true, consistent: true },
+        }],
         /* Enforce consistent usage of destructuring assignment of props, state, and context */
         'react/destructuring-assignment': 0,
         /* Prevent missing props validation in a React component definition */
@@ -54,5 +57,7 @@ module.exports = {
         'import/prefer-default-export': 0,
         'react/no-danger': 0,
         'import/no-extraneous-dependencies': 0,
+        'comma-dangle': ['error', 'always-multiline'],
+        'react/jsx-one-expression-per-line': 0,
     },
 };

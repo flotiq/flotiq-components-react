@@ -11,24 +11,39 @@ import Table from '../Table/Table';
 import Warning from '../Warning/Warning';
 import YouTubeEmbed from '../YouTubeEmbed/YouTubeEmbed';
 
+export const defaults = {
+    headerProps: {},
+    paragraphProps: {},
+    youTubeEmbedProps: {},
+    fileProps: {},
+    quoteProps: {},
+    tableProps: {},
+    codeProps: {},
+    warningProps: {},
+    delimiterProps: {},
+    listProps: {},
+    standardPadding: 'py-2',
+    additionalClasses: [],
+};
+
 /**
  * Component for displaying contents of block fields (editor.js)
  */
 const Content = ({
     blocks,
     highlight,
-    headerProps,
-    paragraphProps,
-    youTubeEmbedProps,
-    fileProps,
-    quoteProps,
-    tableProps,
-    codeProps,
-    warningProps,
-    delimiterProps,
-    listProps,
-    additionalClasses,
-    standardPadding,
+    headerProps = defaults.headerProps,
+    paragraphProps = defaults.paragraphProps,
+    youTubeEmbedProps = defaults.youTubeEmbedProps,
+    fileProps = defaults.fileProps,
+    quoteProps = defaults.quoteProps,
+    tableProps = defaults.tableProps,
+    codeProps = defaults.codeProps,
+    warningProps = defaults.warningProps,
+    delimiterProps = defaults.delimiterProps,
+    listProps = defaults.listProps,
+    additionalClasses = defaults.additionalClasses,
+    standardPadding = defaults.standardPadding,
     ...props
 }) => {
     useEffect(() => {
@@ -150,45 +165,45 @@ Content.propTypes = {
      */
     blocks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
     /**
-     * Additional props for header component
+     * Additional props for header component, for more information check Header component
      */
-    headerProps: PropTypes.shape({}),
+    headerProps: Header.propTypes,
     /**
-     * Additional props for paragraph component
+     * Additional props for paragraph component, for more information check Paragraph component
      */
-    paragraphProps: PropTypes.shape({}),
+    paragraphProps: Paragraph.propTypes,
     /**
-     * Additional props for YouTube embed component
+     * Additional props for YouTube embed component, for more information check YouTubeEmbed component
      */
-    youTubeEmbedProps: PropTypes.shape({}),
+    youTubeEmbedProps: YouTubeEmbed.propTypes,
     /**
-     * Additional props for file components
+     * Additional props for file components, for more information check File component
      */
-    fileProps: PropTypes.shape({}),
+    fileProps: File.propTypes,
     /**
-     * Additional props for quote component
+     * Additional props for quote component, for more information check Quote components
      */
-    quoteProps: PropTypes.shape({}),
+    quoteProps: Quote.propTypes,
     /**
-     * Additional props for table component
+     * Additional props for table component, for more information check Table component
      */
-    tableProps: PropTypes.shape({}),
+    tableProps: Table.propTypes,
     /**
-     * Additional props for code component
+     * Additional props for code component, for more information check Code component
      */
-    codeProps: PropTypes.shape({}),
+    codeProps: Code.propTypes,
     /**
-     * Additional props for warning component
+     * Additional props for warning component, for more information check Warning component
      */
-    warningProps: PropTypes.shape({}),
+    warningProps: Warning.propTypes,
     /**
-     * Additional props for delimiter component
+     * Additional props for delimiter component, for more information check Delimiter component
      */
-    delimiterProps: PropTypes.shape({}),
+    delimiterProps: Delimiter.propTypes,
     /**
-     * Additional components for list component
+     * Additional components for list component, for more information check List component
      */
-    listProps: PropTypes.shape({}),
+    listProps: List.propTypes,
     /**
      * Standard horizontal padding for block components
      */
@@ -197,21 +212,6 @@ Content.propTypes = {
      * Additional classes for content container
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Content.defaultProps = {
-    headerProps: {},
-    paragraphProps: {},
-    youTubeEmbedProps: {},
-    fileProps: {},
-    quoteProps: {},
-    tableProps: {},
-    codeProps: {},
-    warningProps: {},
-    delimiterProps: {},
-    listProps: {},
-    standardPadding: 'py-2',
-    additionalClasses: [],
 };
 
 export default Content;

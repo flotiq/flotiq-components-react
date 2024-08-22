@@ -3,40 +3,59 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _rounded = require("../../defaultProps/rounded");
 var _Delimiter = _interopRequireDefault(require("../Delimiter/Delimiter"));
 var _Header = _interopRequireDefault(require("../Header/Header"));
 var _Paragraph = _interopRequireDefault(require("../Paragraph/Paragraph"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const ArrowTopRightIcon = 'data:image/svg+xml;base64,PHN2ZyB3aWR' + '0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9u' + 'ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9I' + 'k0zLjA4MzAxIDEyLjkxNjhMMTIuOTE2MyAzLjA4MzUiIHN0cm9rZT0iIzAwODNGQy' + 'Igc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1' + 'saW5lam9pbj0icm91bmQiLz4NCjxwYXRoIGQ9Ik0xMi45MTY1IDEwLjA0MVYzLjA4' + 'MzVINS45NTg5OCIgc3Ryb2tlPSIjMDA4M0ZDIiBzdHJva2Utd2lkdGg9IjIiIHN0c' + 'm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPg0KPC' + '9zdmc+DQo=';
 const LiveDemoIcon = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAi' + 'IGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9I' + 'mh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwIDQuMzc0NTFDMy' + '43NSA0LjM3NDUxIDEuMjUgMTAuMDAwMSAxLjI1IDEwLjAwMDFDMS4yNSAxMC4wMDAxIDM' + 'uNzUgMTUuNjI0NSAxMCAxNS42MjQ1QzE2LjI1IDE1LjYyNDUgMTguNzUgMTAuMDAwMSAx' + 'OC43NSAxMC4wMDAxQzE4Ljc1IDEwLjAwMDEgMTYuMjUgNC4zNzQ1MSAxMCA0LjM3NDUxW' + 'iIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZW' + 'pvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMCAxMy4xMjVDMTEuNzI1OSAxMy4xMjUgMTM' + 'uMTI1IDExLjcyNTkgMTMuMTI1IDEwQzEzLjEyNSA4LjI3NDExIDExLjcyNTkgNi44NzUg' + 'MTAgNi44NzVDOC4yNzQxMSA2Ljg3NSA2Ljg3NSA4LjI3NDExIDYuODc1IDEwQzYuODc1I' + 'DExLjcyNTkgOC4yNzQxMSAxMy4xMjUgMTAgMTMuMTI1WiIgc3Ryb2tlPSJibGFjayIgc3' + 'Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3Z' + 'nPgo=';
+const defaults = exports.defaults = {
+  title: undefined,
+  titleLevel: '5',
+  excerpt: undefined,
+  thumbnailSrc: undefined,
+  thumbnailSrcAlt: undefined,
+  demoUrl: undefined,
+  category: undefined,
+  tagIcon: undefined,
+  cardUrl: undefined,
+  footerLinks: undefined,
+  rounded: 'lg',
+  additionalClasses: [],
+  additionalCategoryClasses: [],
+  additionalLiveDemoClasses: [],
+  additionalExcerptClasses: [],
+  additionalHeaderClasses: [],
+  additionalFooterLinkClasses: []
+};
 
 /**
  * Component for displaying product showcase card
  */
 const ShowcaseCard = _ref => {
   let {
-    title,
-    titleLevel = 5,
-    excerpt,
-    thumbnailSrc,
-    thumbnailSrcAlt,
-    cardUrl,
-    demoUrl,
-    rounded,
-    additionalClasses,
-    additionalCategoryClasses,
-    additionalLiveDemoClasses,
-    additionalExcerptClasses,
-    additionalHeaderClasses,
-    additionalFooterLinkClasses,
-    category,
-    tagIcon,
-    footerLinks,
+    title = defaults.title,
+    titleLevel = defaults.titleLevel,
+    excerpt = defaults.excerpt,
+    thumbnailSrc = defaults.thumbnailSrc,
+    thumbnailSrcAlt = defaults.thumbnailSrcAlt,
+    cardUrl = defaults.cardUrl,
+    demoUrl = defaults.demoUrl,
+    rounded = defaults.rounded,
+    additionalClasses = defaults.additionalClasses,
+    additionalCategoryClasses = defaults.additionalCategoryClasses,
+    additionalLiveDemoClasses = defaults.additionalLiveDemoClasses,
+    additionalExcerptClasses = defaults.additionalExcerptClasses,
+    additionalHeaderClasses = defaults.additionalHeaderClasses,
+    additionalFooterLinkClasses = defaults.additionalFooterLinkClasses,
+    category = defaults.category,
+    tagIcon = defaults.tagIcon,
+    footerLinks = defaults.footerLinks,
     ...props
   } = _ref;
   return /*#__PURE__*/_react.default.createElement("div", _extends({
@@ -79,12 +98,12 @@ const ShowcaseCard = _ref => {
     additionalClasses: [...additionalHeaderClasses].join(' ')
   }, title), /*#__PURE__*/_react.default.createElement(_Paragraph.default, {
     className: ['text-sm', ...additionalExcerptClasses].join(' ')
-  }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, excerpt.substring(0, 110), (excerpt === null || excerpt === void 0 ? void 0 : excerpt.length) >= 110 ? '...' : '')))), (footerLinks === null || footerLinks === void 0 ? void 0 : footerLinks.length) > 0 && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Delimiter.default, {
+  }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, excerpt.substring(0, 110), excerpt?.length >= 110 ? '...' : '')))), footerLinks?.length > 0 && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Delimiter.default, {
     variant: "light",
     className: "mb-[20px] mx-6"
   }), /*#__PURE__*/_react.default.createElement("div", {
     className: "ml-1 px-6 pb-6 flex flex-wrap justify-between"
-  }, footerLinks === null || footerLinks === void 0 ? void 0 : footerLinks.map(footer => /*#__PURE__*/_react.default.createElement("a", {
+  }, footerLinks?.map(footer => /*#__PURE__*/_react.default.createElement("a", {
     href: footer.link,
     className: ['text-sm', 'hover:text-blue-600', 'font-400', 'inline-flex', 'items-center', 'no-underline', 'hover:no-underline', ...additionalExcerptClasses].join(' '),
     target: "_blank",
@@ -105,7 +124,7 @@ ShowcaseCard.propTypes = {
    */
   title: _propTypes.default.string,
   /**
-   * Title variant
+   * Title level
    */
   titleLevel: _propTypes.default.oneOf([1, 2, 3, 4, 5, 6]),
   /**
@@ -168,24 +187,5 @@ ShowcaseCard.propTypes = {
    * Additional classes for footer link
    */
   additionalFooterLinkClasses: _propTypes.default.arrayOf(_propTypes.default.string)
-};
-ShowcaseCard.defaultProps = {
-  title: undefined,
-  titleLevel: '5',
-  excerpt: undefined,
-  thumbnailSrc: undefined,
-  thumbnailSrcAlt: undefined,
-  demoUrl: undefined,
-  category: undefined,
-  tagIcon: undefined,
-  cardUrl: undefined,
-  footerLinks: undefined,
-  rounded: 'lg',
-  additionalClasses: [],
-  additionalCategoryClasses: [],
-  additionalLiveDemoClasses: [],
-  additionalExcerptClasses: [],
-  additionalHeaderClasses: [],
-  additionalFooterLinkClasses: []
 };
 var _default = exports.default = ShowcaseCard;

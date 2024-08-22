@@ -1,0 +1,22 @@
+# Code
+
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as Code from './Code.stories';
+
+<Meta of={Code} />
+
+Component for highlighting code.
+
+Install [highlight.js](https://highlightjs.org/) to make the component looks like in the examples, we use nord.css
+
+<Canvas of={Code.Base} sourceState={'none'}/>
+
+Code:
+```javascript
+import highlight from 'highlight.js';
+import 'highlight.js/styles/nord.css';
+// ...
+<Code code='const example = "Flotiq is great!";' highlight={highlight} language="javascript"/>
+// ...
+```

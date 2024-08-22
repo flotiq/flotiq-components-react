@@ -3,20 +3,26 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+const defaults = exports.defaults = {
+  title: 'Youtube video',
+  allowFullScreen: true,
+  additionalClasses: []
+};
+
 /**
  * Component for displaying iframe with YouTube video
  */
 const YouTubeEmbed = _ref => {
   let {
     url,
-    title,
-    allowFullScreen,
-    additionalClasses,
+    title = defaults.title,
+    allowFullScreen = defaults.allowFullScreen,
+    additionalClasses = defaults.additionalClasses,
     ...props
   } = _ref;
   let safeUrl = url.replace('/watch?v=', '/embed/');
@@ -52,10 +58,5 @@ YouTubeEmbed.propTypes = {
    * Additional classes for embed
    */
   additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
-};
-YouTubeEmbed.defaultProps = {
-  title: 'Youtube video',
-  allowFullScreen: true,
-  additionalClasses: []
 };
 var _default = exports.default = YouTubeEmbed;

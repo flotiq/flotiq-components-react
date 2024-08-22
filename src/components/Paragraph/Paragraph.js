@@ -1,14 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+export const defaults = {
+    alignment: 'left',
+    additionalClasses: [],
+};
+
 /**
  * Component for standard text
  */
-const Paragraph = ({ alignment, additionalClasses, children, ...props }) => {
+const Paragraph = ({
+    alignment = defaults.alignment,
+    additionalClasses = defaults.additionalClasses,
+    children, ...props
+}) => {
     const alignmentClass = {
         left: 'text-left',
         center: 'text-center',
         right: 'text-right',
+        justify: 'text-justify',
     };
     return React.isValidElement(children) ? (
         <div
@@ -34,16 +44,11 @@ Paragraph.propTypes = {
     /**
      * Paragraph alignment
      */
-    alignment: PropTypes.oneOf(['left', 'center', 'right']),
+    alignment: PropTypes.oneOf(['left', 'center', 'right', 'justify']),
     /**
      * Additional classes for paragraph
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-Paragraph.defaultProps = {
-    alignment: 'left',
-    additionalClasses: [],
 };
 
 export default Paragraph;

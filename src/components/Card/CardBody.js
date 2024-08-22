@@ -2,10 +2,14 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Context } from './Context';
 
+export const defaults = {
+    additionalClasses: [],
+};
+
 /**
  * Component for text body of card like component
  */
-const CardBody = ({ children, additionalClasses = [], ...props }) => {
+const CardBody = ({ children, additionalClasses = defaults.additionalClasses, ...props }) => {
     const context = useContext(Context);
 
     return (
@@ -31,10 +35,6 @@ CardBody.propTypes = {
      * Additional classes for card body
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
-};
-
-CardBody.defaultProps = {
-    additionalClasses: [],
 };
 
 export default CardBody;

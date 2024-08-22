@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Paragraph } from '../index';
+import Paragraph, { defaults } from '../components/Paragraph/Paragraph';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const ParagraphStory = {
     title: 'Flotiq components/Paragraph',
     component: Paragraph,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
@@ -11,6 +11,8 @@ export default {
         alignment: { control: 'select' },
     },
 };
+
+export default ParagraphStory;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Paragraph {...args} />;
@@ -23,5 +25,5 @@ Base.args = {
         + ' Nullam vehicula tortor vitae lorem egestas imperdiet.'
         + ' Vestibulum molestie sem mollis, commodo neque vitae, posuere urna.'
         + ' Integer malesuada congue dui vel tincidunt. Nunc dictum diam et nibh ultricies, et luctus lorem porttitor.',
-    ...Paragraph.defaultProps,
+    ...defaults,
 };
