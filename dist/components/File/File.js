@@ -3,12 +3,14 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.filePropTypes = exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
-var _Image = _interopRequireDefault(require("../Image/Image"));
-var _Video = _interopRequireDefault(require("../Video/Video"));
-var _Audio = _interopRequireDefault(require("../Audio/Audio"));
+var _Image = _interopRequireWildcard(require("../Image/Image"));
+var _Video = _interopRequireWildcard(require("../Video/Video"));
+var _Audio = _interopRequireWildcard(require("../Audio/Audio"));
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const defaults = exports.defaults = {
@@ -62,11 +64,7 @@ const File = _ref => {
 const isMovie = extension => ['mp4', 'webm', 'ogv'].indexOf(extension) > -1;
 const isImage = extension => ['jpg', 'png', 'bmp', 'svg', 'gif', 'webp', 'ico'].indexOf(extension) > -1;
 const isAudio = extension => ['mpeg', 'mp3', 'mid', 'ogg', 'oga', 'wav'].indexOf(extension) > -1;
-File.propTypes = {
-  /**
-   * File url
-   */
-  url: _propTypes.default.string.isRequired,
+const filePropTypes = exports.filePropTypes = {
   /**
    * File caption
    */
@@ -78,7 +76,7 @@ File.propTypes = {
   /**
    * File extension
    */
-  extension: _propTypes.default.string.isRequired,
+  extension: _propTypes.default.string,
   /**
    * File name
    */
@@ -86,18 +84,29 @@ File.propTypes = {
   /**
    * Additional props for image components, for more information check Image component
    */
-  imageProps: _Image.default.propTypes,
+  imageProps: _propTypes.default.shape(_Image.imagePropTypes),
   /**
    * Additional props for video components, for more information check Video component
    */
-  videoProps: _Video.default.propTypes,
+  videoProps: _propTypes.default.shape(_Video.videoPropTypes),
   /**
    * Additional props for audio components, for more information check Audio component
    */
-  audioProps: _Audio.default.propTypes,
+  audioProps: _propTypes.default.shape(_Audio.audioPropTypes),
   /**
    * Additional classes for file
    */
   additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+};
+File.propTypes = {
+  /**
+   * File url
+   */
+  url: _propTypes.default.string.isRequired,
+  /**
+   * File extension
+   */
+  extension: _propTypes.default.string.isRequired,
+  ...filePropTypes
 };
 var _default = exports.default = File;

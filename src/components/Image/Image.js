@@ -40,11 +40,11 @@ const Image = ({
     </>
 );
 
-Image.propTypes = {
+export const imagePropTypes = {
     /**
      * Image url
      */
-    url: PropTypes.string.isRequired,
+    url: PropTypes.string,
     /**
      * Image caption
      */
@@ -65,6 +65,14 @@ Image.propTypes = {
      * Additional classes for image caption
      */
     captionAdditionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
+Image.propTypes = {
+    ...imagePropTypes,
+    /**
+     * Image url
+     */
+    url: PropTypes.string.isRequired,
 };
 
 export default Image;

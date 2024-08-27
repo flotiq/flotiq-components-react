@@ -41,7 +41,7 @@ const Table = ({
     </table>
 );
 
-Table.propTypes = {
+export const tablePropTypes = {
     /**
      * Table contents
      */
@@ -57,5 +57,7 @@ Table.propTypes = {
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
 };
+
+Table.propTypes = tablePropTypes;
 
 export default Table;

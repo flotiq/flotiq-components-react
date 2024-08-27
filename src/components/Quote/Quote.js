@@ -52,15 +52,15 @@ const Quote = ({
     </div>
 );
 
-Quote.propTypes = {
+export const quotePropTypes = {
     /**
      * Quote content
      */
-    text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     /**
      * Quote caption
      */
-    caption: PropTypes.string.isRequired,
+    caption: PropTypes.string,
     /**
      * Quote variant
      */
@@ -87,6 +87,18 @@ Quote.propTypes = {
      * Additional classes for quote caption
      */
     captionAdditionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
+Quote.propTypes = {
+    ...quotePropTypes,
+    /**
+     * Quote content
+     */
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+    /**
+     * Quote caption
+     */
+    caption: PropTypes.string.isRequired,
 };
 
 export default Quote;

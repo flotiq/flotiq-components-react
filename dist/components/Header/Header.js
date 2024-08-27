@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.headerPropTypes = exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -65,15 +65,11 @@ const Header = _ref => {
     id: anchor
   }, props));
 };
-Header.propTypes = {
+const headerPropTypes = exports.headerPropTypes = {
   /**
    * Level of header
    */
   level: _propTypes.default.number,
-  /**
-   * Header contents
-   */
-  children: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]).isRequired,
   /**
    * Header anchor
    */
@@ -110,5 +106,12 @@ Header.propTypes = {
    * Additional classes for level 6 header
    */
   h6AdditionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+};
+Header.propTypes = {
+  /**
+   * Header contents
+   */
+  children: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]).isRequired,
+  ...headerPropTypes
 };
 var _default = exports.default = Header;

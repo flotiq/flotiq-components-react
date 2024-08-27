@@ -55,11 +55,11 @@ const Items = {
 };
 Items.items = PropTypes.arrayOf(PropTypes.shape(Items));
 
-List.propTypes = {
+export const listPropTypes = {
     /**
      * List content
      */
-    items: PropTypes.arrayOf(PropTypes.shape(Items)).isRequired,
+    items: PropTypes.arrayOf(PropTypes.shape(Items)),
     /**
      * List style
      */
@@ -72,6 +72,14 @@ List.propTypes = {
      * Additional classes for list
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
+List.propTypes = {
+    ...listPropTypes,
+    /**
+     * List content
+     */
+    items: PropTypes.arrayOf(PropTypes.shape(Items)).isRequired,
 };
 
 export default List;

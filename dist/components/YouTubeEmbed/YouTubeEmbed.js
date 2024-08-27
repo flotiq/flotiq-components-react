@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.youTubeEmbedPropTypes = exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -41,11 +41,11 @@ const YouTubeEmbed = _ref => {
     className: ['absolute', 'w-full', 'h-full', ...additionalClasses].join(' ')
   }, props)));
 };
-YouTubeEmbed.propTypes = {
+const youTubeEmbedPropTypes = exports.youTubeEmbedPropTypes = {
   /**
-   * YouTUbe url
+   * YouTube url
    */
-  url: _propTypes.default.string.isRequired,
+  url: _propTypes.default.string,
   /**
    * Title of iframe
    */
@@ -58,5 +58,12 @@ YouTubeEmbed.propTypes = {
    * Additional classes for embed
    */
   additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+};
+YouTubeEmbed.propTypes = {
+  ...youTubeEmbedPropTypes,
+  /**
+   * YouTube url
+   */
+  url: _propTypes.default.string.isRequired
 };
 var _default = exports.default = YouTubeEmbed;

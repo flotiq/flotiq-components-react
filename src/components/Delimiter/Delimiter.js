@@ -31,7 +31,7 @@ const Delimiter = ({
     );
 };
 
-Delimiter.propTypes = {
+export const delimiterPropTypes = {
     /**
      * Delimiter variant
      */
@@ -54,5 +54,7 @@ Delimiter.propTypes = {
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
 };
+
+Delimiter.propTypes = delimiterPropTypes;
 
 export default Delimiter;

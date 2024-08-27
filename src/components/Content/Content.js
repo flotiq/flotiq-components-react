@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Code from '../Code/Code';
-import Delimiter from '../Delimiter/Delimiter';
-import File from '../File/File';
-import Header from '../Header/Header';
-import List from '../List/List';
-import Paragraph from '../Paragraph/Paragraph';
-import Quote from '../Quote/Quote';
-import Table from '../Table/Table';
-import Warning from '../Warning/Warning';
-import YouTubeEmbed from '../YouTubeEmbed/YouTubeEmbed';
+import Code, { codePropTypes } from '../Code/Code';
+import Delimiter, { delimiterPropTypes } from '../Delimiter/Delimiter';
+import File, { filePropTypes } from '../File/File';
+import Header, { headerPropTypes } from '../Header/Header';
+import List, { listPropTypes } from '../List/List';
+import Paragraph, { paragraphPropTypes } from '../Paragraph/Paragraph';
+import Quote, { quotePropTypes } from '../Quote/Quote';
+import Table, { tablePropTypes } from '../Table/Table';
+import Warning, { warningPropTypes } from '../Warning/Warning';
+import YouTubeEmbed, { youTubeEmbedPropTypes } from '../YouTubeEmbed/YouTubeEmbed';
 
 export const defaults = {
     headerProps: {},
@@ -92,7 +92,7 @@ const Content = ({
                     caption={block.data.caption}
                     fileName={block.data.fileName}
                     extension={block.data.extension}
-                    stretched={block.data.stretched}
+                    stretched={!!block.data.stretched}
                     {...fileProps}
                     key={block.id}
                 />
@@ -167,43 +167,43 @@ Content.propTypes = {
     /**
      * Additional props for header component, for more information check Header component
      */
-    headerProps: Header.propTypes,
+    headerProps: PropTypes.shape(headerPropTypes),
     /**
      * Additional props for paragraph component, for more information check Paragraph component
      */
-    paragraphProps: Paragraph.propTypes,
+    paragraphProps: PropTypes.shape(paragraphPropTypes),
     /**
      * Additional props for YouTube embed component, for more information check YouTubeEmbed component
      */
-    youTubeEmbedProps: YouTubeEmbed.propTypes,
+    youTubeEmbedProps: PropTypes.shape(youTubeEmbedPropTypes),
     /**
      * Additional props for file components, for more information check File component
      */
-    fileProps: File.propTypes,
+    fileProps: PropTypes.shape(filePropTypes),
     /**
      * Additional props for quote component, for more information check Quote components
      */
-    quoteProps: Quote.propTypes,
+    quoteProps: PropTypes.shape(quotePropTypes),
     /**
      * Additional props for table component, for more information check Table component
      */
-    tableProps: Table.propTypes,
+    tableProps: PropTypes.shape(tablePropTypes),
     /**
      * Additional props for code component, for more information check Code component
      */
-    codeProps: Code.propTypes,
+    codeProps: PropTypes.shape(codePropTypes),
     /**
      * Additional props for warning component, for more information check Warning component
      */
-    warningProps: Warning.propTypes,
+    warningProps: PropTypes.shape(warningPropTypes),
     /**
      * Additional props for delimiter component, for more information check Delimiter component
      */
-    delimiterProps: Delimiter.propTypes,
+    delimiterProps: PropTypes.shape(delimiterPropTypes),
     /**
      * Additional components for list component, for more information check List component
      */
-    listProps: List.propTypes,
+    listProps: PropTypes.shape(listPropTypes),
     /**
      * Standard horizontal padding for block components
      */

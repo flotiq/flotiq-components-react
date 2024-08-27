@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.defaults = exports.default = exports.codePropTypes = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -47,11 +47,7 @@ const Code = _ref => {
     className: `language-${lang}`
   }, CodeToDisplay)));
 };
-Code.propTypes = {
-  /**
-   * Code content
-   */
-  children: _propTypes.default.string.isRequired,
+const codePropTypes = exports.codePropTypes = {
   /**
    * Programming language name
    */
@@ -60,5 +56,12 @@ Code.propTypes = {
    * Additional classes for code
    */
   additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+};
+Code.propTypes = {
+  ...codePropTypes,
+  /**
+   * Code content
+   */
+  children: _propTypes.default.string.isRequired
 };
 var _default = exports.default = Code;

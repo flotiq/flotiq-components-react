@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Image from '../Image/Image';
-import Video from '../Video/Video';
-import Audio from '../Audio/Audio';
+import Image, { imagePropTypes } from '../Image/Image';
+import Video, { videoPropTypes } from '../Video/Video';
+import Audio, { audioPropTypes } from '../Audio/Audio';
 
 export const defaults = {
     caption: null,
@@ -66,11 +66,7 @@ const isImage = (extension) => ['jpg', 'png', 'bmp', 'svg', 'gif', 'webp', 'ico'
 
 const isAudio = (extension) => ['mpeg', 'mp3', 'mid', 'ogg', 'oga', 'wav'].indexOf(extension) > -1;
 
-File.propTypes = {
-    /**
-     * File url
-     */
-    url: PropTypes.string.isRequired,
+export const filePropTypes = {
     /**
      * File caption
      */
@@ -82,7 +78,7 @@ File.propTypes = {
     /**
      * File extension
      */
-    extension: PropTypes.string.isRequired,
+    extension: PropTypes.string,
     /**
      * File name
      */
@@ -90,19 +86,31 @@ File.propTypes = {
     /**
      * Additional props for image components, for more information check Image component
      */
-    imageProps: Image.propTypes,
+    imageProps: PropTypes.shape(imagePropTypes),
     /**
      * Additional props for video components, for more information check Video component
      */
-    videoProps: Video.propTypes,
+    videoProps: PropTypes.shape(videoPropTypes),
     /**
      * Additional props for audio components, for more information check Audio component
      */
-    audioProps: Audio.propTypes,
+    audioProps: PropTypes.shape(audioPropTypes),
     /**
      * Additional classes for file
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
+File.propTypes = {
+    /**
+     * File url
+     */
+    url: PropTypes.string.isRequired,
+    /**
+     * File extension
+     */
+    extension: PropTypes.string.isRequired,
+    ...filePropTypes,
 };
 
 export default File;

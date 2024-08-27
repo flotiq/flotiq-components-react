@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.delimiterPropTypes = exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _border = require("../../defaultProps/border");
@@ -34,7 +34,7 @@ const Delimiter = _ref => {
     className: ['my-2', _border.borderProps.classSet[variant], styleClasses[style], ...additionalClasses].join(' ')
   }, props));
 };
-Delimiter.propTypes = {
+const delimiterPropTypes = exports.delimiterPropTypes = {
   /**
    * Delimiter variant
    */
@@ -48,4 +48,5 @@ Delimiter.propTypes = {
    */
   additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
 };
+Delimiter.propTypes = delimiterPropTypes;
 var _default = exports.default = Delimiter;

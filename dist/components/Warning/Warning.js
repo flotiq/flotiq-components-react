@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.warningPropTypes = exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -32,7 +32,22 @@ const Warning = _ref => {
     className: "text-warning-800"
   }, message));
 };
+const warningPropTypes = exports.warningPropTypes = {
+  /**
+   * Warning message
+   */
+  message: _propTypes.default.string,
+  /**
+   * Warning title
+   */
+  title: _propTypes.default.string,
+  /**
+   * Additional classes for warning
+   */
+  additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+};
 Warning.propTypes = {
+  ...warningPropTypes,
   /**
    * Warning message
    */
@@ -40,10 +55,6 @@ Warning.propTypes = {
   /**
    * Warning title
    */
-  title: _propTypes.default.string.isRequired,
-  /**
-   * Additional classes for warning
-   */
-  additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+  title: _propTypes.default.string.isRequired
 };
 var _default = exports.default = Warning;

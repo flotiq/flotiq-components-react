@@ -45,11 +45,7 @@ const Code = ({
     );
 };
 
-Code.propTypes = {
-    /**
-     * Code content
-     */
-    children: PropTypes.string.isRequired,
+export const codePropTypes = {
     /**
      * Programming language name
      */
@@ -58,6 +54,14 @@ Code.propTypes = {
      * Additional classes for code
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
+Code.propTypes = {
+    ...codePropTypes,
+    /**
+     * Code content
+     */
+    children: PropTypes.string.isRequired,
 };
 
 export default Code;
