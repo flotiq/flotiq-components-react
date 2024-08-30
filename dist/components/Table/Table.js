@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.tablePropTypes = exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -38,7 +38,7 @@ const Table = _ref => {
     key: column
   }, column))))));
 };
-Table.propTypes = {
+const tablePropTypes = exports.tablePropTypes = {
   /**
    * Table contents
    */
@@ -52,4 +52,5 @@ Table.propTypes = {
    */
   additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
 };
+Table.propTypes = tablePropTypes;
 var _default = exports.default = Table;

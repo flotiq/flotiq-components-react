@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.listPropTypes = exports.defaults = exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -52,11 +52,11 @@ const Items = {
   content: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]).isRequired
 };
 Items.items = _propTypes.default.arrayOf(_propTypes.default.shape(Items));
-List.propTypes = {
+const listPropTypes = exports.listPropTypes = {
   /**
    * List content
    */
-  items: _propTypes.default.arrayOf(_propTypes.default.shape(Items)).isRequired,
+  items: _propTypes.default.arrayOf(_propTypes.default.shape(Items)),
   /**
    * List style
    */
@@ -69,5 +69,12 @@ List.propTypes = {
    * Additional classes for list
    */
   additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+};
+List.propTypes = {
+  ...listPropTypes,
+  /**
+   * List content
+   */
+  items: _propTypes.default.arrayOf(_propTypes.default.shape(Items)).isRequired
 };
 var _default = exports.default = List;

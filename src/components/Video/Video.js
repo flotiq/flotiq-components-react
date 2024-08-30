@@ -26,15 +26,15 @@ const Video = ({
     </div>
 );
 
-Video.propTypes = {
+export const videoPropTypes = {
     /**
      * Video url
      */
-    url: PropTypes.string.isRequired,
+    url: PropTypes.string,
     /**
      * File extension
      */
-    extension: PropTypes.string.isRequired,
+    extension: PropTypes.string,
     /**
      * Video caption
      */
@@ -43,6 +43,18 @@ Video.propTypes = {
      * Additional classes for video
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
+Video.propTypes = {
+    ...videoPropTypes,
+    /**
+     * Video url
+     */
+    url: PropTypes.string.isRequired,
+    /**
+     * File extension
+     */
+    extension: PropTypes.string.isRequired,
 };
 
 export default Video;

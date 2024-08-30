@@ -67,15 +67,11 @@ const Header = ({
     );
 };
 
-Header.propTypes = {
+export const headerPropTypes = {
     /**
      * Level of header
      */
     level: PropTypes.number,
-    /**
-     * Header contents
-     */
-    children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     /**
      * Header anchor
      */
@@ -112,6 +108,14 @@ Header.propTypes = {
      * Additional classes for level 6 header
      */
     h6AdditionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
+Header.propTypes = {
+    /**
+     * Header contents
+     */
+    children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+    ...headerPropTypes,
 };
 
 export default Header;

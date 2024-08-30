@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.imagePropTypes = exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _rounded = require("../../defaultProps/rounded");
@@ -41,11 +41,11 @@ const Image = _ref => {
     }
   }));
 };
-Image.propTypes = {
+const imagePropTypes = exports.imagePropTypes = {
   /**
    * Image url
    */
-  url: _propTypes.default.string.isRequired,
+  url: _propTypes.default.string,
   /**
    * Image caption
    */
@@ -66,5 +66,12 @@ Image.propTypes = {
    * Additional classes for image caption
    */
   captionAdditionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+};
+Image.propTypes = {
+  ...imagePropTypes,
+  /**
+   * Image url
+   */
+  url: _propTypes.default.string.isRequired
 };
 var _default = exports.default = Image;

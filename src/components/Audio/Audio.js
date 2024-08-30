@@ -26,6 +26,21 @@ const Audio = ({
     </div>
 );
 
+export const audioPropTypes = {
+    /**
+     * File extension
+     */
+    extension: PropTypes.string,
+    /**
+     * File caption
+     */
+    caption: PropTypes.string,
+    /**
+     * Additional classes for audio
+     */
+    additionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
 Audio.propTypes = {
     /**
      * File url
@@ -35,14 +50,7 @@ Audio.propTypes = {
      * File extension
      */
     extension: PropTypes.string.isRequired,
-    /**
-     * File caption
-     */
-    caption: PropTypes.string,
-    /**
-     * Additional classes for audio
-     */
-    additionalClasses: PropTypes.arrayOf(PropTypes.string),
+    ...audioPropTypes,
 };
 
 export default Audio;

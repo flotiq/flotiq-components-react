@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.paragraphPropTypes = exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -38,11 +38,7 @@ const Paragraph = _ref => {
     }
   }, props));
 };
-Paragraph.propTypes = {
-  /**
-   * Paragraph content
-   */
-  children: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]).isRequired,
+const paragraphPropTypes = exports.paragraphPropTypes = {
   /**
    * Paragraph alignment
    */
@@ -51,5 +47,12 @@ Paragraph.propTypes = {
    * Additional classes for paragraph
    */
   additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+};
+Paragraph.propTypes = {
+  /**
+   * Paragraph content
+   */
+  children: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]).isRequired,
+  ...paragraphPropTypes
 };
 var _default = exports.default = Paragraph;

@@ -12,7 +12,8 @@ export const defaults = {
 const Paragraph = ({
     alignment = defaults.alignment,
     additionalClasses = defaults.additionalClasses,
-    children, ...props
+    children,
+    ...props
 }) => {
     const alignmentClass = {
         left: 'text-left',
@@ -36,11 +37,7 @@ const Paragraph = ({
     );
 };
 
-Paragraph.propTypes = {
-    /**
-     * Paragraph content
-     */
-    children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+export const paragraphPropTypes = {
     /**
      * Paragraph alignment
      */
@@ -49,6 +46,14 @@ Paragraph.propTypes = {
      * Additional classes for paragraph
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
+Paragraph.propTypes = {
+    /**
+     * Paragraph content
+     */
+    children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+    ...paragraphPropTypes,
 };
 
 export default Paragraph;

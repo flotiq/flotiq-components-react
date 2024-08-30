@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.videoPropTypes = exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -36,15 +36,15 @@ const Video = _ref => {
     className: "pt-2 opacity-70 italic"
   }, caption));
 };
-Video.propTypes = {
+const videoPropTypes = exports.videoPropTypes = {
   /**
    * Video url
    */
-  url: _propTypes.default.string.isRequired,
+  url: _propTypes.default.string,
   /**
    * File extension
    */
-  extension: _propTypes.default.string.isRequired,
+  extension: _propTypes.default.string,
   /**
    * Video caption
    */
@@ -53,5 +53,16 @@ Video.propTypes = {
    * Additional classes for video
    */
   additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+};
+Video.propTypes = {
+  ...videoPropTypes,
+  /**
+   * Video url
+   */
+  url: _propTypes.default.string.isRequired,
+  /**
+   * File extension
+   */
+  extension: _propTypes.default.string.isRequired
 };
 var _default = exports.default = Video;

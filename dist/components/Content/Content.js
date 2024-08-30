@@ -6,16 +6,16 @@ Object.defineProperty(exports, "__esModule", {
 exports.defaults = exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
-var _Code = _interopRequireDefault(require("../Code/Code"));
-var _Delimiter = _interopRequireDefault(require("../Delimiter/Delimiter"));
-var _File = _interopRequireDefault(require("../File/File"));
-var _Header = _interopRequireDefault(require("../Header/Header"));
-var _List = _interopRequireDefault(require("../List/List"));
-var _Paragraph = _interopRequireDefault(require("../Paragraph/Paragraph"));
-var _Quote = _interopRequireDefault(require("../Quote/Quote"));
-var _Table = _interopRequireDefault(require("../Table/Table"));
-var _Warning = _interopRequireDefault(require("../Warning/Warning"));
-var _YouTubeEmbed = _interopRequireDefault(require("../YouTubeEmbed/YouTubeEmbed"));
+var _Code = _interopRequireWildcard(require("../Code/Code"));
+var _Delimiter = _interopRequireWildcard(require("../Delimiter/Delimiter"));
+var _File = _interopRequireWildcard(require("../File/File"));
+var _Header = _interopRequireWildcard(require("../Header/Header"));
+var _List = _interopRequireWildcard(require("../List/List"));
+var _Paragraph = _interopRequireWildcard(require("../Paragraph/Paragraph"));
+var _Quote = _interopRequireWildcard(require("../Quote/Quote"));
+var _Table = _interopRequireWildcard(require("../Table/Table"));
+var _Warning = _interopRequireWildcard(require("../Warning/Warning"));
+var _YouTubeEmbed = _interopRequireWildcard(require("../YouTubeEmbed/YouTubeEmbed"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
@@ -90,7 +90,7 @@ const Content = _ref => {
           caption: block.data.caption,
           fileName: block.data.fileName,
           extension: block.data.extension,
-          stretched: block.data.stretched
+          stretched: !!block.data.stretched
         }, fileProps, {
           key: block.id
         }));
@@ -145,43 +145,43 @@ Content.propTypes = {
   /**
    * Additional props for header component, for more information check Header component
    */
-  headerProps: _Header.default.propTypes,
+  headerProps: _propTypes.default.shape(_Header.headerPropTypes),
   /**
    * Additional props for paragraph component, for more information check Paragraph component
    */
-  paragraphProps: _Paragraph.default.propTypes,
+  paragraphProps: _propTypes.default.shape(_Paragraph.paragraphPropTypes),
   /**
    * Additional props for YouTube embed component, for more information check YouTubeEmbed component
    */
-  youTubeEmbedProps: _YouTubeEmbed.default.propTypes,
+  youTubeEmbedProps: _propTypes.default.shape(_YouTubeEmbed.youTubeEmbedPropTypes),
   /**
    * Additional props for file components, for more information check File component
    */
-  fileProps: _File.default.propTypes,
+  fileProps: _propTypes.default.shape(_File.filePropTypes),
   /**
    * Additional props for quote component, for more information check Quote components
    */
-  quoteProps: _Quote.default.propTypes,
+  quoteProps: _propTypes.default.shape(_Quote.quotePropTypes),
   /**
    * Additional props for table component, for more information check Table component
    */
-  tableProps: _Table.default.propTypes,
+  tableProps: _propTypes.default.shape(_Table.tablePropTypes),
   /**
    * Additional props for code component, for more information check Code component
    */
-  codeProps: _Code.default.propTypes,
+  codeProps: _propTypes.default.shape(_Code.codePropTypes),
   /**
    * Additional props for warning component, for more information check Warning component
    */
-  warningProps: _Warning.default.propTypes,
+  warningProps: _propTypes.default.shape(_Warning.warningPropTypes),
   /**
    * Additional props for delimiter component, for more information check Delimiter component
    */
-  delimiterProps: _Delimiter.default.propTypes,
+  delimiterProps: _propTypes.default.shape(_Delimiter.delimiterPropTypes),
   /**
    * Additional components for list component, for more information check List component
    */
-  listProps: _List.default.propTypes,
+  listProps: _propTypes.default.shape(_List.listPropTypes),
   /**
    * Standard horizontal padding for block components
    */

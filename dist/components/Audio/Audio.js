@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.defaults = exports.default = exports.audioPropTypes = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -36,6 +36,20 @@ const Audio = _ref => {
     className: "pt-2 md:pt-5 opacity-70 italic"
   }, caption));
 };
+const audioPropTypes = exports.audioPropTypes = {
+  /**
+   * File extension
+   */
+  extension: _propTypes.default.string,
+  /**
+   * File caption
+   */
+  caption: _propTypes.default.string,
+  /**
+   * Additional classes for audio
+   */
+  additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+};
 Audio.propTypes = {
   /**
    * File url
@@ -45,13 +59,6 @@ Audio.propTypes = {
    * File extension
    */
   extension: _propTypes.default.string.isRequired,
-  /**
-   * File caption
-   */
-  caption: _propTypes.default.string,
-  /**
-   * Additional classes for audio
-   */
-  additionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+  ...audioPropTypes
 };
 var _default = exports.default = Audio;

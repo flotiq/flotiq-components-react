@@ -37,11 +37,11 @@ const YouTubeEmbed = ({
     );
 };
 
-YouTubeEmbed.propTypes = {
+export const youTubeEmbedPropTypes = {
     /**
-     * YouTUbe url
+     * YouTube url
      */
-    url: PropTypes.string.isRequired,
+    url: PropTypes.string,
     /**
      * Title of iframe
      */
@@ -54,6 +54,14 @@ YouTubeEmbed.propTypes = {
      * Additional classes for embed
      */
     additionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
+YouTubeEmbed.propTypes = {
+    ...youTubeEmbedPropTypes,
+    /**
+     * YouTube url
+     */
+    url: PropTypes.string.isRequired,
 };
 
 export default YouTubeEmbed;

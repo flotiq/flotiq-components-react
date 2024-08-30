@@ -16,7 +16,23 @@ const Warning = ({ message, title, additionalClasses = defaults.additionalClasse
     </div>
 );
 
+export const warningPropTypes = {
+    /**
+     * Warning message
+     */
+    message: PropTypes.string,
+    /**
+     * Warning title
+     */
+    title: PropTypes.string,
+    /**
+     * Additional classes for warning
+     */
+    additionalClasses: PropTypes.arrayOf(PropTypes.string),
+};
+
 Warning.propTypes = {
+    ...warningPropTypes,
     /**
      * Warning message
      */
@@ -25,10 +41,6 @@ Warning.propTypes = {
      * Warning title
      */
     title: PropTypes.string.isRequired,
-    /**
-     * Additional classes for warning
-     */
-    additionalClasses: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default Warning;

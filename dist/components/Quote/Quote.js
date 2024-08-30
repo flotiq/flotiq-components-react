@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaults = exports.default = void 0;
+exports.quotePropTypes = exports.defaults = exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _border = require("../../defaultProps/border");
@@ -42,15 +42,15 @@ const Quote = _ref => {
     className: ['self-end mt-3 py-1.5 opacity-70', ...captionAdditionalClasses].join(' ')
   }, caption));
 };
-Quote.propTypes = {
+const quotePropTypes = exports.quotePropTypes = {
   /**
    * Quote content
    */
-  text: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]).isRequired,
+  text: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]),
   /**
    * Quote caption
    */
-  caption: _propTypes.default.string.isRequired,
+  caption: _propTypes.default.string,
   /**
    * Quote variant
    */
@@ -67,5 +67,16 @@ Quote.propTypes = {
    * Additional classes for quote caption
    */
   captionAdditionalClasses: _propTypes.default.arrayOf(_propTypes.default.string)
+};
+Quote.propTypes = {
+  ...quotePropTypes,
+  /**
+   * Quote content
+   */
+  text: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]).isRequired,
+  /**
+   * Quote caption
+   */
+  caption: _propTypes.default.string.isRequired
 };
 var _default = exports.default = Quote;
