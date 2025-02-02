@@ -8,8 +8,11 @@ var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _rounded = require("../../defaultProps/rounded");
 var _background = require("../../defaultProps/background");
+const _excluded = ["variant", "backgroundColor", "textAlignment", "textSize", "textColor", "content", "additionalClasses", "rounded"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 const defaults = exports.defaults = {
   variant: _background.backgroundProps.defaultValue,
   backgroundColor: null,
@@ -21,16 +24,16 @@ const defaults = exports.defaults = {
 };
 const Announcement = _ref => {
   let {
-    variant = defaults.variant,
-    backgroundColor = defaults.backgroundColor,
-    textAlignment = defaults.textAlignment,
-    textSize = defaults.textSize,
-    textColor = defaults.textSize,
-    content,
-    additionalClasses = defaults.additionalClasses,
-    rounded = defaults.rounded,
-    ...props
-  } = _ref;
+      variant = defaults.variant,
+      backgroundColor = defaults.backgroundColor,
+      textAlignment = defaults.textAlignment,
+      textSize = defaults.textSize,
+      textColor = defaults.textSize,
+      content,
+      additionalClasses = defaults.additionalClasses,
+      rounded = defaults.rounded
+    } = _ref,
+    props = _objectWithoutProperties(_ref, _excluded);
   const alignment = {
     left: 'text-left',
     center: 'text-center',

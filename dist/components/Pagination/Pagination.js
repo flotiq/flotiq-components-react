@@ -86,7 +86,7 @@ const Pagination = _ref => {
     className: "relative z-0 inline-flex space-x-2",
     "aria-label": "Pagination"
   }, safePage > 1 && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("a", {
-    href: safePage > 2 ? `${baseUrl}${safePage - 1}` : baseUrl,
+    href: safePage > 2 ? "".concat(baseUrl).concat(safePage - 1) : baseUrl,
     className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClassPrevNext[size], bgClasses[variant], borderClasses[variant], _rounded.roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...prevNextAdditionalClasses].join(' ')
   }, prev), /*#__PURE__*/_react.default.createElement("a", {
     href: baseUrl,
@@ -94,27 +94,27 @@ const Pagination = _ref => {
   }, "1"), safePage > 4 && /*#__PURE__*/_react.default.createElement("span", {
     className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], _rounded.roundedProps.classSet[rounded], 'leading-6', 'font-medium', 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
   }, "...")), safePage > 3 && /*#__PURE__*/_react.default.createElement("a", {
-    href: `${baseUrl}${safePage - 2}`,
+    href: "".concat(baseUrl).concat(safePage - 2),
     className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], _rounded.roundedProps.classSet[rounded], 'leading-6', 'font-medium', 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
   }, safePage - 2), safePage > 2 && /*#__PURE__*/_react.default.createElement("a", {
-    href: `${baseUrl}${safePage - 1}`,
+    href: "".concat(baseUrl).concat(safePage - 1),
     className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], _rounded.roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...additionalClasses].join(' ')
   }, safePage - 1), /*#__PURE__*/_react.default.createElement("span", {
     "aria-current": "page",
     className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], _background.backgroundProps.classSet[variant], activeBorderClasses[variant], _rounded.roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...activeAdditionalClasses].join(' ')
   }, safePage), safePage < numOfPages - 1 && /*#__PURE__*/_react.default.createElement("a", {
-    href: `${baseUrl}${safePage + 1}`,
+    href: "".concat(baseUrl).concat(safePage + 1),
     className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], _rounded.roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...additionalClasses].join(' ')
   }, safePage + 1), page < numOfPages - 2 && /*#__PURE__*/_react.default.createElement("a", {
-    href: `${baseUrl}${safePage + 2}`,
+    href: "".concat(baseUrl).concat(safePage + 2),
     className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], _rounded.roundedProps.classSet[rounded], 'leading-6', 'font-medium', 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
   }, safePage + 2), safePage < numOfPages && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, safePage < numOfPages - 3 && /*#__PURE__*/_react.default.createElement("span", {
     className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], _rounded.roundedProps.classSet[rounded], 'leading-6', 'font-medium', 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
   }, "..."), /*#__PURE__*/_react.default.createElement("a", {
-    href: `${baseUrl}${numOfPages}`,
+    href: "".concat(baseUrl).concat(numOfPages),
     className: ['relative', 'items-center', 'justify-center', sizeClass[size], bgClasses[variant], borderClasses[variant], _rounded.roundedProps.classSet[rounded], 'leading-6', 'font-medium', safePage >= numOfPages - 1 ? 'inline-flex' : 'hidden', 'md:inline-flex', ...additionalClasses].join(' ')
   }, numOfPages), /*#__PURE__*/_react.default.createElement("a", {
-    href: `${baseUrl}${safePage + 1}`,
+    href: "".concat(baseUrl).concat(safePage + 1),
     className: ['relative', 'inline-flex', 'items-center', 'justify-center', sizeClassPrevNext[size], bgClasses[variant], borderClasses[variant], _rounded.roundedProps.classSet[rounded], 'leading-6', 'font-medium', ...prevNextAdditionalClasses].join(' ')
   }, next)))));
 };

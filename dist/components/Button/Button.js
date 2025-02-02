@@ -8,8 +8,11 @@ var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _rounded = require("../../defaultProps/rounded");
 var _background = require("../../defaultProps/background");
+const _excluded = ["label", "onClick", "variant", "size", "rounded", "additionalClasses"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 const defaults = exports.defaults = {
   onClick: undefined,
   size: 'md',
@@ -23,14 +26,14 @@ const defaults = exports.defaults = {
  */
 const Button = _ref => {
   let {
-    label,
-    onClick = defaults.onClick,
-    variant = defaults.variant,
-    size = defaults.size,
-    rounded = defaults.rounded,
-    additionalClasses = defaults.additionalClasses,
-    ...props
-  } = _ref;
+      label,
+      onClick = defaults.onClick,
+      variant = defaults.variant,
+      size = defaults.size,
+      rounded = defaults.rounded,
+      additionalClasses = defaults.additionalClasses
+    } = _ref,
+    props = _objectWithoutProperties(_ref, _excluded);
   const sizeClass = {
     sm: 'px-8 py-3 text-sm',
     md: 'px-12 py-4 text-base',

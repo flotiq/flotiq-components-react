@@ -16,10 +16,13 @@ var _Quote = _interopRequireWildcard(require("../Quote/Quote"));
 var _Table = _interopRequireWildcard(require("../Table/Table"));
 var _Warning = _interopRequireWildcard(require("../Warning/Warning"));
 var _YouTubeEmbed = _interopRequireWildcard(require("../YouTubeEmbed/YouTubeEmbed"));
+const _excluded = ["blocks", "highlight", "headerProps", "paragraphProps", "youTubeEmbedProps", "fileProps", "quoteProps", "tableProps", "codeProps", "warningProps", "delimiterProps", "listProps", "additionalClasses", "standardPadding"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 const defaults = exports.defaults = {
   headerProps: {},
   paragraphProps: {},
@@ -40,40 +43,41 @@ const defaults = exports.defaults = {
  */
 const Content = _ref => {
   let {
-    blocks,
-    highlight,
-    headerProps = defaults.headerProps,
-    paragraphProps = defaults.paragraphProps,
-    youTubeEmbedProps = defaults.youTubeEmbedProps,
-    fileProps = defaults.fileProps,
-    quoteProps = defaults.quoteProps,
-    tableProps = defaults.tableProps,
-    codeProps = defaults.codeProps,
-    warningProps = defaults.warningProps,
-    delimiterProps = defaults.delimiterProps,
-    listProps = defaults.listProps,
-    additionalClasses = defaults.additionalClasses,
-    standardPadding = defaults.standardPadding,
-    ...props
-  } = _ref;
+      blocks,
+      highlight,
+      headerProps = defaults.headerProps,
+      paragraphProps = defaults.paragraphProps,
+      youTubeEmbedProps = defaults.youTubeEmbedProps,
+      fileProps = defaults.fileProps,
+      quoteProps = defaults.quoteProps,
+      tableProps = defaults.tableProps,
+      codeProps = defaults.codeProps,
+      warningProps = defaults.warningProps,
+      delimiterProps = defaults.delimiterProps,
+      listProps = defaults.listProps,
+      additionalClasses = defaults.additionalClasses,
+      standardPadding = defaults.standardPadding
+    } = _ref,
+    props = _objectWithoutProperties(_ref, _excluded);
   (0, _react.useEffect)(() => {
     if (highlight) {
       highlight.highlightAll();
     }
   }, [highlight]);
   const getBlock = block => {
+    var _block$tunes, _block$tunes2;
     switch (block.type) {
       case 'header':
         return /*#__PURE__*/_react.default.createElement(_Header.default, _extends({
           level: block.data.level,
           anchor: block.data.anchor,
-          alignment: block.tunes?.alignmentTuneTool?.alignment
+          alignment: (_block$tunes = block.tunes) === null || _block$tunes === void 0 || (_block$tunes = _block$tunes.alignmentTuneTool) === null || _block$tunes === void 0 ? void 0 : _block$tunes.alignment
         }, headerProps, {
           key: block.id
         }), block.data.text);
       case 'paragraph':
         return /*#__PURE__*/_react.default.createElement(_Paragraph.default, _extends({
-          alignment: block.tunes?.alignmentTuneTool?.alignment
+          alignment: (_block$tunes2 = block.tunes) === null || _block$tunes2 === void 0 || (_block$tunes2 = _block$tunes2.alignmentTuneTool) === null || _block$tunes2 === void 0 ? void 0 : _block$tunes2.alignment
         }, paragraphProps, {
           key: block.id
         }), block.data.text);
